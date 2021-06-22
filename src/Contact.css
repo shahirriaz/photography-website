@@ -1,0 +1,151 @@
+.contact {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.contact__form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 50px;
+  margin-top: 100px;
+  /* border: 1px solid brown; */
+}
+
+.contact__title {
+  margin-left: 50px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  /* border: 1px solid brown; */
+}
+
+/* LEFT */
+
+.contact__form--left {
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid blue; */
+  flex: 0.6;
+  min-width: 350px;
+}
+
+.contact__form--inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+}
+
+.contact__input {
+  border-radius: 10px;
+  border: 2px solid gray;
+  background-color: transparent;
+  outline-width: 0;
+  padding: 20px;
+  margin: 30px;
+  min-width: 250px;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+.contact__input:hover {
+  cursor: text;
+}
+
+.contact__form--button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.contact__form--button > button {
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Right */
+
+.contact__form--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid brown; */
+}
+
+.contact__logo > img {
+  background-color: black;
+  width: 200px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.contact__maps > img {
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.contact__maps > h2 {
+  margin-bottom: 1rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact__form--button {
+    justify-content: center;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+  }
+  .contact__form {
+    margin-top: 0px;
+  }
+
+  .contact__logo > img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .contact__maps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .contact__form--left {
+    align-items: center;
+  }
+  .contact__title {
+    margin-left: 0px;
+  }
+  .contact__form--button {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .contact__input {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .contact__input {
+    width: 100%;
+  }
+}

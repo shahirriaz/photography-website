@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.info {
+  margin-top: 30px;
+  margin-bottom: 5px;
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+}

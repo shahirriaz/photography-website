@@ -1,0 +1,130 @@
+.mainRow {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; /** MUST BE OPTIONAL */
+  margin: 30px;
+  /* flex-wrap: wrap; */
+  /* border: 5px solid red; */
+  border: 1px solid #f5f5f5;
+  background-color: #f0f0f0;
+
+  /* height: 1000px; */
+}
+
+/* UTILITY CLASSES */
+
+.mainRow_flexDirectionRow {
+  flex-direction: row;
+}
+
+.mainRow_justifyContentCenter {
+  justify-content: center;
+}
+
+.mainRow_flexDirectionColumn {
+  flex-direction: column;
+}
+
+.mainRow__alignItemsCenter {
+  align-items: center;
+}
+.mainRow__reversed {
+  flex-direction: row-reverse;
+}
+
+.mainRow__content--container {
+  /* border: 5px solid green; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #f0f0f0;
+  width: 90vw;
+}
+
+.mainRow__content {
+  padding: 3rem;
+  margin-top: 1rem;
+  margin-right: 0.4rem;
+  margin-left: 2.2rem;
+  /* width: 20%; */
+
+  max-width: 1300px;
+  /* border: 2px solid red; */
+  background-color: white;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0px 4px 8px -7px rgba(0, 0, 0, 0.75);
+}
+
+/* UTILITY CLASSES */
+.mainRow__content--margin--right {
+  margin-right: 2.2rem;
+}
+
+.mainRow__content--margin--left {
+  margin-left: 2.2rem;
+}
+
+.mainRow__content--width {
+  width: 20%;
+}
+
+.mainRow__content > h1 {
+  margin-bottom: 30px;
+  font-size: 3rem;
+}
+
+.mainRow__content > h3 {
+  padding-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  font-size: 1.3rem;
+  background: url(https://www.andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
+  background-repeat: no-repeat;
+  background-size: 30% 100%;
+  padding: 8px 0;
+  color: #383838;
+}
+
+.mainRow__content > p {
+  letter-spacing: 1px;
+  line-height: 2rem;
+  color: #181818;
+  font-weight: 500;
+  padding: 8px 0;
+  /* border: 2px solid blue; */
+}
+
+.mainRow__image--container {
+  display: flex; /*har ingen påvirkning på hjem sin imageROw*/
+  justify-content: center;
+  /* border: 2px solid red; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/*UTILITY CLASS*/
+.mainRow__image--container--alignItemsCenter {
+  align-items: center;
+}
+
+.mainRow__image--container--alignItemsEnd {
+  align-items: flex-end;
+}
+
+.mainRow__image--container--margin--right {
+  margin-right: 2.2rem;
+}
+
+.mainRow__image--container--margin--left {
+  margin-left: 2.2rem;
+}
+
+.mainRow__image--container > img {
+  object-fit: contain;
+}
+/* 
+@media screen and (max-width: 4000px) {
+  .mainRow {
+    flex-direction: column;
+  }
+} */

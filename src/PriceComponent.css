@@ -1,0 +1,47 @@
+.priceComponent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px;
+  /* border: 1px solid blue; */
+}
+
+.priceComponent__card {
+  height: 400px;
+  width: 350px;
+  border: 4px solid #e8e8e8;
+  margin: 20px;
+}
+
+.priceComponent__card--title {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+.priceComponent__card--content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid green; */
+  padding: 30px;
+  flex: 1;
+}
+
+.priceComponent__card--container {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 68%;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+.priceComponent__card:hover {
+  background-color: #ff8c27;
+  color: white;
+}

@@ -1,0 +1,15 @@
+.imageRow {
+  display: flex;
+}
+
+.imageRow--reverseDirection {
+  flex-direction: row-reverse;
+}
+
+.imageRow__container {
+  display: flex;
+  margin: 0.4rem;
+  flex-direction: column;
+  width: 600px;
+  max-width: 600px;
+}
