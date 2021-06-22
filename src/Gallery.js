@@ -11,19 +11,39 @@ function Gallery() {
     setImageLoading(true);
     setTimeout(() => {
       setImageLoading(false);
-    }, 1500);
+    }, 1000);
   }, []);
 
   return (
     <div className="gallery">
       {imageLoading ? (
         <div className="app__loader--container">
-          <HashLoader color={"#ff8c27"} loading={imageLoading} size={50} />
+          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
         </div>
       ) : (
         <ImageCarousel />
       )}
-
+      {imageLoading ? (
+        <div className="app__loader--container">
+          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
+        </div>
+      ) : (
+        <ImageCarousel />
+      )}
+      {imageLoading ? (
+        <div className="app__loader--container">
+          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
+        </div>
+      ) : (
+        <ImageCarousel />
+      )}
+      {imageLoading ? (
+        <div className="app__loader--container">
+          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
+        </div>
+      ) : (
+        <ImageCarousel />
+      )}
       <Slider />
       {/* Slider */}
       {/* Slider */}

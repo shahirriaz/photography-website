@@ -47,7 +47,6 @@
   margin-right: 0.4rem;
   margin-left: 2.2rem;
   /* width: 20%; */
-
   max-width: 1300px;
   /* border: 2px solid red; */
   background-color: white;
@@ -76,7 +75,7 @@
 .mainRow__content > h3 {
   padding-bottom: 1rem;
   /* margin-bottom: 1rem; */
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   background: url(https://www.andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
   background-repeat: no-repeat;
   background-size: 30% 100%;
