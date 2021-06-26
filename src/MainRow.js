@@ -7,6 +7,7 @@ function MainRow({
   title,
   subTitle,
   description,
+  descriptionArray,
   image,
   contentImage,
   isReverse,
@@ -22,6 +23,7 @@ function MainRow({
   imageArray,
   children, //PriceComponent
 }) {
+  console.log(descriptionArray);
   return (
     <div
       className={`mainRow ${isReverse && "mainRow__reversed"} ${
@@ -46,8 +48,31 @@ function MainRow({
             {title && <h1>{title}</h1>}
             <h3>{subTitle}</h3>
             <p>{description}</p>
+            {descriptionArray &&
+              descriptionArray.map(description => (
+                <>
+                  <p>
+                    <strong>Navn:</strong> {description?.name}
+                  </p>
+                  <p>
+                    <strong>E-post:</strong> {description?.email}
+                  </p>
+                  <p>
+                    <strong>Telefon:</strong> {description?.phone}
+                  </p>
+                  <p>
+                    <strong>Type:</strong> {description?.type}
+                  </p>
+                  <p>
+                    <strong>Alder:</strong> {description?.age} <span>år</span>
+                  </p>
+                  <p>
+                    <strong>Dato:</strong> {description?.date}
+                  </p>
+                </>
+              ))}
           </div>
-          
+
           {contentImage && (
             <img
               data-aos="fade-left"
@@ -78,7 +103,7 @@ function MainRow({
         >
           <LazyLoadImage
             // data-aos="fade-up"
-            effect="blurr"
+            effect="blur"
             style={{ width: "600px", objectFit: "contain" }}
             src={image}
             alt="best-image"
@@ -94,7 +119,7 @@ function MainRow({
         >
           {imageArray.map((img, index) => (
             <LazyLoadImage
-              effect="blurr"
+              effect="blur"
               key={index}
               style={{ width: "600px", objectFit: "contain" }}
               src={img}

@@ -7,7 +7,7 @@ body {
 }
 
 .app {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* .app {

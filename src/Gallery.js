@@ -5,53 +5,24 @@ import Slider from "./Slider";
 import HashLoader from "react-spinners/HashLoader";
 
 function Gallery() {
-  const [imageLoading, setImageLoading] = useState(false);
+  // const [imageLoading, setImageLoading] = useState(false);
 
-  useEffect(() => {
-    setImageLoading(true);
-    setTimeout(() => {
-      setImageLoading(false);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setImageLoading(true);
+  //   setTimeout(() => {
+  //     setImageLoading(false);
+  //   }, 1000);
+  // }, []);
 
   return (
     <div className="gallery">
-      {imageLoading ? (
+      {/* {imageLoading ? (
         <div className="app__loader--container">
           <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
         </div>
-      ) : (
-        <ImageCarousel />
-      )}
-      {imageLoading ? (
-        <div className="app__loader--container">
-          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
-        </div>
-      ) : (
-        <ImageCarousel />
-      )}
-      {imageLoading ? (
-        <div className="app__loader--container">
-          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
-        </div>
-      ) : (
-        <ImageCarousel />
-      )}
-      {imageLoading ? (
-        <div className="app__loader--container">
-          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
-        </div>
-      ) : (
-        <ImageCarousel />
-      )}
-      <Slider />
-      {/* Slider */}
-      {/* Slider */}
-      {/* Slider */}
-      {/* Slider */}
-      {/* Slider */}
-      {/* Slider */}
-      {/* Slider */}
+      ) : ( */}
+      <ImageCarousel />
+      {/* )} */}
     </div>
   );
 }

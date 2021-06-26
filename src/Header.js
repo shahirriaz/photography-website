@@ -11,10 +11,11 @@ function Header() {
       <div className="header__logo">
         <img
           style={{
-            backgroundColor: "black",
-            width: "200px",
-            height: "75px",
+            width: "300px",
+            height: "100px",
             objectFit: "contain",
+            border: "1px solid black",
+            borderRadius: "2px",
           }}
           src={logo}
           alt=""

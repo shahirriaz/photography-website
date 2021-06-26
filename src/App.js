@@ -9,6 +9,7 @@ import AboutUs from "./AboutUs";
 import Home from "./Home";
 import HashLoader from "react-spinners/HashLoader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import YourInformation from "./YourInformation";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -17,7 +18,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 2000);
   }, []);
 
   return (
@@ -30,6 +31,9 @@ function App() {
         <Router>
           <Header />
           <Switch>
+            <Route path="/yourInformation">
+              <YourInformation />
+            </Route>
             <Route path="/contact">
               <div className="app__page">
                 <Contact />

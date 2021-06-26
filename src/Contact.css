@@ -98,6 +98,10 @@
   margin-bottom: 1rem;
 }
 
+.error {
+  color: red;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
