@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainRow.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -20,17 +20,24 @@ function MainRow({
   isMarginLeftImage,
   isMarginRightContent,
   isContentWidth,
+  isBackgroundWhite,
   imageArray,
   children, //PriceComponent
+  // isSubPrice,
+  isMainPrice,
+  hr,
+  priceDescription,
+  isFontColorWhite,
 }) {
-  console.log(descriptionArray);
   return (
     <div
       className={`mainRow ${isReverse && "mainRow__reversed"} ${
         isAlignItemsCenter && "mainRow__alignItemsCenter"
       }  ${isRowFlexDirection && "mainRow_flexDirectionRow"} ${
         isColumnFlexDirection && "mainRow_flexDirectionColumn"
-      } ${isJustifyContentCenter && "mainRow_justifyContentCenter "}  `}
+      } ${isJustifyContentCenter && "mainRow_justifyContentCenter "} ${
+        isBackgroundWhite && "mainRow-background-color"
+      }  `}
     >
       {image || title || subTitle ? (
         <div
@@ -45,9 +52,31 @@ function MainRow({
               isContentWidth && "mainRow__content--width"
             }`}
           >
-            {title && <h1>{title}</h1>}
-            <h3>{subTitle}</h3>
-            <p>{description}</p>
+            {title && (
+              <h1
+                className={isFontColorWhite && "mainRow__content--colorWhite"}
+              >
+                {title}
+              </h1>
+            )}
+            <h3 className={isFontColorWhite && "mainRow__content--colorWhite"}>
+              {subTitle}
+            </h3>
+            <p className={isFontColorWhite && "mainRow__content--colorWhite"}>
+              {description}
+            </p>
+            {priceDescription &&
+              priceDescription.map(priceDescription => (
+                <>
+                  <p
+                    className={`mainRow__content--priceDescription ${
+                      isFontColorWhite && "mainRow__content--colorWhite"
+                    }`}
+                  >
+                    {priceDescription}
+                  </p>
+                </>
+              ))}
             {descriptionArray &&
               descriptionArray.map(description => (
                 <>
@@ -73,6 +102,8 @@ function MainRow({
               ))}
           </div>
 
+          {hr && <hr />}
+
           {contentImage && (
             <img
               data-aos="fade-left"
@@ -87,6 +118,15 @@ function MainRow({
               alt=""
             />
           )}
+          {/* {children && isSubPrice ? (
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="mainRow__image--container"
+            >
+              {children}
+            </div>
+          ) : null} */}
         </div>
       ) : null}
 
@@ -104,7 +144,7 @@ function MainRow({
           <LazyLoadImage
             // data-aos="fade-up"
             effect="blur"
-            style={{ width: "600px", objectFit: "contain" }}
+            style={{ width: "500px", objectFit: "contain" }}
             src={image}
             alt="best-image"
           />
@@ -129,7 +169,7 @@ function MainRow({
         </div>
       ) : null}
 
-      {children ? (
+      {children && isMainPrice ? (
         <div
           data-aos="fade-left"
           data-aos-duration="1000"

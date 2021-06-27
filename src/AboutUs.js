@@ -34,8 +34,10 @@ function AboutUs() {
           description="Vi åpnet studio på Madla i 1999. Rikard skulle hjelpe meg i gang et par måneder og nå har det altså gått over 20 år. Jeg liker mennesker, stemninger, årstider, gjensyn, samtaler, latter og melankoli. Rikard er daglig leder og redigerer alle bildene våre. Vi får begge god kontakt med kundene og har mange som kommer tilbake gang på gang. Det er det aller beste vi vet, og en bekreftelse på kvaliteten vi leverer. Mange planlegger og tenker på fotografering i årevis før de gjør noe med det. Det er ikke noe å vente på. Du blir ikke yngre. Jeg har lang erfaring i å få deg til å slappe av foran kamera. Det er ikke så farlig som du tror, og sannsynligvis blir du glad i bildene."
           image={image1}
           isRowFlexDirection
+          isJustifyContentCenter
           isAlignItemsCenterImage
           isMarginRightImage
+          isBackgroundWhite
         />
 
         <MainRow
@@ -44,6 +46,7 @@ function AboutUs() {
           image={image2}
           isAlignItemsCenter
           isMarginRightImage
+          isBackgroundWhite
         />
 
         <MainRow
@@ -56,6 +59,7 @@ function AboutUs() {
           isAlignItemsCenter
           isMarginLeftImage
           isMarginRightContent
+          isBackgroundWhite
         />
 
         <MainRow
@@ -63,6 +67,7 @@ function AboutUs() {
           subTitle="Noe av mitt verk"
           imageArray={imageArray}
           isContentWidth
+          isBackgroundWhite
         />
 
         <MainRow
@@ -71,6 +76,7 @@ function AboutUs() {
           // isAlignItemsCenter
           imageArray={imageArray2}
           isContentWidth
+          isBackgroundWhite
           // isJustifyContentCenter
         />
       </div>

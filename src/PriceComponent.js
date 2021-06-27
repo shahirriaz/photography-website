@@ -15,6 +15,7 @@ function PriceComponent({
       <div className="priceComponent__card">
         <div className="priceComponent__card--title">
           <h1>{title}</h1>
+          <hr />
         </div>
 
         <div className="priceComponent__card--container">
@@ -39,13 +40,14 @@ function PriceComponent({
           {pakke_subTitle_3 && (
             <div className="priceComponent__card--content">
               <div className="priceComponent__card--content--left">
-                <h1>I am left</h1>
+                <p>{pakke_subTitle_3}</p>
               </div>
               <div className="priceComponent__card--content--right">
-                <h1>I am right</h1>
+                <p>{pakke_price_3}</p>
               </div>
             </div>
           )}
+          <button>Vis mer info</button>
         </div>
       </div>
     </div>

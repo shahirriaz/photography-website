@@ -41,7 +41,8 @@ function Prices() {
         isColumnFlexDirection
         // contentImage="https://images.unsplash.com/photo-1591681354784-c684e483dae0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=646&q=80"
         isMainPrice
-        hr
+        isBackgroundWhite
+        // hr
       >
         <PriceComponent
           title="Nyfødt"
@@ -70,18 +71,21 @@ function Prices() {
       </MainRow>
       <MainRow
         title="Events"
-        subTitle="Priser for fotografering"
+        subTitle="Priser for events"
         priceDescription={priceDescription}
         image="https://images.unsplash.com/photo-1603043647336-e71a50a294c9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=730&q=80"
         isMarginRightImage
         isAlignItemsCenter
         isSubPrice
-        hr
-      ></MainRow>
+        isFontColorWhite
+        // hr
+        // isBackgroundWhite
+      />
       <MainRow
         title="Nyfødt"
-        subTitle="Nulla facilisi. Sed sit amet molestie nulla. Curabitur volutpat varius nulla"
-        description="tate ipsum a convalctetur. Etiam vel nunc lacus. Cras ultricies porttitor risus ac dapibus. Vivamus eu risus hendrerit, bibendum neque a, euismod eros."
+        subTitle="Priser for nyfødt"
+        description="Det sies at et bilde øker i verdi for hver dag som går, og det med god grunn. Nyfødtfotografering er noe helt spesielt. Det å få ett nytt familiemedlem kan være overveldende på mange vis, og helst skulle man kanskje ønske at man kunne fryse tiden for å nyte hvert sekund med dette nydelige lille nurket mens det er så lite, enda lengre."
+        priceDescription={priceDescription}
         image="https://images.unsplash.com/photo-1522771930-78848d9293e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
         isMarginLeftImage
         isAlignItemsCenter
@@ -89,22 +93,9 @@ function Prices() {
         isReverse
         isSubPrice
         hr
-      >
-        <PriceComponent
-          title="Brffyllup"
-          pakke_subTitle_1="vielse og ute med alle Digital filler"
-          pakke_subTitle_2="All day med Alle digital filler"
-          pakke_price_1="10000kr"
-          pakke_price_2="18000kr"
-        />
-        <PriceComponent
-          title="loool"
-          pakke_subTitle_1="vielse og ute med alle Digital filler"
-          pakke_subTitle_2="All day med Alle digital filler"
-          pakke_price_1="10000kr"
-          pakke_price_2="18000kr"
-        />
-      </MainRow>
+        isBackgroundWhite
+      />
+
       <MainRow
         title="Familie Fotografering"
         subTitle=""
@@ -116,22 +107,8 @@ function Prices() {
         imageArray={imageArray}
         isSubPrice
         hr
-      >
-        <PriceComponent
-          title="Brffyllup"
-          pakke_subTitle_1="vielse og ute med alle Digital filler"
-          pakke_subTitle_2="All day med Alle digital filler"
-          pakke_price_1="10000kr"
-          pakke_price_2="18000kr"
-        />
-        <PriceComponent
-          title="loool"
-          pakke_subTitle_1="vielse og ute med alle Digital filler"
-          pakke_subTitle_2="All day med Alle digital filler"
-          pakke_price_1="10000kr"
-          pakke_price_2="18000kr"
-        />
-      </MainRow>
+        isFontColorWhite
+      />
     </div>
   );
 }

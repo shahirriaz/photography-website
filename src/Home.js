@@ -7,26 +7,31 @@ import Footer from "./Footer";
 import MainRow from "./MainRow";
 import ImageRow from "./ImageRow";
 
+// bug -- using isMainPrice to show the mainRow__image--container in MainRow.js
+
 function Home() {
   return (
-    <div className="home">
+    <>
       <Banner />
-      <MainRow
-        subTitle="Kolleksjon"
-        isJustifyContentCenter
-        isColumnFlexDirection
-        isContentWidth
-        Icon
-      >
-        <ImageRow isReverse />
-      </MainRow>
-      <MainRow isAlignItemsCenter isJustifyContentCenter>
-        <ImageRow />
-      </MainRow>
-      <Info />
-      <ServiceGallery />
-      <Footer />
-    </div>
+      <div className="home">
+        <MainRow
+          title="Kolleksjon"
+          isJustifyContentCenter
+          isColumnFlexDirection
+          isContentWidth
+          isMainPrice
+          isFontColorWhite
+        >
+          <ImageRow isReverse />
+        </MainRow>
+        <MainRow isMainPrice isAlignItemsCenter isJustifyContentCenter>
+          <ImageRow />
+        </MainRow>
+        <Info />
+        <ServiceGallery />
+        <Footer />
+      </div>
+    </>
   );
 }
 

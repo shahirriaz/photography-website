@@ -2,14 +2,18 @@
   display: flex;
   /* justify-content: center;
   align-items: center; /** MUST BE OPTIONAL */
-  margin: 30px;
-  /* max-width: 4000px; */
+  margin: 30px 30px 30px 30px;
+  max-width: 2000px;
+  min-width: 2000px;
   /* flex-wrap: wrap; */
   /* border: 5px solid red; */
-  /* border: 1px solid #f5f5f5;
-  background-color: #f0f0f0; */
+  /* border: 1px solid #f5f5f5; */
 
   /* height: 1000px; */
+}
+
+.mainRow-background-color {
+  background-color: white;
 }
 
 /* UTILITY CLASSES */
@@ -36,10 +40,12 @@
 .mainRow__content--container {
   /* border: 5px solid green; */
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   /* background-color: #f0f0f0; */
-  width: 100%;
+  padding: 50px;
+  flex: 0.6;
 }
 
 .mainRow__content {
@@ -50,14 +56,21 @@
   /* width: 20%; */
   max-width: 1300px;
   /* border: 2px solid red; */
-  background-color: white;
-  border: 1px solid #f5f5f5;
-  box-shadow: 0px 4px 8px -7px rgba(0, 0, 0, 0.75);
+  /* background-color: #f5f5f5; */
+  /* border: 1px solid #f5f5f5; */
+  /* box-shadow: 0px 4px 8px -7px rgba(0, 0, 0, 0.75); */
 }
 
 /* UTILITY CLASSES */
-.mainRow__content--margin--right {
+/* .mainRow__content--margin--right {
   margin-right: 2.2rem;
+} */
+
+.mainRow__content--priceDescription {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  /* border: 1px solid red; */
 }
 
 .mainRow__content--margin--left {
@@ -77,33 +90,47 @@
   padding-bottom: 1rem;
   /* margin-bottom: 1rem; */
   font-size: 1.6rem;
-  background: url(https://www.andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
+  /* background: url(https://www.andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
   background-repeat: no-repeat;
-  background-size: 30% 100%;
+  background-size: 30% 100%; */
   padding: 8px 0;
-  color: #383838;
+}
+
+.mainRow__content--colorWhite {
+  color: #f8f8f8;
 }
 
 .mainRow__content > p {
   letter-spacing: 1px;
   line-height: 2rem;
-  color: #181818;
+  /* color: #181818; */
   font-weight: 500;
   padding: 8px 0;
   /* border: 2px solid blue; */
 }
 
 .mainRow__image--container {
-  display: flex; /*har ingen påvirkning på hjem sin imageROw*/
+  display: flex;
+
   justify-content: center;
-  /* border: 2px solid red; */
+  /* border: 5px solid purple; */
+
+  flex-wrap: wrap;
+  flex: 0.4;
+}
+
+/* .mainRow__image--container--home{
+  display: flex;  
+  justify-content: center;
+  border: 5px solid purple;
   padding-top: 20px;
   padding-bottom: 20px;
   flex-wrap: wrap;
-}
+  flex: 0.4;
+} */
 
 /*UTILITY CLASS*/
-.mainRow__image--container--alignItemsCenter {
+/* .mainRow__image--container--alignItemsCenter {
   align-items: center;
 }
 
@@ -117,6 +144,14 @@
 
 .mainRow__image--container--margin--left {
   margin-left: 2.2rem;
+} */
+
+hr {
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  width: 60%;
+  margin: auto;
+  margin-top: 3rem;
 }
 
 .mainRow__image--container > img {

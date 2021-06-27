@@ -12,7 +12,7 @@ function Header() {
         <img
           style={{
             width: "300px",
-            height: "100px",
+            height: "50px",
             objectFit: "contain",
             border: "1px solid black",
             borderRadius: "2px",
