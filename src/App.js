@@ -46,6 +46,7 @@ function App() {
             </Route>
             <Route path="/prices">
               <Prices />
+              <Footer />
             </Route>
             <Route path="/gallery">
               <Gallery />

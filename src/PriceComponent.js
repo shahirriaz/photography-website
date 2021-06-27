@@ -47,7 +47,6 @@ function PriceComponent({
               </div>
             </div>
           )}
-          <button>Vis mer info</button>
         </div>
       </div>
     </div>

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./MainRow.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import ScheduleIcon from "@material-ui/icons/Schedule";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function MainRow({
   title,
@@ -28,6 +30,7 @@ function MainRow({
   hr,
   priceDescription,
   isFontColorWhite,
+  Icon,
 }) {
   return (
     <div
@@ -65,10 +68,13 @@ function MainRow({
             <p className={isFontColorWhite && "mainRow__content--colorWhite"}>
               {description}
             </p>
+            {hr && <hr />}
             {priceDescription &&
               priceDescription.map(priceDescription => (
                 <>
                   <p
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
                     className={`mainRow__content--priceDescription ${
                       isFontColorWhite && "mainRow__content--colorWhite"
                     }`}
@@ -77,6 +83,7 @@ function MainRow({
                   </p>
                 </>
               ))}
+
             {descriptionArray &&
               descriptionArray.map(description => (
                 <>
@@ -101,10 +108,32 @@ function MainRow({
                 </>
               ))}
           </div>
+          {Icon && (
+            <div className="mainRow__content--container--button--container">
+              <div className="mainRow__content--container--button--left">
+                <button className="mainRow__content--container--button--container--button">
+                  <div className="mainRow__content--container--button--content">
+                    <span className="icon">
+                      <ScheduleIcon fontSize="large" />
+                    </span>
+                    <span>Bestill</span>
+                  </div>
+                </button>
+              </div>
+              <div className="mainRow__content--container--button--left">
+                <button className="mainRow__content--container--button--container--button">
+                  <div className="mainRow__content--container--button--content">
+                    <span className="icon">
+                      <ExpandMoreIcon fontSize="large" />
+                    </span>
+                    <span>Se mer bilder</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          )}
 
-          {hr && <hr />}
-
-          {contentImage && (
+          {/* {contentImage && (
             <img
               data-aos="fade-left"
               data-aos-duration="2000"
@@ -117,7 +146,7 @@ function MainRow({
               src={contentImage}
               alt=""
             />
-          )}
+          )} */}
           {/* {children && isSubPrice ? (
             <div
               data-aos="fade-left"

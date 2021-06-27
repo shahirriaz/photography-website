@@ -38,7 +38,7 @@
 }
 
 .mainRow__content--container {
-  /* border: 5px solid green; */
+  border: 5px solid green;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -87,12 +87,10 @@
 }
 
 .mainRow__content > h3 {
+  letter-spacing: 1px;
   padding-bottom: 1rem;
   /* margin-bottom: 1rem; */
   font-size: 1.6rem;
-  /* background: url(https://www.andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
-  background-repeat: no-repeat;
-  background-size: 30% 100%; */
   padding: 8px 0;
 }
 
@@ -102,10 +100,11 @@
 
 .mainRow__content > p {
   letter-spacing: 1px;
-  line-height: 2rem;
+  line-height: 1.5em;
   /* color: #181818; */
   font-weight: 500;
   padding: 8px 0;
+  font-size: 1.6rem;
   /* border: 2px solid blue; */
 }
 
@@ -148,9 +147,10 @@
 
 hr {
   border: 1px solid #e0e0e0;
+  opacity: 0.6;
   border-radius: 2px;
-  width: 60%;
-  margin: auto;
+  width: 80%;
+
   margin-top: 3rem;
 }
 
@@ -163,3 +163,50 @@ hr {
     flex-direction: column;
   }
 } */
+
+.mainRow__content--container--button--container {
+  /* border: 1px solid purple; */
+  margin: 5px;
+  margin-left: 5.4rem;
+  font-size: 1.4rem;
+  display: flex;
+}
+
+.mainRow__content--container--button--container--button {
+  /* width: 200px; */
+  /* height: 100%; */
+  font-size: 1.4rem;
+  padding: 20px;
+  /* padding-bottom: 45px; */
+  border-width: 0;
+  /* border: 1px solid #a3a1a1; */
+  background-color: #fc9031;
+  color: white;
+  outline: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  /* border: none; */
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 10px;
+
+  /* text-decoration: none; */
+}
+
+.mainRow__content--container--button--container--button:hover {
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 5px;
+  margin-top: 3px;
+  /* border: 1px solid red; */
+}
+
+.mainRow__content--container--button--content {
+  /* border: 2px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px 0px 10px;
+}
