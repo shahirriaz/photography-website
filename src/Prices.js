@@ -48,16 +48,15 @@ function Prices() {
     <div className="prices">
       <MainRow
         title="Priser"
-        subTitle="Her er en oversikt over mine priser og produkter. Et fint utvalg av ulike produkter som passer inn i dagens moderne hjem. Ikke glem å få bildene dine opp på vegg eller i et album slik at de kan nytes til sin fulle rett."
-        // description="Nedenfor ser du et veldig bra pris. Det er den beste prisen i hele verden"
+        subTitle="Info om pris"
+        description="Fotograferingsprisen dekker forberedelser, selve fotograferingen, arkivering, plukking og klargjøring av bilder til presentasjon. Bildene presenteres i både farge og sorthvitt via egen innlogging på vår hjemmeside. Visningstime er inkludert i prisen. Den har vi vanligvis en måneds tid etter fotograferingen. Da går vi sammen gjennom bildene og lager det dere måtte ønske."
         isColumnFlexDirection
-        // contentImage="https://images.unsplash.com/photo-1591681354784-c684e483dae0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=646&q=80"
         isMainPrice
         isBackgroundWhite
         // hr
       >
         <PriceComponent
-          title="Nyfødt"
+          title="Barn"
           pakke_subTitle_1="Portrett NyFødt"
           pakke_subTitle_2="Med Familie"
           pakke_price_1="2500kr"

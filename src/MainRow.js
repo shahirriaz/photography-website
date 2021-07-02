@@ -147,7 +147,7 @@ function MainRow({
             </div>
           )}
 
-          {/* {contentImage && (
+          {contentImage && (
             <img
               data-aos="fade-left"
               data-aos-duration="2000"
@@ -160,7 +160,7 @@ function MainRow({
               src={contentImage}
               alt=""
             />
-          )} */}
+          )}
           {/* {children && isSubPrice ? (
             <div
               data-aos="fade-left"

@@ -40,13 +40,14 @@ function AboutUs() {
           image={image2}
           // isBackgroundWhite
           isFontColorWhite
+          isReverse
         />
 
         <MainRow
           subTitle="Vårt fokus er at du skal føle deg komfortabel med oss og vårt kamera, og at du skal ha det gøy"
           description="Gjennom vår fotografering har vi ikke bare fått kunder men også gode venner. La oss bli venner! Ta gjerne kontakt med oss for en hyggelig samtale"
           image={image3}
-          isReverse
+          // isReverse
           isAlignItemsCenter
           isMarginLeftImage
           isMarginRightContent
