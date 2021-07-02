@@ -4,8 +4,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { NavLink } from "react-router-dom";
 
 function MainRow({
+  id,
   title,
   subTitle,
   description,
@@ -34,6 +36,7 @@ function MainRow({
 }) {
   return (
     <div
+      id={id}
       className={`mainRow ${isReverse && "mainRow__reversed"} ${
         isAlignItemsCenter && "mainRow__alignItemsCenter"
       }  ${isRowFlexDirection && "mainRow_flexDirectionRow"} ${
@@ -72,15 +75,17 @@ function MainRow({
             {priceDescription &&
               priceDescription.map(priceDescription => (
                 <>
-                  <p
-                    data-aos="fade-up"
-                    data-aos-duration="1500"
-                    className={`mainRow__content--priceDescription ${
-                      isFontColorWhite && "mainRow__content--colorWhite"
-                    }`}
-                  >
-                    {priceDescription}
-                  </p>
+                  <strong>
+                    <p
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
+                      className={`mainRow__content--priceDescription ${
+                        isFontColorWhite && "mainRow__content--colorWhite"
+                      }`}
+                    >
+                      {priceDescription}
+                    </p>
+                  </strong>
                 </>
               ))}
 
@@ -109,27 +114,36 @@ function MainRow({
               ))}
           </div>
           {Icon && (
-            <div className="mainRow__content--container--button--container">
-              <div className="mainRow__content--container--button--left">
-                <button className="mainRow__content--container--button--container--button">
-                  <div className="mainRow__content--container--button--content">
-                    <span className="icon">
-                      <ScheduleIcon fontSize="large" />
-                    </span>
-                    <span>Bestill</span>
-                  </div>
-                </button>
-              </div>
-              <div className="mainRow__content--container--button--left">
-                <button className="mainRow__content--container--button--container--button">
-                  <div className="mainRow__content--container--button--content">
-                    <span className="icon">
-                      <ExpandMoreIcon fontSize="large" />
-                    </span>
-                    <span>Se mer bilder</span>
-                  </div>
-                </button>
-              </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="mainRow__content--container--button--container"
+            >
+              <NavLink to="/contact">
+                <div className="mainRow__content--container--button--left">
+                  <button className="mainRow__content--container--button--container--button">
+                    <div className="mainRow__content--container--button--content">
+                      <span className="icon">
+                        <ScheduleIcon fontSize="large" />
+                      </span>
+                      <span>Bestill</span>
+                    </div>
+                  </button>
+                </div>
+              </NavLink>
+
+              <NavLink to="/gallery">
+                <div className="mainRow__content--container--button--right">
+                  <button className="mainRow__content--container--button--container--button">
+                    <div className="mainRow__content--container--button--content">
+                      <span className="icon">
+                        <ExpandMoreIcon fontSize="large" />
+                      </span>
+                      <span>Se mer bilder</span>
+                    </div>
+                  </button>
+                </div>
+              </NavLink>
             </div>
           )}
 

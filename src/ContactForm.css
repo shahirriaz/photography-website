@@ -1,0 +1,226 @@
+.contactForm {
+  /* width: 80%; */
+  overflow-x: hidden;
+  /* color: white; */
+  background-color: white;
+  margin: 30px 30px 30px 30px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.contactForm__form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 50px;
+  margin-top: 100px;
+  /* border: 1px solid brown; */
+}
+
+.contactForm__title {
+  margin-left: 50px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  /* border: 1px solid brown; */
+}
+
+/* LEFT */
+
+.contactForm__form--left {
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid blue; */
+  flex: 0.6;
+  min-width: 350px;
+}
+
+.contactForm__form--inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactForm__input {
+  border-radius: 2px;
+  border: 2px solid gray;
+  background-color: transparent;
+  outline-width: 0;
+  padding: 20px;
+  margin-bottom: 10px;
+  min-width: 250px;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+.contactForm__input:hover {
+  cursor: text;
+}
+
+.contactForm__input--select:hover {
+  cursor: pointer;
+}
+
+.contactForm__form--text {
+  /* border: 1px solid red; */
+  padding: 10px;
+  padding-left: 2rem;
+  max-width: 1000px;
+  margin-bottom: 1rem;
+}
+
+.contactForm__form--text > p {
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  /* font-size: 1.5rem; */
+}
+
+.contactForm__form--checkbox {
+  /* border: 1px solid red; */
+  margin-top: 0.3rem;
+  padding-left: 4rem;
+}
+
+.contactForm__form--checkbox--text {
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+
+  /* border: 1px solid red; */
+}
+
+input[type="checkbox"] {
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+}
+
+.contactForm__form--button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.contactForm__form--button > button {
+  width: 150px;
+  font-size: 1.4rem;
+  padding: 20px;
+  border-width: 0;
+  background-color: #fc9031;
+  color: white;
+  outline: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+}
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/* Right */
+
+.contactForm__form--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid brown; */
+}
+
+.contactForm__logo > img {
+  width: 200px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.contactForm__maps > img {
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.contactForm__maps > h2 {
+  margin-bottom: 1rem;
+}
+
+.error {
+  color: red;
+  margin-bottom: 1rem;
+  /* border: 1px solid blue; */
+  padding-left: 1rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+::placeholder {
+  /* color: white; */
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  .contactForm__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactForm__form--button {
+    justify-content: center;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+  }
+  .contactForm__form {
+    margin-top: 0px;
+  }
+
+  .contactForm__logo > img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .contactForm__maps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .contactForm__form--left {
+    align-items: center;
+  }
+  .contactForm__title {
+    margin-left: 0px;
+  }
+  .contactForm__form--button {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .contactForm__input {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .contactForm__input {
+    width: 100%;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, createRef } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import "./ImageCarousel.css";
@@ -24,9 +24,7 @@ function ImageCarousel() {
         loadImg.src = image.src;
         // wait 2 seconds to simulate loading time
         loadImg.onload = () => {
-          setTimeout(() => {
-            resolve(image.url);
-          }, 1000);
+          resolve(image.url);
         };
         loadImg.onerror = err => reject(err);
       });
@@ -44,9 +42,7 @@ function ImageCarousel() {
         loadImg.src = image.src;
         // wait 2 seconds to simulate loading time
         loadImg.onload = () => {
-          setTimeout(() => {
-            resolve(image.url);
-          }, 2000);
+          resolve(image.url);
         };
         loadImg.onerror = err => reject(err);
       });
@@ -64,9 +60,7 @@ function ImageCarousel() {
         loadImg.src = image.src;
         // wait 2 seconds to simulate loading time
         loadImg.onload = () => {
-          setTimeout(() => {
-            resolve(image.url);
-          }, 2000);
+          resolve(image.url);
         };
         loadImg.onerror = err => reject(err);
       });
@@ -84,9 +78,7 @@ function ImageCarousel() {
         loadImg.src = image.src;
         // wait 2 seconds to simulate loading time
         loadImg.onload = () => {
-          setTimeout(() => {
-            resolve(image.url);
-          }, 2000);
+          resolve(image.url);
         };
         loadImg.onerror = err => reject(err);
       });
@@ -104,9 +96,7 @@ function ImageCarousel() {
         loadImg.src = image.src;
         // wait 2 seconds to simulate loading time
         loadImg.onload = () => {
-          setTimeout(() => {
-            resolve(image.url);
-          }, 2000);
+          resolve(image.url);
         };
         loadImg.onerror = err => reject(err);
       });

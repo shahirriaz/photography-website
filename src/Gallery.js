@@ -14,6 +14,10 @@ function Gallery() {
   //   }, 1000);
   // }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="gallery">
       {/* {imageLoading ? (

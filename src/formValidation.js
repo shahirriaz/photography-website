@@ -1,27 +1,33 @@
-const formValidation = user => {
+const formValidation = (user, checked) => {
   let errors = {};
 
   if (!user.name) {
-    errors.name = "Name is required";
+    errors.name = "Navn er påkrevd";
   }
 
   if (!user.email) {
-    errors.email = "Email is required";
+    errors.email = "E-post er påkrevd";
   } else if (!/\S+@\S+\.\S+/.test(user.email)) {
-    errors.email = "Email is invalid";
+    errors.email = "E-post er ugyldig";
   }
   if (!user.phone) {
-    errors.phone = "Phone is required";
+    errors.phone = "Telefon er påkrevd";
   }
+
   if (!user.type) {
     errors.type = "Type is required";
   }
 
   if (!user.age) {
-    errors.age = "Age is required";
+    errors.age = "Alder er påkrevd og må skrives med tall";
   }
+
   if (!user.date) {
-    errors.date = "Date is required";
+    errors.date = "Dato er påkrevd";
+  }
+
+  if (!checked) {
+    errors.checked = "Dette feltet er påkrevd";
   }
 
   return errors;

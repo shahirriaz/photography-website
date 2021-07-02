@@ -2,24 +2,25 @@ import React from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import logo from "./images/logo.png";
-import { slide as Menu } from "react-burger-menu";
 import MenuIcon from "@material-ui/icons/Menu";
 
 function Header() {
   return (
     <div className="header">
       <div className="header__logo">
-        <img
-          style={{
-            width: "300px",
-            height: "50px",
-            objectFit: "contain",
-            border: "1px solid black",
-            borderRadius: "2px",
-          }}
-          src={logo}
-          alt=""
-        />
+        <NavLink to="/home">
+          <img
+            style={{
+              width: "300px",
+              height: "50px",
+              objectFit: "contain",
+              border: "1px solid black",
+              borderRadius: "2px",
+            }}
+            src={logo}
+            alt=""
+          />
+        </NavLink>
       </div>
       <NavLink
         exact

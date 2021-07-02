@@ -3,7 +3,7 @@
 }
 
 .imageCarousel__image > img {
-  height: 800px;
+  height: 100vh;
   object-fit: contain;
 }
 
@@ -12,5 +12,5 @@
   align-items: center;
   /* border: 2px solid red; */
   justify-content: center;
-  height: 50vh;
+  height: 100vh;
 }

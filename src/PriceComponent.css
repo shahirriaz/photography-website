@@ -4,7 +4,8 @@
   align-items: center;
   margin: 20px;
   /* border: 1px solid blue; */
-  margin-bottom: 200px;
+  margin-bottom: 5rem;
+  /* margin: 0 200px 0 200px; */
 }
 
 .priceComponent__card {

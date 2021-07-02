@@ -38,7 +38,7 @@
 }
 
 .mainRow__content--container {
-  border: 5px solid green;
+  /* border: 5px solid green; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -70,6 +70,7 @@
   margin-bottom: 3rem;
   margin-top: 2rem;
   font-size: 1.5rem;
+  letter-spacing: 1px;
   /* border: 1px solid red; */
 }
 
@@ -129,10 +130,10 @@
 } */
 
 /*UTILITY CLASS*/
-/* .mainRow__image--container--alignItemsCenter {
+.mainRow__image--container--alignItemsCenter {
   align-items: center;
 }
-
+/*
 .mainRow__image--container--alignItemsEnd {
   align-items: flex-end;
 }

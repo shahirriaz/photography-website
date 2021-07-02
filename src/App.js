@@ -18,7 +18,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -31,14 +31,9 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route path="/yourInformation">
-              <YourInformation />
-            </Route>
             <Route path="/contact">
-              <div className="app__page">
-                <Contact />
-                <Footer />
-              </div>
+              <Contact />
+              <Footer />
             </Route>
             <Route path="/aboutUs">
               <AboutUs />

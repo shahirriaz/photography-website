@@ -64,7 +64,7 @@ function Prices() {
           pakke_price_2="4500kr"
         />
         <PriceComponent
-          title="Familie Fotografering"
+          title="Familie"
           pakke_subTitle_1="Liten pakke - 5 bilder"
           pakke_subTitle_2="Mellom pakke - 10 bilder"
           pakke_subTitle_3="Stor pakke - 15 bilder"
@@ -96,11 +96,12 @@ function Prices() {
         // isBackgroundWhite
         isFontColorWhite
         Icon
+        // id="1"
       />
       <MainRow
-        title="Events"
-        subTitle="Priser for events"
-        description="Jeg elsker brudepar! Dere skal senke skuldrene og stole på at det blir bra bilder. Jeg er med dere så lenge dere vil, og fanger store og små øyeblikk.  Alle våre brudepar har en planleggingstime i god tid før bryllupsdagen. Da blir vi litt kjent med hverandre og snakker om ønsker og muligheter. I etterkant av fotograferingen har vi visningstime. Der ser vi bildene stort på skjerm, og jeg hjelper med valg av takkekort, forstørrelser, rammer og selvfølgelig album. Store filer kan kjøpes dersom dere ønsker å printe selv. Jeg fotograferer i hele distriktet, og har stort sett vært over alt. Studio står klart på Madla hvis dere ønsker studiobilder, eller det er dårlig vær."
+        title="Bryllup"
+        subTitle="Priser for bryllup"
+        description="Jeg elsker brudepar! Dere skal senke skuldrene og stole på at det blir bra bilder. Jeg er med dere så lenge dere vil, og fanger store og små øyeblikk.  Alle våre brudepar har en planleggingstime i god tid før bryllupsdagen. Da blir vi litt kjent med hverandre og snakker om ønsker og muligheter. I etterkant av fotograferingen har vi visningstime. Der ser vi bildene stort på skjerm, og jeg hjelper med valg av takkekort, forstørrelser, rammer og selvfølgelig album."
         priceDescription={eventPriceDescription}
         image="https://images.unsplash.com/photo-1603043647336-e71a50a294c9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=730&q=80"
         isMarginRightImage
