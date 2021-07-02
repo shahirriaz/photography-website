@@ -31,6 +31,11 @@ import music_1 from "./images/gallery/music/music_1.jpg";
 import music_2 from "./images/gallery/music/music_2.jpg";
 import music_3 from "./images/gallery/music/music_3.jpg";
 
+import anette_1 from "./images/gallery/anette/1.jpg";
+import anette_2 from "./images/gallery/anette/2.jpg";
+import anette_3 from "./images/gallery/anette/3.jpg";
+import anette_4 from "./images/gallery/anette/4.jpg";
+
 const collection = [
   {
     image:
@@ -191,6 +196,25 @@ export const galleryMusicCollection = [
   {
     src: music_2,
     id: 27,
+  },
+];
+
+export const galleryAnetteCollection = [
+  {
+    src: anette_4,
+    id: 32,
+  },
+  {
+    src: anette_1,
+    id: 29,
+  },
+  {
+    src: anette_2,
+    id: 30,
+  },
+  {
+    src: anette_3,
+    id: 31,
   },
 ];
 

@@ -1,5 +1,7 @@
 .imageRow {
   display: flex;
+  /* border: 5px solid blue; */
+  /* flex-wrap: wrap; */
 }
 
 .imageRow--reverseDirection {
@@ -7,6 +9,7 @@
 }
 
 .imageRow__container {
+  /* border: 2px solid green; */
   display: flex;
   margin: 0.4rem;
   flex-direction: column;

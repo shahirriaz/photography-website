@@ -4,8 +4,8 @@
   align-items: center; /** MUST BE OPTIONAL */
   margin: 30px 30px 30px 30px;
   padding: 60px 60px 60px 60px;
-  max-width: 2000px;
-  min-width: 2000px;
+  /* max-width: 2000px;
+  min-width: 2000px; */
   /* flex-wrap: wrap; */
   /* border: 5px solid red; */
   /* border: 1px solid #f5f5f5; */

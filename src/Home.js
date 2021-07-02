@@ -6,6 +6,7 @@ import Info from "./Info";
 import Footer from "./Footer";
 import MainRow from "./MainRow";
 import ImageRow from "./ImageRow";
+import { galleryAnetteCollection } from "./collection";
 
 // bug -- using isMainPrice to show the mainRow__image--container in MainRow.js
 
@@ -18,14 +19,14 @@ function Home() {
           title="Kolleksjon"
           isJustifyContentCenter
           isColumnFlexDirection
-          isContentWidth
+          // isContentWidth
           isMainPrice
           isFontColorWhite
         >
-          <ImageRow isReverse />
+          <ImageRow isReverse images={galleryAnetteCollection} />
         </MainRow>
         <MainRow isMainPrice isAlignItemsCenter isJustifyContentCenter>
-          <ImageRow />
+          <ImageRow images={galleryAnetteCollection} />
         </MainRow>
         <Info />
         <ServiceGallery />

@@ -146,7 +146,7 @@ function MainRow({
               </NavLink>
             </div>
           )}
-
+          {/* 
           {contentImage && (
             <img
               data-aos="fade-left"
@@ -160,16 +160,7 @@ function MainRow({
               src={contentImage}
               alt=""
             />
-          )}
-          {/* {children && isSubPrice ? (
-            <div
-              data-aos="fade-left"
-              data-aos-duration="1000"
-              className="mainRow__image--container"
-            >
-              {children}
-            </div>
-          ) : null} */}
+          )} */}
         </div>
       ) : null}
 
