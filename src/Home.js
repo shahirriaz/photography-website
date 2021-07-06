@@ -13,7 +13,7 @@ import { galleryBeateCollection } from "./collection";
 // bug -- using isMainPrice to show the mainRow__image--container in MainRow.js
 
 function Home() {
-  const [scrollTop, setScrollTop] = useState(0);
+  // const [scrollTop, setScrollTop] = useState(0);
 
   // const onScroll = () => {
   //   const winScroll = document.documentElement.scrollTop;

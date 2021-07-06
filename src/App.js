@@ -39,6 +39,7 @@ function App() {
               <Footer />
             </Route>
             <Route path="/prices">
+              <Header isSticky />
               <Prices />
               <Footer />
             </Route>
@@ -46,7 +47,7 @@ function App() {
               <Gallery />
             </Route>
             <Route path="/home">
-              <Header isAnimated />
+              <Header isAnimated isAbsoluteFixed />
               <Home />
             </Route>
             <Route path="/">

@@ -95,9 +95,8 @@ function ContactForm({ submitForm }) {
           // setProcessing(false);
           setSucceeded(true);
 
-          setTimeout(() => {
-            submitForm(true);
-          }, 2000);
+          submitForm(true);
+
           setUser({
             name: "",
             email: "",

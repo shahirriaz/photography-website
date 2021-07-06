@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import logo from "./images/logo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 
-function Header({ isAnimated }) {
+function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
   const [show, handleShow] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,11 @@ function Header({ isAnimated }) {
   }, []);
 
   return (
-    <div className={`header ${show && isAnimated ? "header__white" : null} `}>
+    <div
+      className={`header ${show && isAnimated ? "header__white" : null} ${
+        isAbsoluteFixed && "header__absoluteFixed"
+      } ${isSticky && "header__sticky"} `}
+    >
       <div className="header__buttons">
         <div className="header__logo">
           <NavLink to="/home">
@@ -45,7 +49,11 @@ function Header({ isAnimated }) {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--home  header__heading--mobile">
-            <h4 className={`header__title ${show && "header__titleBlack"} `}>
+            <h4
+              className={`header__title ${
+                show && isAnimated ? "header__titleBlack" : null
+              } `}
+            >
               Hjem
             </h4>
           </div>

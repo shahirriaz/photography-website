@@ -115,7 +115,7 @@ function Prices() {
       <MainRow
         title="Familie Fotografering"
         subTitle="Priser for familiebilder"
-        description="Ta vare på minnene med gode familiebilder. Når dere kommer blir vi enige om hvilket uttrykk dere ønsker, og planlegger fotograferingen ut fra det. Når vi er i gang, tar jeg gjerne forskjellige varianter med alle sammen og ellers de oppsettene dere måtte ønske. Noen vil ha klassiske familiebilder og andre ønsker en mer reportasjepreget stil. Jeg liker begge deler. Hvis barna er små fotograferer vi på dagtid, vi får best uttrykk hvis de er opplagte. Har dere eldre eller voksne barn finner vi tid en ettermiddag / kveld. Det er lurt å samkjøre klær så fargene harmonerer og dere er i samme årstid. Unngå store mønster og velg noe du føler deg fin i.Ønsker dere fotografering ute avtaler vi det ved bestilling."
+        description="Ta vare på minnene med gode familiebilder. Når dere kommer blir vi enige om hvilket uttrykk dere ønsker, og planlegger fotograferingen ut fra det."
         // image="https://images.unsplash.com/photo-1590171980804-fa50d5ca4524?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
         isMarginRightImage
         isAlignItemsCenter
