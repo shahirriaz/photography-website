@@ -1,8 +1,8 @@
-require("dotenv").config();
 const functions = require("firebase-functions");
 const express = require("express");
 const { check, validationResult } = require("express-validator");
-const mysql = require("mysql");
+const db = require("./db");
+
 const cors = require("cors");
 
 // - App config
@@ -18,30 +18,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-//DB config
-const db = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
-});
-
-// db.connect(function (err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
-
-//- API routes
-// app.get("/", function (req, res) {
-//   // console.log(res.statusCode);
-//   res.status(200).send("SUCCESS");
-// });
-
 app.post(
   "/yourInformation",
   check("firstName").notEmpty().isString(),
   check("email").isEmail().isString(),
-  check("phone").isInt(),
+  check("phone").isInt().isMobilePhone(),
   check("type").notEmpty(),
   check("age").isInt(),
   check("dato").notEmpty().isString(),
@@ -71,7 +52,7 @@ app.post(
             }
           };
         } catch (error) {
-          // console.log("Geeeee");
+          console.log(error);
         }
       }
     }
