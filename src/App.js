@@ -9,7 +9,6 @@ import AboutUs from "./AboutUs";
 import Home from "./Home";
 import HashLoader from "react-spinners/HashLoader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import YourInformation from "./YourInformation";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -29,9 +28,9 @@ function App() {
         </div>
       ) : (
         <Router>
-          <Header />
           <Switch>
             <Route path="/contact">
+              {/* <Header /> */}
               <Contact />
               <Footer />
             </Route>
@@ -47,6 +46,7 @@ function App() {
               <Gallery />
             </Route>
             <Route path="/home">
+              <Header isAnimated />
               <Home />
             </Route>
             <Route path="/">

@@ -187,8 +187,8 @@ function MainRow({
 
       {imageArray ? (
         <div
-          data-aos="fade-up"
-          data-aos-duration="1500"
+          // data-aos="fade-up"
+          // data-aos-duration="1500"
           className="mainRow__image--container"
         >
           {imageArray.map((img, index) => (
@@ -205,8 +205,8 @@ function MainRow({
 
       {children && isMainPrice ? (
         <div
-          data-aos="fade-left"
-          data-aos-duration="1000"
+          // data-aos="fade-left"
+          // data-aos-duration="1000"
           className="mainRow__image--container"
         >
           {children}

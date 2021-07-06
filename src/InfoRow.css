@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&family=Playfair+Display&family=Zen+Loop&display=swap");
+
 .infoRow {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,9 +9,10 @@
   overflow: hidden;
   border: 1px solid #f5f5f5;
   background-color: #f0f0f0;
-  height: 60vh;
+  /* height: 60vh; */
   margin-left: 30px;
   margin-right: 30px;
+  width: 80vw;
   /* border: 8px solid blue; */
 }
 
@@ -36,24 +39,19 @@
 
 .infoRow__contents--left--title .infoRow__title {
   font-size: 4rem;
-  font-family: "Dancing Script", cursive;
-  background: url(https://www.andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png);
-  background-repeat: no-repeat;
-  background-size: 90% 100%;
   padding: 8px 0;
-  /* border: 2px solid blue; */
 }
 
 .infoRow__contents--left--description {
-  /* border: 2px solid purple; */
   padding: 10px;
+  font-size: 2rem;
 }
 
 .infoRow__description {
-  font-family: "Dancing Script", cursive;
-  font-size: 2.5rem;
-  max-width: 350px;
-  font-weight: 400;
+  font-size: 1.9rem;
+  /* max-width: 350px; */
+  font-weight: 600;
+  font-style: italic;
   width: 90%;
 }
 

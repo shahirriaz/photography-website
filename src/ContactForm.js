@@ -97,7 +97,7 @@ function ContactForm({ submitForm }) {
 
           setTimeout(() => {
             submitForm(true);
-          }, 10000);
+          }, 2000);
           setUser({
             name: "",
             email: "",

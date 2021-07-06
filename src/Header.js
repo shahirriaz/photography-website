@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import logo from "./images/logo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 
-function Header() {
+function Header({ isAnimated }) {
+  const [show, handleShow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else {
+        handleShow(false);
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", null);
+    };
+  }, []);
+
   return (
-    <div className="header">
+    <div className={`header ${show && isAnimated ? "header__white" : null} `}>
       <div className="header__buttons">
         <div className="header__logo">
           <NavLink to="/home">
             <img
               style={{
                 width: "300px",
-                height: "50px",
+                height: "100px",
                 objectFit: "contain",
-                border: "1px solid black",
+                // border: "1px solid black",
                 borderRadius: "2px",
               }}
               src={logo}
@@ -30,7 +45,9 @@ function Header() {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--home  header__heading--mobile">
-            <h4>Hjem</h4>
+            <h4 className={`header__title ${show && "header__titleBlack"} `}>
+              Hjem
+            </h4>
           </div>
         </NavLink>
         <NavLink
@@ -40,7 +57,9 @@ function Header() {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--gallery header__heading--mobile ">
-            <h4>Galleri</h4>
+            <h4 className={`header__title ${show && "header__titleBlack"} `}>
+              Galleri
+            </h4>
           </div>
         </NavLink>
 
@@ -54,7 +73,9 @@ function Header() {
             className="header__heading--prices header__heading--mobile"
             activeClassName="header__heading--active"
           >
-            <h4>Priser</h4>
+            <h4 className={`header__title ${show && "header__titleBlack"} `}>
+              Priser
+            </h4>
           </div>
         </NavLink>
         <NavLink
@@ -67,7 +88,9 @@ function Header() {
             className="header__heading--aboutUs header__heading--mobile"
             activeClassName="header__heading--active"
           >
-            <h4>Om oss</h4>
+            <h4 className={`header__title ${show && "header__titleBlack"} `}>
+              Om oss
+            </h4>
           </div>
         </NavLink>
 
@@ -78,7 +101,9 @@ function Header() {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--contact header__heading--mobile">
-            <h4>Kontakt</h4>
+            <h4 className={`header__title ${show && "header__titleBlack"} `}>
+              Kontakt
+            </h4>
           </div>
         </NavLink>
         <div className="header__burgerIcon">

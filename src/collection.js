@@ -35,6 +35,15 @@ import anette_1 from "./images/gallery/anette/1.jpg";
 import anette_2 from "./images/gallery/anette/2.jpg";
 import anette_3 from "./images/gallery/anette/3.jpg";
 import anette_4 from "./images/gallery/anette/4.jpg";
+import anette_5 from "./images/gallery/anette/5.jpg";
+import anette_6 from "./images/gallery/anette/6.jpg";
+
+import beata_1 from "./images/gallery/beata/1.jpg";
+import beata_2 from "./images/gallery/beata/2.jpg";
+import beata_3 from "./images/gallery/beata/3.jpg";
+import beata_4 from "./images/gallery/beata/4.jpg";
+import beata_5 from "./images/gallery/beata/5.jpg";
+import beata_6 from "./images/gallery/beata/6.jpg";
 
 const collection = [
   {
@@ -42,13 +51,6 @@ const collection = [
       "https://images.unsplash.com/photo-1512852964607-8cca57a833e1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80",
     title: "Konfirmantfotografering",
     id: 1,
-  },
-
-  {
-    image:
-      "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-    title: "Nyfødtfotografering",
-    id: 2,
   },
   {
     image:
@@ -201,10 +203,6 @@ export const galleryMusicCollection = [
 
 export const galleryAnetteCollection = [
   {
-    src: anette_4,
-    id: 32,
-  },
-  {
     src: anette_1,
     id: 29,
   },
@@ -215,6 +213,45 @@ export const galleryAnetteCollection = [
   {
     src: anette_3,
     id: 31,
+  },
+  {
+    src: anette_4,
+    id: 32,
+  },
+  {
+    src: anette_5,
+    id: 33,
+  },
+  {
+    src: anette_6,
+    id: 34,
+  },
+];
+
+export const galleryBeateCollection = [
+  {
+    src: beata_1,
+    id: 35,
+  },
+  {
+    src: beata_2,
+    id: 36,
+  },
+  {
+    src: beata_3,
+    id: 37,
+  },
+  {
+    src: beata_4,
+    id: 38,
+  },
+  {
+    src: beata_5,
+    id: 39,
+  },
+  {
+    src: beata_6,
+    id: 40,
   },
 ];
 

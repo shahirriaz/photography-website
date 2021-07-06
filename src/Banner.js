@@ -20,10 +20,12 @@ function Banner() {
         backgroundPosition: "center center",
       }}
     >
-      {/* <div className="banner__contents">
-        <h1 className="banner__title">Welcome to Memorylane</h1>
-        <h1 className="banner__description">where we create memories</h1>
-      </div> */}
+      <div className="banner__contents">
+        {/* <h1 className="banner__title">
+          Memories are the timeless treasures of the past
+        </h1> */}
+        {/* <h1 className="banner__description">where we create memories</h1> */}
+      </div>
       <div className="banner--fadeBottom"></div>
     </header>
   );

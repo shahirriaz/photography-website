@@ -1,0 +1,16 @@
+.home__progressBarContainer {
+  /* background-color: black;
+  height: 10px; */
+  position: sticky;
+  top: 144px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.home__progressBarStyle {
+  height: 5px;
+  background-color: #ff8c27;
+  transition-timing-function: ease-in;
+  transition: all 0.2s;
+}
