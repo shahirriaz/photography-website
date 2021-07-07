@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import test from "./images/test.jpg";
 
 function Banner() {
+  const [screenWidth, setScreenWidth] = useState();
+
+  console.log(window.screen.width);
+
   useEffect(() => {
     AOS.init();
   });
@@ -16,14 +20,10 @@ function Banner() {
       style={{
         backgroundSize: "cover",
         backgroundImage: `url(${test})`,
-
-        backgroundPosition: "center center",
+        backgroundPosition: "70%",
       }}
     >
       <div className="banner__contents">
-        {/* <h1 className="banner__title">
-          Memories are the timeless treasures of the past
-        </h1> */}
         {/* <h1 className="banner__description">where we create memories</h1> */}
       </div>
       <div className="banner--fadeBottom"></div>

@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&display=swap");
 
 .banner {
-  color: white;
-  object-fit: contain;
-  height: 92vh;
+  /* color: white; */
+  height: 95vh;
   /* display: grid;
   place-items: center; */
   font-family: "Dancing Script", cursive;
@@ -11,6 +10,7 @@
   text-shadow: 1px 1px black;
   position: relative;
   top: 0;
+  /* border: 1px solid green; */
 }
 
 .banner__contents {
@@ -42,7 +42,8 @@
 
   width: 100%;
 
-  height: 21.4rem;
+  height: 25.4rem;
+  max-height: 30vh;
   background-image: linear-gradient(
     180deg,
     transparent,
