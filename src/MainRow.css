@@ -1,8 +1,7 @@
 .mainRow {
   display: flex;
-  /* justify-content: center;
-  align-items: center; /** MUST BE OPTIONAL */
-  margin: 30px 30px 30px 30px;
+  /* align-items: center; * MUST BE OPTIONAL */
+  margin: 100px 30px 30px 30px;
   padding: 60px 60px 60px 60px;
   /* border: 2px solid red; */
 }
@@ -17,17 +16,10 @@
   flex-direction: row;
 }
 
-.mainRow_justifyContentCenter {
-  justify-content: center;
-}
-
 .mainRow_flexDirectionColumn {
   flex-direction: column;
 }
 
-.mainRow__alignItemsCenter {
-  align-items: center;
-}
 .mainRow__reversed {
   flex-direction: row-reverse;
 }
@@ -37,154 +29,87 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 50px;
-  flex: 0.6; /*HVA GJØR DENNE??*/
   /* border: 3px solid purple; */
 }
 
 .mainRow__content {
-  padding: 3rem;
-  margin-top: 1rem;
-  margin-right: 0.4rem;
-  margin-left: 2.2rem;
+  padding: 1em;
   max-width: 80%;
-  /* max-width: 1300px; USIKKER  */
 }
-
-/* UTILITY CLASSES */
-/* .mainRow__content--margin--right {
-  margin-right: 2.2rem;
-} */
 
 .mainRow__content--priceDescription {
   margin-bottom: 3rem;
   margin-top: 3rem;
-  font-size: 1.9rem;
-
+  font-size: 1.5rem;
   letter-spacing: 1px;
-  /* border: 1px solid red; */
-}
-
-.mainRow__content--margin--left {
-  margin-left: 2.2rem;
-}
-
-.mainRow__content--width {
-  width: 20%;
 }
 
 .mainRow__content > h1 {
   margin-bottom: 30px;
   font-size: 3rem;
 }
-
 .mainRow__content > h3 {
-  letter-spacing: 1px;
+  letter-spacing: 0.7px;
   padding-bottom: 1rem;
-  /* margin-bottom: 1rem; */
-  font-size: 1.6rem;
+  font-size: 2rem;
   padding: 8px 0;
 }
 
 .mainRow__content > p {
-  letter-spacing: 1px;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.7px;
   line-height: 1.5em;
-  /* color: #181818; */
-  font-weight: 300;
+  font-weight: 500;
   padding: 8px 0;
-  font-size: 1.54rem;
-  /* border: 2px solid blue; */
+  font-size: 1.9rem;
 }
 
 .mainRow__content--colorWhite {
-  color: #f8f8f8;
+  color: #fff;
 }
 
 .mainRow__image--container {
   display: flex;
   margin-top: 1rem;
   margin-bottom: 0.6rem;
-  justify-content: center;
-  /* border: 5px solid purple; */
-
-  flex-wrap: wrap;
-  flex: 0.4;
-}
-
-/* .mainRow__image--container--home{
-  display: flex;  
-  justify-content: center;
-  border: 5px solid purple;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  flex-wrap: wrap;
-  flex: 0.4;
-} */
-
-/*UTILITY CLASS*/
-.mainRow__image--container--alignItemsCenter {
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 0.4;
 }
-/*
-.mainRow__image--container--alignItemsEnd {
-  align-items: flex-end;
-}
-
-.mainRow__image--container--margin--right {
-  margin-right: 2.2rem;
-}
-
-.mainRow__image--container--margin--left {
-  margin-left: 2.2rem;
-} */
 
 hr {
   border: 1px solid #e0e0e0;
   opacity: 0.6;
   border-radius: 2px;
   width: 80%;
-
   margin-top: 3rem;
 }
 
 .mainRow__image--container > img {
   object-fit: contain;
 }
-/* 
-@media screen and (max-width: 4000px) {
-  .mainRow {
-    flex-direction: column;
-  }
-} */
 
 .mainRow__content--container--button--container {
-  /* border: 1px solid purple; */
   margin: 5px;
-  margin-left: 5.4rem;
-  font-size: 1.4rem;
+  margin-left: 1em;
   display: flex;
 }
 
 .mainRow__content--container--button--container--button {
-  /* width: 200px; */
-  /* height: 100%; */
-  font-size: 1.4rem;
-  padding: 20px;
-  /* padding-bottom: 45px; */
+  font-size: 1.3rem;
+  padding: 10px;
   border-width: 0;
-  /* border: 1px solid #a3a1a1; */
   background-color: #fc9031;
   color: white;
   outline: none;
   letter-spacing: 1px;
   font-weight: bold;
-  /* border: none; */
   text-align: center;
   margin-right: 1rem;
   border-radius: 10px;
   opacity: 0.8;
   transition: 0.3s;
-
-  /* text-decoration: none; */
 }
 
 .mainRow__content--container--button--container--button:hover {
@@ -202,11 +127,9 @@ hr {
 .icon {
   margin-right: 5px;
   margin-top: 3px;
-  /* border: 1px solid red; */
 }
 
 .mainRow__content--container--button--content {
-  /* border: 2px solid green; */
   display: flex;
   align-items: center;
   justify-content: center;

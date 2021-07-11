@@ -43,12 +43,12 @@ function Home() {
       <Banner />
       <div className="home">
         <MainRow
-          title="Velkommen"
-          description="Vi er et fotografteam som består av mann og kone som elsker å fange opp øyeblikk og forevige verdifulle minner.
-          Fotografi er noe vi begge har stor lidenskap for og gjennom vårt kamera får vi vitne utrolig fine øyeblikk med fantastiske mennesker. Det er drivkraften vår, og derfor vi elsker det vi gjør."
+          title="Kolleksjon"
+          // subTitle="Kolleksjon"
+          // description="Vi er et fotografteam som består av mann og kone som elsker å fange opp øyeblikk og forevige verdifulle minner.
+          // Fotografi er noe vi begge har stor lidenskap for og gjennom vårt kamera får vi vitne utrolig fine øyeblikk med fantastiske mennesker. Det er drivkraften vår, og derfor vi elsker det vi gjør."
           isJustifyContentCenter
           isColumnFlexDirection
-          // isContentWidth
           isMainPrice
           isFontColorWhite
         >
@@ -59,7 +59,7 @@ function Home() {
         </MainRow>
         <MainRow
           isMainPrice
-          isAlignItemsCenter
+          // isAlignItemsCenter
           isJustifyContentCenter
           isColumnFlexDirection
         >

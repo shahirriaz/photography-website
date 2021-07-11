@@ -44,7 +44,7 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           <NavLink to="/home">
             <img
               style={{
-                width: "300px",
+                width: "200px",
                 height: "60px",
                 objectFit: "contain",
                 // border: "1px solid black",
@@ -62,12 +62,18 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--home  header__heading--mobile">
-            <h4
-              className={`header__title ${
-                show && isAnimated ? "header__titleBlack" : null
-              } `}
-            >
-              Hjem
+            <h4 className="header__title">
+              {isAnimated ? (
+                <span
+                  className={`header__titleWhite ${
+                    show && "header__titleBlack"
+                  }`}
+                >
+                  Hjem
+                </span>
+              ) : (
+                <span className="header__titleBlack">Hjem</span>
+              )}
             </h4>
           </div>
         </NavLink>
@@ -78,8 +84,18 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--gallery header__heading--mobile ">
-            <h4 className={`header__title ${show && "header__titleBlack"} `}>
-              Galleri
+            <h4 className="header__title">
+              {isAnimated ? (
+                <span
+                  className={`header__titleWhite ${
+                    show && "header__titleBlack"
+                  }`}
+                >
+                  Galleri
+                </span>
+              ) : (
+                <span className="header__titleBlack">Galleri</span>
+              )}
             </h4>
           </div>
         </NavLink>
@@ -94,8 +110,18 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
             className="header__heading--prices header__heading--mobile"
             activeClassName="header__heading--active"
           >
-            <h4 className={`header__title ${show && "header__titleBlack"} `}>
-              Priser
+            <h4 className="header__title">
+              {isAnimated ? (
+                <span
+                  className={`header__titleWhite ${
+                    show && "header__titleBlack"
+                  }`}
+                >
+                  Priser
+                </span>
+              ) : (
+                <span className="header__titleBlack">Priser</span>
+              )}
             </h4>
           </div>
         </NavLink>
@@ -109,8 +135,18 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
             className="header__heading--aboutUs header__heading--mobile"
             activeClassName="header__heading--active"
           >
-            <h4 className={`header__title ${show && "header__titleBlack"} `}>
-              Om oss
+            <h4 className="header__title">
+              {isAnimated ? (
+                <span
+                  className={`header__titleWhite ${
+                    show && "header__titleBlack"
+                  }`}
+                >
+                  Om oss
+                </span>
+              ) : (
+                <span className="header__titleBlack">Om oss</span>
+              )}
             </h4>
           </div>
         </NavLink>
@@ -122,12 +158,24 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           activeClassName="header__heading--active"
         >
           <div className="header__heading--contact header__heading--mobile">
-            <h4 className={`header__title ${show && "header__titleBlack"} `}>
-              Kontakt
+            <h4 className="header__title">
+              {isAnimated ? (
+                <span
+                  className={`header__titleWhite ${
+                    show && "header__titleBlack"
+                  }`}
+                >
+                  Kontakt oss
+                </span>
+              ) : (
+                <span className="header__titleBlack">Kontakt oss</span>
+              )}
             </h4>
           </div>
         </NavLink>
-        <div className="header__burgerIcon">
+        <div
+          className={`header__burgerIcon ${show && "header__burgerIconBlack"}`}
+        >
           <MenuIcon fontSize="large" onClick={() => setShowMenu(!showMenu)} />
 
           {/* MOBILE MENU */}

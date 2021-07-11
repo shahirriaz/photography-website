@@ -30,11 +30,12 @@ function App() {
         <Router>
           <Switch>
             <Route path="/contact">
-              {/* <Header /> */}
+              <Header isSticky />
               <Contact />
               <Footer />
             </Route>
             <Route path="/aboutUs">
+              <Header isSticky />
               <AboutUs />
               <Footer />
             </Route>
@@ -44,6 +45,7 @@ function App() {
               <Footer />
             </Route>
             <Route path="/gallery">
+              <Header isSticky />
               <Gallery />
             </Route>
             <Route path="/home">
@@ -51,6 +53,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/">
+              <Header isAnimated isAbsoluteFixed />
               <Home />
             </Route>
           </Switch>

@@ -15,19 +15,11 @@ function MainRow({
   image,
   contentImage,
   isReverse,
-  isAlignItemsCenter,
   isRowFlexDirection,
   isColumnFlexDirection,
-  isJustifyContentCenter,
-  isAlignItemsCenterImage,
-  isMarginRightImage,
-  isMarginLeftImage,
-  isMarginRightContent,
-  isContentWidth,
   isBackgroundWhite,
   imageArray,
   children, //PriceComponent
-  // isSubPrice,
   isMainPrice,
   hr,
   priceDescription,
@@ -37,26 +29,18 @@ function MainRow({
   return (
     <div
       id={id}
-      className={`mainRow ${isReverse && "mainRow__reversed"} ${
-        isAlignItemsCenter && "mainRow__alignItemsCenter"
-      }  ${isRowFlexDirection && "mainRow_flexDirectionRow"} ${
-        isColumnFlexDirection && "mainRow_flexDirectionColumn"
-      } ${isJustifyContentCenter && "mainRow_justifyContentCenter "} ${
+      className={`mainRow ${isReverse && "mainRow__reversed"}  ${
+        isRowFlexDirection && "mainRow_flexDirectionRow"
+      } ${isColumnFlexDirection && "mainRow_flexDirectionColumn"} ${
         isBackgroundWhite && "mainRow-background-color"
       }  `}
     >
       {image || title || subTitle ? (
-        <div
-          className={`mainRow__content--container ${
-            isMarginRightContent && "mainRow__content--margin--right"
-          }`}
-        >
+        <div className={`mainRow__content--container`}>
           <div
             data-aos="fade-up"
             data-aos-duration="1500"
-            className={`mainRow__content ${
-              isContentWidth && "mainRow__content--width"
-            }`}
+            className={`mainRow__content`}
           >
             {title && (
               <h1
@@ -168,12 +152,7 @@ function MainRow({
         <div
           data-aos="fade-left"
           data-aos-duration="2000"
-          className={`mainRow__image--container ${
-            isAlignItemsCenterImage &&
-            "mainRow__image--container--alignItemsCenter"
-          } ${
-            isMarginRightImage && "mainRow__image--container--margin--right"
-          } ${isMarginLeftImage && "mainRow__image--container--margin--left"}`}
+          className={`mainRow__image--container`}
         >
           <LazyLoadImage
             // data-aos="fade-up"

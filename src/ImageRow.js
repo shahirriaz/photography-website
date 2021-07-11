@@ -49,7 +49,7 @@ function ImageRow({ images, isReverse }) {
                 // data-aos-duration="2000"
                 className="imageRow__container"
               >
-                <LazyLoadImage src={image.src} alt="" />
+                <LazyLoadImage src={image.src} alt="collection image" />
               </div>
             ))}
           </>
