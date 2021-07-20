@@ -8,8 +8,9 @@ function Row({ image, title, id }) {
     AOS.init();
   });
 
+  // data-aos="fade-up" data-aos-duration="1800"
   return (
-    <div key={id} data-aos="fade-up" data-aos-duration="1800" className="row">
+    <div key={id} className="row">
       <div className="row__container">
         <div className="row__title">
           <h2>{title}</h2>

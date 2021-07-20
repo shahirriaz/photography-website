@@ -7,7 +7,7 @@
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 1.8em;
 }
 
 .contactForm__form {
@@ -22,8 +22,8 @@ h1 {
 
 .contactForm__title {
   margin-left: 50px;
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 20px;
   /* border: 1px solid brown; */
 }
 
@@ -54,7 +54,13 @@ h1 {
   margin-bottom: 10px;
   min-width: 250px;
   width: 90%;
-  font-size: 1.5rem;
+  font-size: 16px;
+  height: 2px;
+}
+
+select[name^="type"] {
+  height: 60px;
+  width: 95%;
 }
 
 .contactForm__input:hover {
@@ -75,8 +81,8 @@ h1 {
 
 .contactForm__form--text > p {
   letter-spacing: 1px;
-  line-height: 1.5em;
-  /* font-size: 1.5rem; */
+  /* line-height: 1.5em; */
+  font-size: 18px;
 }
 
 .contactForm__form--checkbox {
@@ -89,18 +95,18 @@ h1 {
   letter-spacing: 1px;
   line-height: 1.5em;
   margin-left: 1rem;
-  font-size: 1.2rem;
+  font-size: 14px;
 
   /* border: 1px solid red; */
 }
 
 input[type="checkbox"] {
   /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
   padding: 10px;
 }
 
@@ -108,12 +114,14 @@ input[type="checkbox"] {
   display: flex;
   justify-content: flex-end;
   margin-right: 30px;
+  margin-top: 2rem;
 }
 
 .contactForm__form--button > button {
-  width: 150px;
-  font-size: 1.4rem;
-  padding: 20px;
+  width: 120px;
+  height: 50px;
+  font-size: 15px;
+  padding: 10px;
   border-width: 0;
   background-color: #fc9031;
   color: white;
@@ -122,14 +130,20 @@ input[type="checkbox"] {
   font-weight: bold;
   text-align: center;
   margin-right: 1rem;
-  border-radius: 10px;
-  font-family: "Roboto", sans-serif;
+  border-radius: 2px;
 }
 button:disabled,
 button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+button:active {
+  cursor: pointer;
+  -webkit-box-shadow: inset 1px 1px 10px #333;
+  -moz-box-shadow: inset 1px 1px 10px #333;
+  box-shadow: inset 1px 1px 10px #333;
 }
 
 /* Right */
@@ -167,10 +181,6 @@ button[disabled] {
   padding-left: 1rem;
   width: 100%;
   font-size: 1rem;
-}
-
-::placeholder {
-  /* color: white; */
 }
 
 /* MEDIA QUERIES */

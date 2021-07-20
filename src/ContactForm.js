@@ -172,7 +172,7 @@ function ContactForm({ submitForm }) {
               name="age"
               value={user.age}
               onChange={handleChange}
-              placeholder="Skriv alder og kjønn på den/de som skal fotografere"
+              placeholder="Skriv alder og kjønn"
             />
             {errors.age && <p className="error">{errors.age}</p>}
             <input

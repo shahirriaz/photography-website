@@ -34,20 +34,26 @@ function Home() {
 
   return (
     <>
-      {/* <div className="home__progressBarContainer">
-        <div
-          className="home__progressBarStyle"
-          style={{ width: `${scrollTop}%` }}
-        ></div>
-      </div> */}
       <Banner />
       <div className="home">
         <MainRow
-          title="Kolleksjon"
+          title="Fotografering i Stavangerområdet"
+          description="Velkommen til to profesjonelle fotograf fra Stavanger. Vi er et ektepar som tilbyr alt av fotografering. Siden 2016 har vi fanget forevige øyeblikk for familier og brudepar. Vi jobber for å gi lykkelige faimlieminner som vil minne deg om de fantastiske dagene. Nedenfor kan du se tjenester vi tilbyr."
+          isFontColorWhite
+          isMargin
+          isPadding
+          // contentImage="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+          // isColumnFlexDirection
+          // hr
+        />
+
+        <MainRow
+          // title="Kolleksjon"
           // subTitle="Kolleksjon"
           // description="Vi er et fotografteam som består av mann og kone som elsker å fange opp øyeblikk og forevige verdifulle minner.
           // Fotografi er noe vi begge har stor lidenskap for og gjennom vårt kamera får vi vitne utrolig fine øyeblikk med fantastiske mennesker. Det er drivkraften vår, og derfor vi elsker det vi gjør."
           isJustifyContentCenter
+          isAlignItemsCenter
           isColumnFlexDirection
           isMainPrice
           isFontColorWhite
@@ -57,17 +63,21 @@ function Home() {
             images={galleryAnetteCollection}
           />
         </MainRow>
+        <ServiceGallery />
+
         <MainRow
+          // subTitle="Natur"
+          isFontColorWhite
           isMainPrice
           // isAlignItemsCenter
           isJustifyContentCenter
           isColumnFlexDirection
         >
-          <ImageRow images={galleryBeateCollection} />
+          {/* <ImageRow images={galleryBeateCollection} /> */}
         </MainRow>
 
         <Info />
-        <ServiceGallery />
+
         <Footer />
       </div>
     </>

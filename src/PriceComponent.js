@@ -15,7 +15,7 @@ function PriceComponent({
       <div className="priceComponent__card">
         <div className="priceComponent__card--title">
           <h1>{title}</h1>
-          <hr />
+          <hr style={{ width: "65%" }} />
         </div>
 
         <div className="priceComponent__card--container">

@@ -11,9 +11,7 @@
 }
 
 .row__image > img {
-  max-width: 500px;
-  min-width: 200px;
-  width: 100%;
+  width: 300px;
   box-shadow: 8px 3px 18px -7px rgba(0, 0, 0, 0.75);
 }
 
@@ -22,7 +20,7 @@
 }
 
 .row__title > h2 {
-  font-size: 2rem;
+  font-size: 20px;
   letter-spacing: 2px;
   color: #585858;
   width: 100%;

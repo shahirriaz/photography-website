@@ -26,6 +26,8 @@ function AboutUs() {
           image={image1}
           // isJustifyContentCenter
           isBackgroundWhite
+          isMarginFirstRow
+          isPadding
         />
 
         <MainRow
@@ -33,7 +35,10 @@ function AboutUs() {
           description="Hvert øyeblikk har en back-story, og det er vår jobb å oversette det til et bilde. Vi er her for å skape vakre, tidløse minner for deg og din familie."
           image={image2}
           isFontColorWhite
+          isRowFlexDirection
           isReverse
+          isPadding
+          isMargin
         />
 
         <MainRow
@@ -41,6 +46,8 @@ function AboutUs() {
           description="Gjennom vår fotografering har vi ikke bare fått kunder men også gode venner. La oss bli venner! Ta gjerne kontakt med oss for en hyggelig samtale"
           image={image3}
           isFontColorWhite
+          isPadding
+          isMargin
         />
       </div>
     </div>

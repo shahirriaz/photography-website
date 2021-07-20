@@ -4,10 +4,21 @@ import { NavLink } from "react-router-dom";
 import logo from "./images/logo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useTransition, animated } from "react-spring";
+import Dropdown from "./Dropdown";
 
 function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
   const [show, handleShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
+
+  const handleToggle = e => {
+    e.preventDefault();
+    setToggleDropdown(prevState => !prevState);
+  };
+
+  const closeToggle = () => {
+    setToggleDropdown(false);
+  };
 
   const maskTransitions = useTransition(showMenu, {
     from: { opacity: 0 },
@@ -44,8 +55,8 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           <NavLink to="/home">
             <img
               style={{
-                width: "200px",
-                height: "60px",
+                width: "50px",
+                // height: "30px",
                 objectFit: "contain",
                 // border: "1px solid black",
                 borderRadius: "2px",
@@ -77,28 +88,24 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
             </h4>
           </div>
         </NavLink>
-        <NavLink
-          exact
-          to="/gallery"
-          style={{ textDecoration: "none" }}
-          activeClassName="header__heading--active"
+
+        <div
+          onClick={handleToggle}
+          className="header__heading--gallery header__heading--mobile dropdown "
         >
-          <div className="header__heading--gallery header__heading--mobile ">
-            <h4 className="header__title">
-              {isAnimated ? (
-                <span
-                  className={`header__titleWhite ${
-                    show && "header__titleBlack"
-                  }`}
-                >
-                  Galleri
-                </span>
-              ) : (
-                <span className="header__titleBlack">Galleri</span>
-              )}
-            </h4>
-          </div>
-        </NavLink>
+          <h4 className="header__title">
+            {isAnimated ? (
+              <span
+                className={`header__titleWhite ${show && "header__titleBlack"}`}
+              >
+                Galleri
+              </span>
+            ) : (
+              <span className="header__titleBlack">Galleri</span>
+            )}
+          </h4>
+          {toggleDropdown && <Dropdown closeToggle={closeToggle} />}
+        </div>
 
         <NavLink
           exact
@@ -174,9 +181,11 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           </div>
         </NavLink>
         <div
-          className={`header__burgerIcon ${show && "header__burgerIconBlack"}`}
+          className={`header__burgerIcon
+          ${isSticky ? "header__burgerIconBlack" : "header__burgerIconWhite"}
+          ${show && "header__burgerIconBlack"}`}
         >
-          <MenuIcon fontSize="large" onClick={() => setShowMenu(!showMenu)} />
+          <MenuIcon fontSize="medium" onClick={() => setShowMenu(!showMenu)} />
 
           {/* MOBILE MENU */}
           {maskTransitions(
@@ -194,53 +203,192 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
             (styles, item) =>
               item && (
                 <animated.div style={styles} className="header__mobileMenu">
-                  <div className="header__mobileMenuContents">
-                    <NavLink
-                      exact
-                      to="/home"
-                      onClick={() => setShowMenu(!showMenu)}
-                      style={{ textDecoration: "none" }}
-                      activeClassName="header__heading--active"
-                    >
-                      <h4 className="header__titleBlack">Hjem</h4>
-                    </NavLink>
-                    <NavLink
-                      exact
-                      to="/gallery"
-                      onClick={() => setShowMenu(!showMenu)}
-                      style={{ textDecoration: "none" }}
-                      activeClassName="header__heading--active"
-                    >
-                      <h4 className="header__titleBlack">Galleri</h4>
-                    </NavLink>
-                    <NavLink
-                      exact
-                      to="/prices"
-                      onClick={() => setShowMenu(!showMenu)}
-                      style={{ textDecoration: "none" }}
-                      activeClassName="header__heading--active"
-                    >
-                      <h4 className="header__titleBlack">Priser</h4>
-                    </NavLink>
-                    <NavLink
-                      exact
-                      to="/aboutUs"
-                      onClick={() => setShowMenu(!showMenu)}
-                      style={{ textDecoration: "none" }}
-                      activeClassName="header__heading--active"
-                    >
-                      <h4 className="header__titleBlack">Om oss</h4>
-                    </NavLink>
-                    <NavLink
-                      exact
-                      to="/contact"
-                      onClick={() => setShowMenu(!showMenu)}
-                      style={{ textDecoration: "none" }}
-                      activeClassName="header__heading--active"
-                    >
-                      <h4 className="header__titleBlack">Kontakt</h4>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      // backgroundColor: "#232323",
+                    }}
+                  >
+                    <NavLink to="/home">
+                      <img
+                        style={{
+                          width: "70px",
+                          objectFit: "contain",
+                          marginTop: "12px",
+                          marginBottom: "12px",
+                          backgroundColor: "white",
+                          borderRadius: "3px",
+                          padding: "10px",
+                        }}
+                        src={logo}
+                        alt="memorylane fotografi"
+                      />
                     </NavLink>
                   </div>
+                  <div className="header__mobileMenuContents">
+                    <div className="header__mobileMenuContentsContainer">
+                      <NavLink
+                        exact
+                        to="/home"
+                        onClick={() => setShowMenu(!showMenu)}
+                        style={{ textDecoration: "none" }}
+                        activeClassName="header__heading--active2"
+                      >
+                        <h4
+                          style={{ fontSize: "22px" }}
+                          className="header__titleBlack"
+                        >
+                          Hjem
+                        </h4>
+                      </NavLink>
+                      <div className="gallery__menu">
+                        <h4
+                          style={{ fontSize: "22px" }}
+                          className="header__titleBlack"
+                        >
+                          Galleri
+                        </h4>
+                        <div className="gallery__subMenu header__titleBlack">
+                          <NavLink
+                            exact
+                            to="/gallery/par"
+                            onClick={() => setShowMenu(!showMenu)}
+                            style={{ textDecoration: "none" }}
+                            // activeClassName="header__heading--active2"
+                          >
+                            <h5
+                              style={{
+                                paddingLeft: "12px",
+                                fontSize: "18px",
+                                paddingBottom: "3px",
+                              }}
+                              className="header__titleBlack"
+                            >
+                              Par
+                            </h5>
+                          </NavLink>
+                          <NavLink
+                            exact
+                            to="/gallery/familie"
+                            onClick={() => setShowMenu(!showMenu)}
+                            style={{ textDecoration: "none" }}
+                            // activeClassName="header__heading--active2"
+                          >
+                            <h5
+                              style={{
+                                paddingLeft: "12px",
+                                fontSize: "18px",
+                                paddingBottom: "3px",
+                              }}
+                              className="header__titleBlack"
+                            >
+                              Familie
+                            </h5>
+                          </NavLink>
+                          <NavLink
+                            exact
+                            to="/gallery/barn"
+                            onClick={() => setShowMenu(!showMenu)}
+                            style={{ textDecoration: "none" }}
+                            // activeClassName="header__heading--active2"
+                          >
+                            <h5
+                              style={{
+                                paddingLeft: "12px",
+                                fontSize: "18px",
+                                paddingBottom: "3px",
+                              }}
+                              className="header__titleBlack"
+                            >
+                              Barn
+                            </h5>
+                          </NavLink>
+                          <NavLink
+                            exact
+                            to="/gallery/gravid"
+                            onClick={() => setShowMenu(!showMenu)}
+                            style={{ textDecoration: "none" }}
+                            // activeClassName="header__heading--active2"
+                          >
+                            <h5
+                              style={{
+                                paddingLeft: "12px",
+                                fontSize: "18px",
+                                paddingBottom: "3px",
+                              }}
+                              className="header__titleBlack"
+                            >
+                              Gravid
+                            </h5>
+                          </NavLink>
+                        </div>
+                      </div>
+
+                      <NavLink
+                        exact
+                        to="/prices"
+                        onClick={() => setShowMenu(!showMenu)}
+                        style={{ textDecoration: "none" }}
+                        activeClassName="header__heading--active2"
+                      >
+                        <h4
+                          style={{ fontSize: "22px" }}
+                          className="header__titleBlack"
+                        >
+                          Priser
+                        </h4>
+                      </NavLink>
+                      <NavLink
+                        exact
+                        to="/aboutUs"
+                        onClick={() => setShowMenu(!showMenu)}
+                        style={{ textDecoration: "none" }}
+                        activeClassName="header__heading--active2"
+                      >
+                        <h4
+                          style={{ fontSize: "22px" }}
+                          className="header__titleBlack"
+                        >
+                          Om oss
+                        </h4>
+                      </NavLink>
+                      <NavLink
+                        exact
+                        to="/contact"
+                        onClick={() => setShowMenu(!showMenu)}
+                        style={{ textDecoration: "none" }}
+                        activeClassName="header__heading--active2"
+                      >
+                        <h4
+                          style={{ fontSize: "22px" }}
+                          className="header__titleBlack"
+                        >
+                          Kontakt
+                        </h4>
+                      </NavLink>
+                    </div>
+                  </div>
+                  <div className="header__mobileMenuContact">
+                    <div className="header__mobileMenuContactContainer">
+                      <address>
+                        <p>
+                          <strong>Memorylane</strong>
+                        </p>
+                        <p>Sjøhagen 4, Stavanger 4066</p>
+                        <p>
+                          <a href="tel: 40071168 ">tlf: 40071168 </a>
+                          &nbsp;&nbsp;
+                          <a href="mailto:mlfoto@hotmail.no">
+                            mlfoto@hotmail.no
+                          </a>
+                        </p>
+                        <p> Mandag-fredag 10-16</p>
+                        <p> Lørdag-Søndag 09-16</p>
+                      </address>
+                    </div>
+                  </div>
+                  "
                 </animated.div>
               )
           )}

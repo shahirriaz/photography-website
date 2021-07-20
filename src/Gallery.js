@@ -1,32 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Gallery.css";
-import ImageCarousel from "./ImageCarousel";
-import Slider from "./Slider";
-import HashLoader from "react-spinners/HashLoader";
+import { useParams } from "react-router-dom";
+import Bryllup from "./galleryPages/Par";
+import Familie from "./galleryPages/Familie";
+import Par from "./galleryPages/Par";
 
 function Gallery() {
-  // const [imageLoading, setImageLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setImageLoading(true);
-  //   setTimeout(() => {
-  //     setImageLoading(false);
-  //   }, 1000);
-  // }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const { name } = useParams();
 
   return (
     <div className="gallery">
-      {/* {imageLoading ? (
-        <div className="app__loader--container">
-          <HashLoader color={"#ff8c27"} loading={imageLoading} size={100} />
-        </div>
-      ) : ( */}
-      <ImageCarousel />
-      {/* )} */}
+      {name === "par" ? <Par /> : null}
+      {name === "familie" ? <Familie /> : null}
     </div>
   );
 }

@@ -2,86 +2,59 @@ import React, { useEffect, useState } from "react";
 import "./ImageRow.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Lightbox from "react-awesome-lightbox";
+import "react-awesome-lightbox/build/style.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import { NavLink } from "react-router-dom";
 
 function ImageRow({ images, isReverse }) {
-  const [photos, setPhotos] = useState([]);
-  const [visible, setVisible] = useState(3);
-  const [show, setShow] = useState(false);
-  const [showButton, setShowButton] = useState(false);
+  let [galopen, changeGalOpen] = useState(false);
+  let [singOpen, changeSing] = useState(false);
+  let [currentIndex, changeCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    AOS.init();
-  });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowButton(true);
-    }, 20000);
-  }, []);
-
-  useEffect(() => {
-    setPhotos(images);
-  }, [images]);
-
-  const showMoreImages = () => {
-    setShow(true);
-    setVisible(prevValue => prevValue + 3);
-
-    if (show === true) {
-      setVisible(3);
-      setShow(false);
-    }
-  };
-
+  function launchGalary(_i, changeCurrentIndex, changeGalOpen) {
+    changeCurrentIndex(_i);
+    changeGalOpen(true);
+  }
   return (
     <div className={`imageRow ${isReverse && "imageRow--reverseDirection"}`}>
       <div className="imageRow__mainContainer">
         {images && (
           <>
-            {photos.slice(0, visible).map(image => (
-              <div
+            {images.map((image, idx) => (
+              <LazyLoadImage
                 key={image.id}
-                // data-aos="fade-up"
-                // data-aos-duration="2000"
-                className="imageRow__container"
-              >
-                <LazyLoadImage src={image.src} alt="collection image" />
-              </div>
+                src={image.url}
+                onClick={e =>
+                  launchGalary(idx, changeCurrentIndex, changeGalOpen)
+                }
+                alt="collection image"
+              />
             ))}
           </>
         )}
       </div>
+      {galopen ? (
+        <Lightbox
+          startIndex={currentIndex}
+          images={images}
+          zoomStep={1}
+          onClose={e => changeGalOpen(false)}
+        />
+      ) : null}
+      {singOpen ? <Lightbox onClose={e => changeSing(false)} /> : null}
       <div className="imageRow__buttonContainer">
-        <button
-          style={{ marginTop: "1rem" }}
-          onClick={showMoreImages}
-          className="imageRow__buttonContainer--button"
-        >
-          <div className="imageRow__buttonContainer--button--content">
-            <span className="icon">
-              {show ? (
-                <ExpandLessIcon fontSize="large" />
-              ) : (
-                <ExpandMoreIcon fontSize="large" />
-              )}
-            </span>
-            <span>{show ? "Skjul bilder" : "Vis mer bilder"}</span>
-          </div>
-        </button>
-        {showButton && (
+        {/* <NavLink to="/gallery">
           <button
             style={{ marginTop: "1rem" }}
-            className="imageRow__buttonContainer--button fade-in "
+            className="imageRow__buttonContainer--button"
           >
             <div className="imageRow__buttonContainer--button--content">
               <span>Ta meg til galleriet</span>
             </div>
           </button>
-        )}
+        </NavLink> */}
       </div>
     </div>
   );

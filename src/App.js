@@ -17,7 +17,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 2);
   }, []);
 
   return (
@@ -44,8 +44,8 @@ function App() {
               <Prices />
               <Footer />
             </Route>
-            <Route path="/gallery">
-              <Header isSticky />
+            <Route path="/gallery/:name">
+              <Header isAnimated isAbsoluteFixed />
               <Gallery />
             </Route>
             <Route path="/home">

@@ -5,10 +5,8 @@ const db = require("./db");
 
 const cors = require("cors");
 
-// - App config
 const app = express();
 
-// - Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: true, credentials: true }));
@@ -59,5 +57,4 @@ app.post(
   }
 );
 
-//Listen command
 exports.api = functions.https.onRequest(app);

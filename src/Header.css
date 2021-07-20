@@ -30,15 +30,15 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   /* border: 1px solid red; */
-  max-width: 2560px;
+  max-width: 1500px;
   width: 100%;
 }
 
 .header__title {
   margin-bottom: 5px;
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .header__titleWhite {
@@ -56,6 +56,9 @@
 
 .header__heading--active {
   border-bottom: 3px solid #ff8c27;
+}
+.header__heading--active2 {
+  border-bottom: 2px solid #ff8c27;
 }
 
 .header__mobileMenu {
@@ -82,12 +85,65 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  font-size: 2em;
+  font-size: 24px;
   align-items: center;
-  height: 70%;
+  height: 55%;
+  /* border: 1px solid red; */
 }
 
-@media screen and (max-width: 768px) {
+.header__mobileMenuContentsContainer {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.header__mobileMenuContact {
+  /* border: 4px solid green; */
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  height: 35%;
+}
+
+.header__mobileMenuContactContainer {
+  /* border: 2px solid blue; */
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gallery__menu {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch; /*takes whole space in row direction*/
+}
+
+.gallery__subMenu {
+  border-left: 1.5px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* border: 1px solid red; */
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 150px;
+}
+
+address > p {
+  font-style: normal;
+  font-size: 12px;
+  color: #202020;
+}
+
+@media screen and (max-width: 800px) {
   .header__heading--mobile {
     display: none;
   }
@@ -95,6 +151,9 @@
 
 .header__burgerIcon {
   display: none;
+}
+
+.header__burgerIconWhite {
   color: rgb(218, 218, 218);
 }
 
@@ -102,7 +161,7 @@
   color: #202020;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 801px) {
   .header__burgerIcon {
     display: inline;
     margin-right: 2em;

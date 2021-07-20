@@ -22,6 +22,9 @@ function MainRow({
   children, //PriceComponent
   isMainPrice,
   hr,
+  isMargin,
+  isMarginFirstRow,
+  isPadding,
   priceDescription,
   isFontColorWhite,
   Icon,
@@ -33,15 +36,13 @@ function MainRow({
         isRowFlexDirection && "mainRow_flexDirectionRow"
       } ${isColumnFlexDirection && "mainRow_flexDirectionColumn"} ${
         isBackgroundWhite && "mainRow-background-color"
-      }  `}
+      } ${isMarginFirstRow && "mainRow__marginFirstRow"} ${
+        isMargin && "mainRow__margin"
+      }  ${isPadding && "mainRow__padding"} `}
     >
       {image || title || subTitle ? (
-        <div className={`mainRow__content--container`}>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            className={`mainRow__content`}
-          >
+        <div className="mainRow__content--container">
+          <div className="mainRow__content">
             {title && (
               <h1
                 className={isFontColorWhite && "mainRow__content--colorWhite"}
@@ -58,11 +59,11 @@ function MainRow({
             {hr && <hr />}
             {priceDescription &&
               priceDescription.map(priceDescription => (
-                <>
+                <div className="mainRow__priceDescriptionContainer">
                   <strong>
                     <p
-                      data-aos="fade-up"
-                      data-aos-duration="1500"
+                      // data-aos="fade-up"
+                      // data-aos-duration="1500"
                       className={`mainRow__content--priceDescription ${
                         isFontColorWhite && "mainRow__content--colorWhite"
                       }`}
@@ -70,7 +71,7 @@ function MainRow({
                       {priceDescription}
                     </p>
                   </strong>
-                </>
+                </div>
               ))}
 
             {descriptionArray &&
@@ -99,8 +100,8 @@ function MainRow({
           </div>
           {Icon && (
             <div
-              data-aos="fade-up"
-              data-aos-duration="2000"
+              // data-aos="fade-up"
+              // data-aos-duration="2000"
               className="mainRow__content--container--button--container"
             >
               <NavLink to="/contact">
@@ -108,7 +109,10 @@ function MainRow({
                   <button className="mainRow__content--container--button--container--button">
                     <div className="mainRow__content--container--button--content">
                       <span className="icon">
-                        <ScheduleIcon fontSize="large" />
+                        <ScheduleIcon
+                          fontSize="medium"
+                          style={{ marginRight: "2px" }}
+                        />
                       </span>
                       <span>Bestill</span>
                     </div>
@@ -121,7 +125,7 @@ function MainRow({
                   <button className="mainRow__content--container--button--container--button">
                     <div className="mainRow__content--container--button--content">
                       <span className="icon">
-                        <ExpandMoreIcon fontSize="large" />
+                        <ExpandMoreIcon fontSize="medium" />
                       </span>
                       <span>Se mer bilder</span>
                     </div>
@@ -149,15 +153,11 @@ function MainRow({
       ) : null}
 
       {image ? (
-        <div
-          data-aos="fade-left"
-          data-aos-duration="2000"
-          className={`mainRow__image--container`}
-        >
+        <div className={`mainRow__image--container`}>
           <LazyLoadImage
-            // data-aos="fade-up"
             effect="blur"
-            style={{ width: "500px", objectFit: "contain" }}
+            className="mainRow__image--container--image"
+            style={{ objectFit: "contain" }} //with is problem
             src={image}
             alt="best-image"
           />
@@ -165,11 +165,7 @@ function MainRow({
       ) : null}
 
       {imageArray ? (
-        <div
-          // data-aos="fade-up"
-          // data-aos-duration="1500"
-          className="mainRow__image--container"
-        >
+        <div className="mainRow__image--container">
           {imageArray.map((img, index) => (
             <LazyLoadImage
               effect="blur"
@@ -183,13 +179,7 @@ function MainRow({
       ) : null}
 
       {children && isMainPrice ? (
-        <div
-          // data-aos="fade-left"
-          // data-aos-duration="1000"
-          className="mainRow__image--container"
-        >
-          {children}
-        </div>
+        <div className="mainRow__image--container">{children}</div>
       ) : null}
     </div>
   );

@@ -39,6 +39,9 @@ function YourInformation() {
         subTitle="Her er dine opplysninger"
         image="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
         descriptionArray={userArray}
+        isMarginFirstRow
+        isPadding
+        isBackgroundWhite
       />
     </div>
   );
