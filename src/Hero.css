@@ -4,17 +4,17 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background: url(https://i.pinimg.com/originals/71/9b/e8/719be89efa6a548253b4d3c7e9bfa6b1.jpg);
+  /* background: url(https://i.pinimg.com/originals/71/9b/e8/719be89efa6a548253b4d3c7e9bfa6b1.jpg);
 
   background-size: cover;
   background-position: 50%;
 
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
   position: relative;
-  /* background: #232526;   */
-  /* background: -webkit-linear-gradient(to top, #414345, #232526);
-  background: linear-gradient(to top, #414345, #232526); */
+  background: #232526;
+  background: -webkit-linear-gradient(to top, #414345, #232526);
+  background: linear-gradient(to top, #414345, #232526);
   /* border: 1px solid blue; */
 }
 .overlay3 {
