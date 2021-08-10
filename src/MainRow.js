@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MainRow.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -28,7 +28,23 @@ function MainRow({
   priceDescription,
   isFontColorWhite,
   Icon,
+  serMerBilderBtn,
+  isCenterButton,
 }) {
+  // const [width, setWidth] = useState(0);
+
+  // useEffect(() => {
+  //   const upDateWindowDimensions = () => {
+  //     const newWidth = window.innerWidth;
+  //     setWidth(newWidth);
+  //   };
+
+  //   window.addEventListener("resize", upDateWindowDimensions);
+  //   return () => {
+  //     window.removeEventListener("resize", upDateWindowDimensions);
+  //   };
+  // }, []);
+
   return (
     <div
       id={id}
@@ -45,15 +61,31 @@ function MainRow({
           <div className="mainRow__content">
             {title && (
               <h1
+                style={{
+                  textAlign: "center",
+                  lineHeight: "34px",
+                }}
                 className={isFontColorWhite && "mainRow__content--colorWhite"}
               >
                 {title}
               </h1>
             )}
-            <h3 className={isFontColorWhite && "mainRow__content--colorWhite"}>
+            <h3
+              style={{
+                textAlign: "center",
+                // lineHeight: "34px",
+              }}
+              className={isFontColorWhite && "mainRow__content--colorWhite"}
+            >
               {subTitle}
             </h3>
-            <p className={isFontColorWhite && "mainRow__content--colorWhite"}>
+            <p
+              id="descriptionWrap"
+              style={{
+                textAlign: "center",
+              }}
+              className={isFontColorWhite && "mainRow__content--colorWhite"}
+            >
               {description}
             </p>
             {hr && <hr />}
@@ -100,17 +132,18 @@ function MainRow({
           </div>
           {Icon && (
             <div
-              // data-aos="fade-up"
-              // data-aos-duration="2000"
-              className="mainRow__content--container--button--container"
+              className={`mainRow__content--container--button--container ${
+                isCenterButton &&
+                "mainRow__content--container--button--container--center"
+              }`}
             >
-              <NavLink to="/contact">
+              <NavLink to="/kontakt">
                 <div className="mainRow__content--container--button--left">
                   <button className="mainRow__content--container--button--container--button">
                     <div className="mainRow__content--container--button--content">
                       <span className="icon">
                         <ScheduleIcon
-                          fontSize="medium"
+                          fontSize="small"
                           style={{ marginRight: "2px" }}
                         />
                       </span>
@@ -120,16 +153,18 @@ function MainRow({
                 </div>
               </NavLink>
 
-              <NavLink to="/gallery">
+              <NavLink to="/galleri">
                 <div className="mainRow__content--container--button--right">
-                  <button className="mainRow__content--container--button--container--button">
-                    <div className="mainRow__content--container--button--content">
-                      <span className="icon">
-                        <ExpandMoreIcon fontSize="medium" />
-                      </span>
-                      <span>Se mer bilder</span>
-                    </div>
-                  </button>
+                  {serMerBilderBtn && (
+                    <button className="mainRow__content--container--button--container--button">
+                      <div className="mainRow__content--container--button--content">
+                        <span className="icon">
+                          <ExpandMoreIcon fontSize="small" />
+                        </span>
+                        <span>Se mer bilder</span>
+                      </div>
+                    </button>
+                  )}
                 </div>
               </NavLink>
             </div>
@@ -170,7 +205,8 @@ function MainRow({
             <LazyLoadImage
               effect="blur"
               key={index}
-              style={{ width: "600px", objectFit: "contain" }}
+              className="mainRow__image--container--image"
+              style={{ objectFit: "contain" }}
               src={img}
               alt="best-image"
             />

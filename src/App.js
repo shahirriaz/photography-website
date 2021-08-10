@@ -13,52 +13,43 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000);
+  // }, []);
 
   return (
     <div className="app">
-      {loading ? (
-        <div className="app__loader--container">
-          <HashLoader color={"#ff8c27"} loading={loading} size={150} />
-        </div>
-      ) : (
-        <Router>
-          <Switch>
-            <Route path="/contact">
-              <Header isSticky />
-              <Contact />
-              <Footer />
-            </Route>
-            <Route path="/aboutUs">
-              <Header isSticky />
-              <AboutUs />
-              <Footer />
-            </Route>
-            <Route path="/prices">
-              <Header isSticky />
-              <Prices />
-              <Footer />
-            </Route>
-            <Route path="/gallery/:name">
-              <Header isAnimated isAbsoluteFixed />
-              <Gallery />
-            </Route>
-            <Route path="/home">
-              <Header isAnimated isAbsoluteFixed />
-              <Home />
-            </Route>
-            <Route path="/">
-              <Header isAnimated isAbsoluteFixed />
-              <Home />
-            </Route>
-          </Switch>
-        </Router>
-      )}
+      <Router>
+        <Switch>
+          <Route path="/kontakt">
+            <Header isSticky />
+            <Contact />
+          </Route>
+          <Route path="/omoss">
+            <Header isSticky />
+            <AboutUs />
+          </Route>
+          <Route path="/priser">
+            <Header isSticky />
+            <Prices />
+          </Route>
+          <Route path="/galleri/:name">
+            <Header isAnimated isAbsoluteFixed />
+            <Gallery />
+          </Route>
+          <Route path="/:name">
+            <Header isAnimated isAbsoluteFixed />
+            <Home />
+          </Route>
+          <Route path="/">
+            <Header isAnimated isAbsoluteFixed />
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

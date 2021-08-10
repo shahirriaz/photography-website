@@ -1,0 +1,115 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"); */
+
+.keyPointsSection {
+  /* border: 1px solid red; */
+  height: 650px;
+  background-color: white;
+  width: 66%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  max-width: 1500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute;
+  top: 64%; */
+}
+
+.mainContainerKey {
+  margin-right: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  /* border: 1px solid red; */
+  width: 100%;
+}
+.mainContainerKey:not(:last-child) {
+  border-right: 1px solid #dcdcdc;
+}
+
+.keyInformationHeading {
+  /* font-family: "Lato", sans-serif; */
+  padding-bottom: 15px;
+  font-size: 24px;
+  color: #232526;
+
+  /* font-weight: 1000; */
+}
+.purple {
+  color: 232526;
+  font-size: 22px;
+}
+
+.keyParagraph {
+  text-align: center;
+  letter-spacing: 0.6px;
+  line-height: 22px;
+  font-size: 20px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.svg-icon {
+  transform: scale(1.7);
+  color: #232526;
+  margin-bottom: 30px;
+}
+
+.keyPointsSection__section--1,
+.keyPointsSection__section--2,
+.keyPointsSection__section--3 {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.countUp--container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 0px 0px 0px;
+}
+
+.countUp--container > span {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) {
+  .keyPointsSection {
+    width: 90%;
+    top: 60%;
+  }
+  .keyParagraph {
+    text-align: center;
+    letter-spacing: 0.6px;
+    line-height: 18px;
+    font-size: 18px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .keyPointsSection {
+    flex-direction: column;
+    height: auto;
+  }
+  .mainContainerKey:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  .mainContainerKey {
+    margin-right: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 500px;
+  }
+}

@@ -1,22 +1,39 @@
-.footer {
-  background-color: #f0f0f0;
-  height: 400px;
+/* .footer {
+  background: #ada996;  
+  background: -webkit-linear-gradient(
+    to right,
+    #eaeaea,
+    #dbdbdb,
+    #f2f2f2,
+    #ada996
+  );  
+  background: linear-gradient(
+    to right,
+    #eaeaea,
+    #dbdbdb,
+    #f2f2f2,
+    #ada996
+  ); 
+
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
   bottom: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
+  margin-top: 50px;
 }
 
 .footer__icons {
   display: flex;
-  /* border: 1px solid red; */
+ 
   height: 50px;
   flex-grow: 1;
   width: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .footer__spaceBox {
@@ -24,9 +41,181 @@
 }
 
 .svg_icons {
-  transform: scale(1.8);
+  transform: scale(1.2);
 }
 
 .svg_icons:hover {
   cursor: pointer;
+} */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: #232323;
+  padding-bottom: 30px;
+  /* border: 1px solid red; */
+  width: 60%;
+  margin: 0 auto;
+  /* padding-top: 50px; */
+}
+
+.mainContainer {
+  /* height: 200px; */
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: center;
+}
+
+.footer__firstPart {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  /* align-items: center; */
+  height: 70%;
+  flex: 0.4;
+  margin-right: 10px;
+}
+
+.footer__firstPart--email > input {
+  height: 30px;
+  width: 200px;
+  margin-top: 20px;
+  /* padding: 1px; */
+  border-width: 1px;
+  border-style: none;
+}
+
+.footer__firstPart--email > button {
+  font-size: 15px;
+  padding: 9.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-width: 0;
+  background-color: #fc9031;
+  color: white;
+  outline: none;
+  letter-spacing: 1px;
+  text-align: center;
+  border-radius: 2px;
+  opacity: 1;
+  margin-left: 2px;
+  transition: 0.3s;
+}
+
+.footer__secondPart {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+
+  /* border: 1px solid blue; */
+  flex: 0.3;
+  height: 70%;
+  margin-right: 10px;
+}
+
+.footer__thirdPart {
+  /* border: 1px solid green; */
+  flex: 0.3;
+  height: 70%;
+}
+
+.footer__firstPart--heading,
+.footer__secondPart--heading,
+.footer__thirdPart--heading {
+  margin-top: 50px;
+  color: #e0e0e0;
+  text-align: left;
+}
+
+.footer__firstPart--heading {
+  display: flex;
+  align-items: center;
+}
+.favoriteIcon {
+  margin-left: 10px;
+}
+
+.footer__firstPart--paragraph,
+.footer__secondPart--paragraph,
+.footer__thirdPart--navigationButtons {
+  margin-top: 10px;
+  color: #bebebe;
+}
+.footer__thirdPart--navigationButtons > h3 {
+  margin-bottom: 10px;
+}
+.footer__firstPart--socialMedia {
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.svg_icons {
+  transform: scale(1.5);
+  color: white;
+  margin: 20px;
+  margin-left: 0;
+}
+
+.bottomSection {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: #bebebe;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+.footer__thirdPart--navigationButtons > a {
+  color: #bebebe;
+}
+.footer__thirdPart--navigationButtons {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 90px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    width: 95%;
+  }
+  .footer__firstPart--email > input {
+    width: 160px;
+  }
+  .footer__firstPart {
+    flex: 0.42;
+  }
+  .footer__secondPart {
+    flex: 0.25;
+    margin-right: 10px;
+  }
+  .footer__thirdPart {
+    flex: 0.25;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    width: 85%;
+  }
+  .mainContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__thirdPart--navigationButtons {
+    /* border: 1px solid red; */
+    width: 300px;
+  }
+  .footer__firstPart--email > input {
+    width: 160px;
+  }
+  .footer__thirdPart--navigationButtons {
+    max-height: 60px;
+  }
 }

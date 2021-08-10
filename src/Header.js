@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
-import logo from "./images/logo.png";
+import logo_white from "./images/logo_white.png";
+import logo_black from "./images/logo_black.png";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useTransition, animated } from "react-spring";
 import Dropdown from "./Dropdown";
+import "./Dropdown.css";
+import Expand from "react-expand-animated";
 
 function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
   const [show, handleShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [toggleGallery, setToggleGallery] = useState(false);
+
+  const menuArray = ["barn", "familie", "par", "portrett"];
+
+  const handleGalleryToggle = e => {
+    e.preventDefault();
+    setToggleGallery(prevState => !prevState);
+  };
 
   const handleToggle = e => {
     e.preventDefault();
@@ -53,22 +64,34 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
       <div className="header__buttons">
         <div className="header__logo">
           <NavLink to="/home">
-            <img
-              style={{
-                width: "50px",
-                // height: "30px",
-                objectFit: "contain",
-                // border: "1px solid black",
-                borderRadius: "2px",
-              }}
-              src={logo}
-              alt=""
-            />
+            {isAnimated ? (
+              <img
+                className="header__mobileLogo"
+                style={{
+                  objectFit: "contain",
+                  marginBottom: "2px",
+                }}
+                src={show ? logo_black : logo_white}
+                alt=""
+              />
+            ) : (
+              <img
+                className="header__mobileLogo"
+                style={{
+                  // height: "30px",
+                  objectFit: "contain",
+                  // border: "1px solid black",
+                  marginBottom: "2px",
+                }}
+                src={logo_black}
+                alt=""
+              />
+            )}
           </NavLink>
         </div>
         <NavLink
           exact
-          to="/home"
+          to="/hjem"
           style={{ textDecoration: "none" }}
           activeClassName="header__heading--active"
         >
@@ -91,9 +114,11 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
 
         <div
           onClick={handleToggle}
-          className="header__heading--gallery header__heading--mobile dropdown "
+          className={`header__heading--gallery header__heading--mobile ${
+            toggleDropdown ? "dropdown active" : "dropdown"
+          }`}
         >
-          <h4 className="header__title">
+          <h4 id="galleri__arrow" className="header__title">
             {isAnimated ? (
               <span
                 className={`header__titleWhite ${show && "header__titleBlack"}`}
@@ -109,14 +134,11 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
 
         <NavLink
           exact
-          to="/prices"
+          to="/priser"
           style={{ textDecoration: "none" }}
           activeClassName="header__heading--active"
         >
-          <div
-            className="header__heading--prices header__heading--mobile"
-            activeClassName="header__heading--active"
-          >
+          <div className="header__heading--prices header__heading--mobile">
             <h4 className="header__title">
               {isAnimated ? (
                 <span
@@ -134,14 +156,11 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
         </NavLink>
         <NavLink
           exact
-          to="/aboutUs"
+          to="/omoss"
           style={{ textDecoration: "none" }}
           activeClassName="header__heading--active"
         >
-          <div
-            className="header__heading--aboutUs header__heading--mobile"
-            activeClassName="header__heading--active"
-          >
+          <div className="header__heading--aboutUs header__heading--mobile">
             <h4 className="header__title">
               {isAnimated ? (
                 <span
@@ -160,7 +179,7 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
 
         <NavLink
           exact
-          to="/contact"
+          to="/kontakt"
           style={{ textDecoration: "none" }}
           activeClassName="header__heading--active"
         >
@@ -185,7 +204,7 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
           ${isSticky ? "header__burgerIconBlack" : "header__burgerIconWhite"}
           ${show && "header__burgerIconBlack"}`}
         >
-          <MenuIcon fontSize="medium" onClick={() => setShowMenu(!showMenu)} />
+          <MenuIcon fontSize="small" onClick={() => setShowMenu(!showMenu)} />
 
           {/* MOBILE MENU */}
           {maskTransitions(
@@ -193,7 +212,7 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
               item && (
                 <animated.div
                   style={styles}
-                  className="half-black"
+                  className={`${showMenu && "half-black"}`}
                   onClick={() => setShowMenu(!showMenu)}
                 ></animated.div>
               )
@@ -206,22 +225,21 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
                   <div
                     style={{
                       display: "flex",
-                      justifyContent: "center",
-                      // backgroundColor: "#232323",
+                      justifyContent: "flex-start",
                     }}
                   >
-                    <NavLink to="/home">
+                    <NavLink to="/hjem">
                       <img
                         style={{
-                          width: "70px",
+                          // border: "1px solid red",
+                          height: "50px",
+                          width: "100px",
                           objectFit: "contain",
-                          marginTop: "12px",
-                          marginBottom: "12px",
-                          backgroundColor: "white",
-                          borderRadius: "3px",
-                          padding: "10px",
+                          marginTop: "16px",
+                          marginLeft: "42px",
                         }}
-                        src={logo}
+                        className="header__mobileLogo"
+                        src={logo_black}
                         alt="memorylane fotografi"
                       />
                     </NavLink>
@@ -230,140 +248,101 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
                     <div className="header__mobileMenuContentsContainer">
                       <NavLink
                         exact
-                        to="/home"
+                        to="/hjem"
                         onClick={() => setShowMenu(!showMenu)}
                         style={{ textDecoration: "none" }}
-                        activeClassName="header__heading--active2"
                       >
                         <h4
-                          style={{ fontSize: "22px" }}
-                          className="header__titleBlack"
+                          style={{
+                            fontSize: "16px",
+                            color: "#fff",
+                          }}
                         >
                           Hjem
                         </h4>
                       </NavLink>
-                      <div className="gallery__menu">
+                      <div className="header__border"></div>
+                      <div
+                        className={`gallery__menu  ${
+                          toggleGallery ? "dropdown active" : "dropdown"
+                        }`}
+                        onClick={handleGalleryToggle}
+                      >
                         <h4
-                          style={{ fontSize: "22px" }}
-                          className="header__titleBlack"
+                          id="gallery__arrowMobile"
+                          style={{
+                            fontSize: "16px",
+                            color: "#fff",
+                            // border: "1px solid red",
+                          }}
                         >
                           Galleri
                         </h4>
-                        <div className="gallery__subMenu header__titleBlack">
-                          <NavLink
-                            exact
-                            to="/gallery/par"
-                            onClick={() => setShowMenu(!showMenu)}
-                            style={{ textDecoration: "none" }}
-                            // activeClassName="header__heading--active2"
-                          >
-                            <h5
-                              style={{
-                                paddingLeft: "12px",
-                                fontSize: "18px",
-                                paddingBottom: "3px",
-                              }}
-                              className="header__titleBlack"
-                            >
-                              Par
-                            </h5>
-                          </NavLink>
-                          <NavLink
-                            exact
-                            to="/gallery/familie"
-                            onClick={() => setShowMenu(!showMenu)}
-                            style={{ textDecoration: "none" }}
-                            // activeClassName="header__heading--active2"
-                          >
-                            <h5
-                              style={{
-                                paddingLeft: "12px",
-                                fontSize: "18px",
-                                paddingBottom: "3px",
-                              }}
-                              className="header__titleBlack"
-                            >
-                              Familie
-                            </h5>
-                          </NavLink>
-                          <NavLink
-                            exact
-                            to="/gallery/barn"
-                            onClick={() => setShowMenu(!showMenu)}
-                            style={{ textDecoration: "none" }}
-                            // activeClassName="header__heading--active2"
-                          >
-                            <h5
-                              style={{
-                                paddingLeft: "12px",
-                                fontSize: "18px",
-                                paddingBottom: "3px",
-                              }}
-                              className="header__titleBlack"
-                            >
-                              Barn
-                            </h5>
-                          </NavLink>
-                          <NavLink
-                            exact
-                            to="/gallery/gravid"
-                            onClick={() => setShowMenu(!showMenu)}
-                            style={{ textDecoration: "none" }}
-                            // activeClassName="header__heading--active2"
-                          >
-                            <h5
-                              style={{
-                                paddingLeft: "12px",
-                                fontSize: "18px",
-                                paddingBottom: "3px",
-                              }}
-                              className="header__titleBlack"
-                            >
-                              Gravid
-                            </h5>
-                          </NavLink>
-                        </div>
+                        <Expand open={toggleGallery}>
+                          <div className="gallery__subMenu">
+                            {menuArray.map((item, i, arr) => (
+                              <div key={item} className="gallery__item">
+                                <NavLink
+                                  to={`/galleri/${item}`}
+                                  onClick={() => setShowMenu(!showMenu)}
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <h5
+                                    style={{
+                                      paddingLeft: "12px",
+                                      fontSize: "12px",
+                                      paddingBottom: "3px",
+                                      color: "#fff",
+                                    }}
+                                  >
+                                    {item.charAt(0).toUpperCase() +
+                                      item.slice(1)}
+                                  </h5>
+                                </NavLink>
+                                <div
+                                  style={{
+                                    display:
+                                      arr.length - 1 === i ? "none" : "block",
+                                  }}
+                                  className="header__border"
+                                ></div>
+                              </div>
+                            ))}
+                          </div>
+                        </Expand>
                       </div>
-
+                      <div className="header__border"></div>
                       <NavLink
                         exact
-                        to="/prices"
+                        to="/priser"
                         onClick={() => setShowMenu(!showMenu)}
                         style={{ textDecoration: "none" }}
-                        activeClassName="header__heading--active2"
+                        activeclassname="header__heading--active2"
                       >
-                        <h4
-                          style={{ fontSize: "22px" }}
-                          className="header__titleBlack"
-                        >
+                        <h4 style={{ fontSize: "16px", color: "#fff" }}>
                           Priser
                         </h4>
                       </NavLink>
+                      <div className="header__border"></div>
                       <NavLink
                         exact
-                        to="/aboutUs"
+                        to="/omoss"
                         onClick={() => setShowMenu(!showMenu)}
                         style={{ textDecoration: "none" }}
-                        activeClassName="header__heading--active2"
+                        activeclassname="header__heading--active2"
                       >
-                        <h4
-                          style={{ fontSize: "22px" }}
-                          className="header__titleBlack"
-                        >
+                        <h4 style={{ fontSize: "16px", color: "#fff" }}>
                           Om oss
                         </h4>
                       </NavLink>
+                      <div className="header__border"></div>
                       <NavLink
                         exact
-                        to="/contact"
+                        to="/kontakt"
                         onClick={() => setShowMenu(!showMenu)}
                         style={{ textDecoration: "none" }}
-                        activeClassName="header__heading--active2"
                       >
-                        <h4
-                          style={{ fontSize: "22px" }}
-                          className="header__titleBlack"
-                        >
+                        <h4 style={{ fontSize: "16px", color: "#fff" }}>
                           Kontakt
                         </h4>
                       </NavLink>
@@ -388,7 +367,6 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
                       </address>
                     </div>
                   </div>
-                  "
                 </animated.div>
               )
           )}

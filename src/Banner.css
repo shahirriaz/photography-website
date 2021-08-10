@@ -59,13 +59,13 @@
     180deg,
     transparent,
     rgba(37, 37, 37, 0.61),
-    #232323
+    #232526
   );
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .banner {
-    height: 70vh;
+    height: 50vh;
   }
   .banner--fadeBottom {
     height: 15vh;

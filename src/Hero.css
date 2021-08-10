@@ -1,0 +1,74 @@
+.hero {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: url(https://i.pinimg.com/originals/71/9b/e8/719be89efa6a548253b4d3c7e9bfa6b1.jpg);
+
+  background-size: cover;
+  background-position: 50%;
+
+  background-repeat: no-repeat;
+
+  position: relative;
+  /* background: #232526;   */
+  /* background: -webkit-linear-gradient(to top, #414345, #232526);
+  background: linear-gradient(to top, #414345, #232526); */
+  /* border: 1px solid blue; */
+}
+.overlay3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__text {
+  /* border: 1px solid red; */
+  padding: 12px;
+  text-align: center;
+  /* text-shadow: 2px 2px black; */
+  color: #ffff;
+
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+}
+.hero__heading {
+  margin-bottom: 24px;
+}
+.hero__subHeading > h2 {
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: 500;
+  /* max-width: 500px; */
+}
+
+.keypointsContainer {
+  position: absolute;
+  /* border: 1px solid red; */
+  /* height: 600px; */
+  top: 60%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__text {
+    padding: 30px;
+    padding-top: 80px;
+  }
+  .hero__subHeading > h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+}

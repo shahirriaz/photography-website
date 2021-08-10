@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  /* border: 1px solid red; */
+  margin: 50px;
+  flex-basis: 33%;
+  justify-content: center;
+  max-width: 90%;
+}
+
+.card__textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 32px;
+}
+
+.card__description {
+  max-width: 320px;
+  text-align: left;
+  font-weight: bold;
+}
+.card__customerName {
+  text-align: left;
+}
+
+.card__customerName {
+  padding: 4px;
+}
+
+.floater {
+  float: left;
+}
+
+.quote {
+  font-size: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .quote {
+    font-size: 90px;
+  }
+  .card__description {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card__textContainer {
+    margin-top: 20px;
+  }
+  .card__customerName {
+    margin-top: 10px;
+  }
+}

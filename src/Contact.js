@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Contact.css";
 import ContactForm from "./ContactForm";
 import YourInformation from "./YourInformation";
+import Footer from "./Footer";
 
 function Contact() {
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
@@ -17,6 +18,7 @@ function Contact() {
       ) : (
         <YourInformation />
       )}
+      <Footer />
     </div>
   );
 }

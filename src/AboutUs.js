@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./AboutUs.css";
 import MainRow from "./MainRow";
+import Footer from "./Footer";
 
 const image1 =
   "https://images.unsplash.com/photo-1517488629431-6427e0ee1e5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80";
@@ -23,7 +24,7 @@ function AboutUs() {
           title="Om oss"
           subTitle="Vi er et fotografteam bestående av mann og kone som elsker å fange opp øyeblikk og forevige verdifulle minner."
           description="Fotografi er noe vi begge har stor lidenskap for og gjennom vårt kamera fåt vi virne utrolig fine øyeblikk med fantastiske mennesker. Det er drivkraften vår, og derfor vi elske det vi gjør."
-          image={image1}
+          // image={image1}
           // isJustifyContentCenter
           isBackgroundWhite
           isMarginFirstRow
@@ -50,6 +51,7 @@ function AboutUs() {
           isMargin
         />
       </div>
+      <Footer />
     </div>
   );
 }

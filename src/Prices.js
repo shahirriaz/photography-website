@@ -4,6 +4,7 @@ import PriceComponent from "./PriceComponent";
 import MainRow from "./MainRow";
 import { useEffect } from "react";
 import familieBilde from "./images/gallery/beata/5.jpg";
+import Footer from "./Footer";
 
 const imageArray = [
   "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=950&q=80",
@@ -11,13 +12,13 @@ const imageArray = [
 ];
 
 const priceDescription = [
-  "Bildepakke 1-5 høyoppløste filer 2000 kr",
+  "Bildepakke 1-5 filer 2000 kr",
 
-  "Bildepakke 2-10 høyoppløste filer 3500 kr",
+  "Bildepakke 2-10 filer 3500 kr",
 
-  "Bildepakke 3-15 høyoppløste filer 4995 kr",
+  "Bildepakke 3-15 filer 4995 kr",
 
-  " Bildepakke 4-20 høyoppløste filer 6990 kr",
+  " Bildepakke 4-20 filer 6990 kr",
 ];
 
 const eventPriceDescription = [
@@ -50,7 +51,7 @@ function Prices() {
         isPadding
         // hr
       >
-        <PriceComponent
+        {/* <PriceComponent
           title="Barn"
           pakke_subTitle_1="Portrett NyFødt"
           pakke_subTitle_2="Med Familie"
@@ -73,48 +74,55 @@ function Prices() {
           pakke_subTitle_2="Stor pakke - Opptil 5t"
           pakke_price_1="4500,-"
           pakke_price_2="6000,-"
-        />
+        /> */}
       </MainRow>
       <MainRow
         title="Ettårsfotografering"
         subTitle="Priser for ettårsfotografering"
-        description="Det sies at et bilde øker i verdi for hver dag som går, og det med god grunn. Nyfødtfotografering er noe helt spesielt. Det å få ett nytt familiemedlem kan være overveldende på mange vis, og helst skulle man kanskje ønske at man kunne fryse tiden for å nyte hvert sekund med dette nydelige lille nurket mens det er så lite, enda lengre."
+        description="Sed pretium dictum venenatis. Duis auctor a nisl non vehicula. Vestibulum at diam at tortor iaculis porta. Ut iaculis volutpat efficitur. Nulla facilisi. Proin nibh dui, dictum quis justo ac, congue molestie elit."
         priceDescription={priceDescription}
-        image="https://images.unsplash.com/photo-1608561435915-874b68cfc209?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+        // image="https://images.unsplash.com/photo-1608561435915-874b68cfc209?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+        imageArray={imageArray}
         isReverse
         isMargin
         isPadding
-        hr
+        // hr
         isFontColorWhite
         Icon
+        // serMerBilderBtn
+        isCenterButton
       />
       <MainRow
         title="Bryllup"
         subTitle="Priser for bryllup"
-        description="Jeg elsker brudepar! Dere skal senke skuldrene og stole på at det blir bra bilder. Jeg er med dere så lenge dere vil, og fanger store og små øyeblikk.  Alle våre brudepar har en planleggingstime i god tid før bryllupsdagen. Da blir vi litt kjent med hverandre og snakker om ønsker og muligheter. I etterkant av fotograferingen har vi visningstime. Der ser vi bildene stort på skjerm, og jeg hjelper med valg av takkekort, forstørrelser, rammer og selvfølgelig album."
+        description="Aliquam auctor, diam ac placerat accumsan, magna elit aliquam risus, eu aliquet lorem quam et orci. Praesent sem arcu, eleifend vel augue eget, auctor pellentesque massa. Nullam sagittis elit nec eleifend congue. "
         priceDescription={eventPriceDescription}
-        image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-        hr
+        // image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+        imageArray={imageArray}
+        // hr
         isBackgroundWhite
         isMargin
         isPadding
         Icon
+        isCenterButton
       />
 
       <MainRow
         title="Familie"
         subTitle="Priser for familiebilder"
-        description="Ta vare på minnene med gode familiebilder. Når dere kommer blir vi enige om hvilket uttrykk dere ønsker, og planlegger fotograferingen ut fra det."
+        description="Curabitur rhoncus, urna vitae rutrum malesuada, eros tortor fermentum dolor, non dignissim mauris ipsum eget lectus. Donec pulvinar urna eu dolor pharetra, eu egestas metus laoreet. "
         // imageArray={imageArray}
         isReverse
         image={familieBilde}
-        hr
+        // hr
         isFontColorWhite
         isPadding
         isMargin
         priceDescription={priceDescription}
         Icon
+        serMerBilderBtn
       />
+      <Footer />
     </div>
   );
 }

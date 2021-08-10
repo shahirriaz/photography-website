@@ -17,6 +17,7 @@ function ImageRow({ images, isReverse }) {
     changeCurrentIndex(_i);
     changeGalOpen(true);
   }
+
   return (
     <div className={`imageRow ${isReverse && "imageRow--reverseDirection"}`}>
       <div className="imageRow__mainContainer">
@@ -24,6 +25,8 @@ function ImageRow({ images, isReverse }) {
           <>
             {images.map((image, idx) => (
               <LazyLoadImage
+                className="imageRow__image"
+                effect={"blur"}
                 key={image.id}
                 src={image.url}
                 onClick={e =>
@@ -35,7 +38,7 @@ function ImageRow({ images, isReverse }) {
           </>
         )}
       </div>
-      {galopen ? (
+      {galopen && window.innerWidth >= 900 ? (
         <Lightbox
           startIndex={currentIndex}
           images={images}

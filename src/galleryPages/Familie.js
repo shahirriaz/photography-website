@@ -6,9 +6,20 @@ import { Carousel } from "react-responsive-carousel";
 import { galleryFamilyCollection } from "../collection";
 import MainRow from "../MainRow";
 import bannerImage from "../images/gallery/anette/5.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import ServiceGallery from "./../ServiceGallery";
 
 function Familie() {
   const [imgsLoaded, setimgsLoaded] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+  });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const loadImage = image => {
@@ -17,7 +28,7 @@ function Familie() {
         loadImg.src = image.src;
         // wait 2 seconds to simulate loading time
         loadImg.onload = () => {
-          resolve(image.url);
+          resolve(image.src); //url
         };
         loadImg.onerror = err => reject(err);
       });
@@ -29,39 +40,57 @@ function Familie() {
   }, []);
 
   return (
-    <div className="familie">
+    <>
       <header
         className="imageCarousel__banner"
         style={{
           opacity: "0.8",
           backgroundSize: "cover",
           backgroundImage: `url(${bannerImage})`,
+          backgroundPositionY: "50%",
         }}
       >
         <div className="imageCarousel__banner--fadeBottom"></div>
       </header>
-      <MainRow
-        title="Familie"
-        description="
-        Familiefotografering er som et utsnitt fra virkeligheten, en verdifull påminner om hvordan livet var akkurat da. En måte å minnes sporene av levd liv, er å ta familiebilder. Det er en stor verdi i å se tilbake på bilder når du ikke lenger husker hvordan dere så ut eller hvem dere var. Vi tar bilder ute på location. Eller hva med mer ekte og lekne familiefoto i omgivelser som betyr noe for dere? Med dokumentarisk foto bevarer vi en bit av familielivet, det kan være feks en middag, tur i skogen eller i akebakken.  "
-        isFontColorWhite
-        isMargin
-        isPadding
-      />
-      {imgsLoaded ? (
-        <Carousel useKeyboardArrows={true} showThumbs={false}>
-          {galleryFamilyCollection.map(image => (
-            <div key={image.id} className="imageCarousel__image">
-              <img src={image.src} />
-            </div>
-          ))}
-        </Carousel>
-      ) : (
-        <div className="imageCarousel__loader--container">
-          <CircularProgress style={{ color: "#ff8c27" }} />
-        </div>
-      )}
-    </div>
+      <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
+        <MainRow
+          title="Familie fotografering"
+          description="Familibilder kobler oss til våre røtter, og hvor vi kommer fra. Det er så viktig å forevige de fine øyeblikkene en har sammen. En dag vil disse bildene være det eneste barnet har av deg. Vi tenker ofte på hvordan fremtiden vil være, men glemmer å forevige de fine minnene vi har idag."
+          isFontColorWhite
+          isMargin
+          isPadding
+        />
+        {imgsLoaded ? (
+          <Carousel
+            useKeyboardArrows={true}
+            showThumbs={false}
+            dynamicHeight={true}
+            autoplay={false}
+          >
+            {galleryFamilyCollection.map(image => (
+              <div key={image.id} className="imageCarousel__image">
+                <img src={image.src} />
+              </div>
+            ))}
+          </Carousel>
+        ) : (
+          <div className="imageCarousel__loader--container">
+            <CircularProgress style={{ color: "#ff8c27" }} />
+          </div>
+        )}
+      </div>
+      <div className="familie__info">
+        <MainRow
+          title="Interessert i å ta bilder hos oss?"
+          subTitle="Trykk under for å bestille"
+          isFontColorWhite
+          Icon
+          onlyBestill
+          isCenterButton
+        />
+      </div>
+      <ServiceGallery />
+    </>
   );
 }
 
