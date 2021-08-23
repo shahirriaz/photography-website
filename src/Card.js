@@ -9,8 +9,8 @@ function Card({ name, image, review }) {
         <Avatar style={{ height: "150px", width: "150px" }} src={image} />
       </div>
       <div className="card__textContainer">
-        <div style={{ position: "relative" }}>
-          <span
+        {/* <div style={{ position: "relative" }}>
+           <span
             className="quote"
             style={{
               position: "absolute",
@@ -20,12 +20,12 @@ function Card({ name, image, review }) {
             }}
           >
             “
-          </span>
-        </div>
+          </span>  
+        </div> */}
         <div className="card__description">
           <p>{review}</p>
         </div>
-        <div style={{ position: "relative" }}>
+        {/* <div style={{ position: "relative" }}>
           <span
             className="quote"
             style={{
@@ -37,7 +37,7 @@ function Card({ name, image, review }) {
           >
             ”
           </span>
-        </div>
+        </div> */}
         <div className="card__customerName">
           <h3>{name}</h3>
         </div>

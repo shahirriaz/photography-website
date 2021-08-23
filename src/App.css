@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 
 * {
+  scroll-behavior: smooth;
   margin: 0;
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-family: "Open Sans", sans-serif;
+  /* font-weight: 400; */
 }
 
 body {
-  background-color: #232323;
+  /* background-color: #232323; */
+  background: #232323;
+
+  /* background-color: #111; */
   /* background-color: #232526; */
 
   /* 111 */

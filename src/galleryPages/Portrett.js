@@ -49,7 +49,7 @@ function Portrett() {
           backgroundPositionY: "50%",
         }}
       >
-        <div className="imageCarousel__banner--fadeBottom"></div>
+        {/* <div className="imageCarousel__banner--fadeBottom"></div> */}
       </header>
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
@@ -78,17 +78,7 @@ function Portrett() {
           </div>
         )}
       </div>
-      <div className="portrett__info">
-        <MainRow
-          title="Interessert i å ta bilder hos oss?"
-          subTitle="Trykk under for å bestille"
-          isFontColorWhite
-          Icon
-          onlyBestill
-          isCenterButton
-        />
-      </div>
-      <ServiceGallery />
+      {/* <ServiceGallery /> */}
     </>
   );
 }

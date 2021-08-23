@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./ContactForm.css";
-import logo from "./images/logo.png";
-import maps from "./images/maps.png";
 import formValidation from "./formValidation";
-import { useHistory } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { CircularProgress } from "@material-ui/core";
 import axios from "./axios";
+import barn from "./images/gallery/barn/barn_13.jpg";
 
 function ContactForm({ submitForm }) {
   //React Context
@@ -20,6 +18,8 @@ function ContactForm({ submitForm }) {
     type: "",
     age: "",
     date: "",
+    comment: "",
+    pricePackage: "",
   });
 
   //Error handling
@@ -78,13 +78,13 @@ function ContactForm({ submitForm }) {
           type: user.type,
           age: user.age,
           dato: user.date,
+          comment: user.comment,
+          pricePackage: user.pricePackage,
         },
         timeout: 10000,
         headers: { "Content-Type": "application/json" },
       })
         .then(response => {
-          console.log(response);
-          console.log(response.status);
           if (response.status === 201) {
             dispatch({
               type: "SEND_USER",
@@ -104,6 +104,8 @@ function ContactForm({ submitForm }) {
             type: "",
             age: "",
             date: "",
+            comment: "",
+            pricePackage: "",
           });
         })
         .catch(err => {
@@ -121,69 +123,135 @@ function ContactForm({ submitForm }) {
             <h1>Kontakt oss</h1>
           </div>
           <div className="contactForm__form--inputs">
-            <input
-              className="contactForm__input"
-              type="text"
-              name="name"
-              value={user.name}
-              onChange={handleChange}
-              placeholder="Navn"
-            />
+            <div className="input__container">
+              <input
+                className="contactForm__input"
+                type="text"
+                name="name"
+                value={user.name}
+                onChange={handleChange}
+                placeholder="Navn"
+              />
+            </div>
+
             {errors.name && <p className="error">{errors.name}</p>}
-            <input
-              className="contactForm__input"
-              type="text"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-              placeholder="E-post"
-            />
+            <div className="input__container">
+              <input
+                className="contactForm__input"
+                type="text"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+                placeholder="E-post"
+              />
+            </div>
+
             {errors.email && <p className="error">{errors.email}</p>}
-            <input
-              className="contactForm__input"
-              type="text"
-              name="phone"
-              value={user.phone}
-              onChange={handleChange}
-              placeholder="Telefon"
-            />
+            <div className="input__container">
+              <input
+                className="contactForm__input"
+                type="text"
+                name="phone"
+                value={user.phone}
+                onChange={handleChange}
+                placeholder="Telefon"
+              />
+            </div>
+
             {errors.phone && <p className="error">{errors.phone}</p>}
-            <select
-              style={{ color: "black" }}
-              name="type"
-              className="contactForm__input contactForm__input--select"
-              value={user.type}
-              onChange={handleChange}
-            >
-              <option value="" disabled selected>
-                Type fotografering
-              </option>
-              <option value="Bryllup">Bryllup</option>
-              <option value="Familie">Familie</option>
-              <option value="Forlovelse">Forlovelse</option>
-              <option value="1års fotografering">1års fotografering</option>
-              <option value="Gravidfotografering">Gravidfotografering</option>
-              <option value="Nyfødtfotografering">Nyfødtfotografering</option>
-            </select>
+            <div className="input__container">
+              <select
+                style={{ color: "black" }}
+                name="type"
+                className="contactForm__input contactForm__input--select"
+                value={user.type}
+                onChange={handleChange}
+              >
+                <option value="" disabled selected>
+                  Type fotografering
+                </option>
+                <option value="Bryllup">Bryllup</option>
+                <option value="Familie">Familie</option>
+                <option value="Forlovelse">Forlovelse</option>
+                <option value="Barn">Barn</option>
+                <option value="Gravid">Gravid</option>
+                <option value="Portrett">Portrett</option>
+              </select>
+            </div>
+
             {errors.type && <div className="error__container"></div>}
-            <input
-              className="contactForm__input"
-              type="text"
-              name="age"
-              value={user.age}
-              onChange={handleChange}
-              placeholder="Skriv alder og kjønn"
-            />
+            <div className="input__container">
+              <input
+                className="contactForm__input"
+                type="text"
+                name="age"
+                value={user.age}
+                onChange={handleChange}
+                placeholder="Skriv alder"
+              />
+            </div>
             {errors.age && <p className="error">{errors.age}</p>}
-            <input
-              className="contactForm__input"
-              type="text"
-              name="date"
-              value={user.date}
-              onChange={handleChange}
-              placeholder="Når ønsker du fotografering?"
-            />
+            <div className="input__container">
+              <input
+                className="contactForm__input"
+                type="text"
+                name="date"
+                value={user.date}
+                onChange={handleChange}
+                placeholder="Når ønsker du fotografering?"
+              />
+            </div>
             {errors.date && <p className="error">{errors.date}</p>}
+
+            <div className="input__container">
+              <select
+                style={{ color: "black" }}
+                name="pricePackage"
+                className="contactForm__input contactForm__input--select"
+                value={user.pricePackage}
+                onChange={handleChange}
+              >
+                <option value="" disabled selected>
+                  Type pakke
+                </option>
+                <option value="Har ikke bestemt meg enda">
+                  Har ikke bestemt meg enda
+                </option>
+                <option value="Bildepakke 1, 5 bilder, 2000kr">
+                  Bildepakke 1, 5 bilder, 2000kr
+                </option>
+                <option value="Bildepakke 2, 10 bilder, 3500kr">
+                  Bildepakke 2, 10 bilder, 3500kr
+                </option>
+                <option value="Bildepakke 3, 15 bilder, 4800kr">
+                  Bildepakke 3, 15 bilder, 4800kr
+                </option>
+                <option value="Bildepakke 4, 20 bilder, 5600kr">
+                  Bildepakke 4, 20 bilder, 5600kr
+                </option>
+                <option value="Bryllupspakke - Halvdag, 250 bilder, 4999kr">
+                  Bryllupspakke - Halvdag, 250 bilder, 4999kr
+                </option>
+                <option value="Bryllupspakke - Halvdag, 250 bilder, 4999kr">
+                  Bryllupspakke - Heldag, 400 bilder, 6999kr
+                </option>
+                <option value="Bryllupspakke - Dagen før og heldag, 500 bilder, 7999kr">
+                  Bryllupspakke - Dagen før og heldag, 500 bilder, 7999kr
+                </option>
+              </select>
+            </div>
+
+            <div id="comment__input--container" className="input__container">
+              <input
+                id="comment__input"
+                className="contactForm__input"
+                type="text"
+                name="comment"
+                value={user.comment}
+                onChange={handleChange}
+                placeholder="Kommentar"
+              />
+            </div>
           </div>
           <div className="contactForm__form--text">
             <p>
@@ -214,17 +282,19 @@ function ContactForm({ submitForm }) {
             </button>
           </div>
         </div>
+      </form>
 
-        <div className="contactForm__form--right">
-          <div className="contactForm__logo">
+      <div className="contactForm__form--right">
+        <img src={barn} alt="" />
+
+        {/* <div className="contactForm__logo">
             <img src={logo} alt="" />
           </div>
           <div className="contactForm__maps">
             <h2>Her finner du oss!</h2>
             <img src={maps} alt="" />
-          </div>
-        </div>
-      </form>
+          </div> */}
+      </div>
     </div>
   );
 }

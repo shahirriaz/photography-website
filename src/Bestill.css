@@ -1,0 +1,351 @@
+.bestill {
+  /* height: 100vh; */
+  width: 100%;
+  background-color: rgb(233, 233, 233);
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+._loading_overlay_overlay {
+  background-color: none !important;
+  background: none !important;
+  color: grey !important;
+}
+
+.mainContainer--bestill {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  /* border: 1px solid blue; */
+  margin-top: 50px;
+}
+._loading_overlay_content,
+.css-42igfv {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.secondary_container {
+  width: 600px;
+  max-width: 1000px;
+  /* overflow: hidden; */
+  margin: 2rem;
+  padding: 2rem;
+  /* border: 1px solid red; */
+  height: 100vh;
+  margin-bottom: 15rem;
+}
+
+.calendar__container {
+  /* border: 1px solid red; */
+}
+
+.calendar__backBtn {
+}
+
+.calendar__backBtn {
+  display: inline-block;
+  margin-bottom: 4rem;
+  background: none;
+  border: none;
+  color: blue;
+  /* border: 1px solid red; */
+}
+
+.calendar__backBtn:active {
+  box-shadow: none;
+}
+
+.calendar__backBtn:hover {
+  cursor: pointer;
+}
+.calendar__backBtn::before {
+  content: "";
+  border: solid blue;
+  border-width: 0 1.5px 1.5px 0;
+  float: left;
+  margin-top: 5px;
+  margin-right: 4px;
+  padding: 4px;
+  transform: rotate(130deg);
+}
+
+.calendar__firstHeading {
+  margin-bottom: 5rem;
+}
+
+.calendar__heading2 {
+  /* margin-top: 6rem; */
+}
+
+.wrapperSummray {
+  height: 80vh;
+  width: 400px;
+  /* border: 1px solid red; */
+}
+
+.summary {
+  margin: 2rem;
+  padding: 2rem;
+  float: left;
+  width: 300px;
+  height: 200px;
+  position: fixed;
+  /* border: 1px solid red; */
+  /* position: absolute;
+  right: 5%;
+  top: 10%; */
+  /* background-color: red; */
+}
+
+.nice-dates-day {
+  font-size: 18px !important;
+}
+.nice-dates-week-header_day {
+  font-size: 18px !important;
+  font-weight: bold;
+  color: #111 !important;
+}
+
+.nice-dates-day_month {
+  font-size: 14px !important;
+  line-height: 0.5 !important;
+}
+
+.nice-dates-navigation_current {
+  font-size: 18px !important;
+}
+
+.nice-dates-day:after,
+.nice-dates-day:before {
+  border-radius: 0px !important;
+  background-color: #32292f !important;
+}
+.nice-dates-day:hover {
+  color: white !important;
+}
+
+.nice-dates-day.-disabled {
+  color: #b0b0b0 !important;
+}
+
+.summary__btn {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #32292f;
+  /* border: 1px solid white; */
+  border: none;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* INPUT FIELDS */
+
+.bestillContact__container {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+.bestill__input--container {
+  /* border: 1px solid red; */
+  /* height: 500px; */
+  padding: 8px;
+}
+
+.bestill__input--container > p {
+  margin-bottom: 12px;
+}
+
+.input--name > input,
+.input--email > input,
+.input--number > input,
+.input--message > input {
+  border: none;
+  background: none;
+  outline: none;
+  outline-width: none;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  /* border: 1px solid blue; */
+}
+
+.input--name,
+.input--email,
+.input--number,
+.input--message {
+  border: 1px solid lightgray;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+/* CALENDAR STYLE */
+
+.MuiPickersToolbar-toolbar {
+  background-color: #32292f !important;
+}
+.MuiPickersClockPointer-pointer {
+  background-color: #32292f !important;
+}
+
+.MuiPickersClockPointer-noPoint {
+  background-color: #32292f !important;
+}
+
+.MuiPickersClockPointer-thumb {
+  border: 14px solid #32292f !important;
+}
+
+/* TIME */
+
+.time--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 4px solid red; */
+  margin-top: 2rem;
+}
+
+.flex--container {
+  display: flex;
+  justify-content: space-between;
+  /* border: 4px solid red; */
+  width: 90%;
+}
+
+#scrollID {
+  scroll-margin-bottom: 10rem;
+  border-top: 1px solid lightgray;
+  margin-top: 4px;
+}
+
+.flex--container h2 {
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.flex--container p {
+  /* border: 1px solid red; */
+  text-align: center;
+  padding: 4px 12px;
+  margin-bottom: 1rem;
+  font-size: 12px;
+  border: 1px solid transparent;
+  /* pointer-events: none; */
+}
+
+.flex--container p:hover {
+  cursor: pointer;
+  border: 1px solid #32292f;
+}
+
+.time--stamp.selected {
+  border: 1px solid #32292f;
+}
+
+.btn--container {
+  /* border: 1px solid red; */
+  display: grid;
+  place-items: center;
+}
+
+.time__btn {
+  background: none;
+  border: none;
+  color: blue;
+}
+
+.time__btn:active {
+  box-shadow: none;
+}
+
+.time__btn:hover {
+  cursor: pointer;
+}
+
+.time__btn:after {
+  content: "";
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  float: right;
+  margin-top: 6px;
+  margin-left: 10px;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.input__error {
+  color: red;
+  /* border: 1px solid red; */
+  font-size: 13px;
+}
+
+/* screen 3 */
+
+.screen3 {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 60vh;
+}
+
+.first--horizontal--row {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+}
+
+.screen3__heading > h1 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.second--horizontal--row {
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-around;
+  height: 60%;
+  /* flex-direction: column; */
+}
+
+.dateColumn > h1,
+.dateColumn > h3,
+.dateColumn > p {
+  text-align: center;
+}
+
+.dateColumn > h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.dateColumn > h3 {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.confirmationColumn > h2 {
+  font-weight: 500;
+}

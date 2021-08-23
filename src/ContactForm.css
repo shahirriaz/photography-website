@@ -1,9 +1,11 @@
 .contactForm {
   width: 100%;
-  overflow-x: hidden;
-  /* color: white; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: row-reverse;
   background-color: white;
   margin: 30px 30px 30px 30px;
+  /* border: 1px solid red; */
 }
 
 h1 {
@@ -12,16 +14,11 @@ h1 {
 
 .contactForm__form {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-  margin-bottom: 50px;
-  margin-top: 100px;
-  /* border: 1px solid brown; */
+  flex: 0.5;
 }
 
 .contactForm__title {
-  margin-left: 50px;
+  margin-left: 75px;
   margin-top: 100px;
   margin-bottom: 20px;
   /* border: 1px solid brown; */
@@ -32,8 +29,11 @@ h1 {
 .contactForm__form--left {
   display: flex;
   flex-direction: column;
-  /* border: 3px solid blue; */
-  flex: 0.6;
+
+  margin-top: 100px;
+  /* flex: 1; */
+  height: 100%;
+  width: 100%;
   min-width: 350px;
 }
 
@@ -45,25 +45,46 @@ h1 {
   align-items: center;
 }
 
-.contactForm__input {
-  border-radius: 2px;
-  border: 2px solid gray;
-  background-color: transparent;
-  outline-width: 0;
-  padding: 20px;
+.input__container {
+  border: 1px solid grey;
   margin-bottom: 10px;
   min-width: 250px;
   width: 90%;
-  font-size: 16px;
-  height: 2px;
 }
 
+.contactForm__input {
+  border: none;
+  width: 90%;
+  background-color: transparent;
+  outline-width: 0;
+  font-size: 16px;
+  height: 20px;
+  padding: 20px;
+}
+.contactForm__input > input:focus {
+  outline-width: 0;
+}
+.contactForm__input > :active {
+  outline-width: 0;
+}
+
+#comment__input--container {
+  height: 100px;
+}
+
+#comment__input {
+  height: 50px;
+}
 select[name^="type"] {
-  height: 60px;
+  height: 70px;
+  width: 95%;
+}
+select[name^="pricePackage"] {
+  height: 70px;
   width: 95%;
 }
 
-.contactForm__input:hover {
+.input__container:hover {
   cursor: text;
 }
 
@@ -72,23 +93,22 @@ select[name^="type"] {
 }
 
 .contactForm__form--text {
-  /* border: 1px solid red; */
   padding: 10px;
   padding-left: 2rem;
   max-width: 1000px;
   margin-bottom: 1rem;
+  margin-left: 2.4rem;
 }
 
 .contactForm__form--text > p {
   letter-spacing: 1px;
-  /* line-height: 1.5em; */
   font-size: 18px;
 }
 
 .contactForm__form--checkbox {
-  /* border: 1px solid red; */
   margin-top: 0.3rem;
   padding-left: 4rem;
+  margin-left: 0.5rem;
 }
 
 .contactForm__form--checkbox--text {
@@ -102,35 +122,37 @@ select[name^="type"] {
 
 input[type="checkbox"] {
   /* Double-sized Checkboxes */
-  -ms-transform: scale(1.5); /* IE */
-  -moz-transform: scale(1.5); /* FF */
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
-  -o-transform: scale(1.5); /* Opera */
-  transform: scale(1.5);
+  -ms-transform: scale(1.7); /* IE */
+  -moz-transform: scale(1.7); /* FF */
+  -webkit-transform: scale(1.7); /* Safari and Chrome */
+  -o-transform: scale(1.7); /* Opera */
+  transform: scale(1.7);
   padding: 10px;
 }
 
 .contactForm__form--button {
   display: flex;
   justify-content: flex-end;
-  margin-right: 30px;
+  margin-right: 65px;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .contactForm__form--button > button {
-  width: 120px;
-  height: 50px;
-  font-size: 15px;
-  padding: 10px;
-  border-width: 0;
-  background-color: #fc9031;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #32292f;
+  /* border: 1px solid white; */
+  border: none;
   color: white;
-  outline: none;
-  letter-spacing: 1px;
-  font-weight: bold;
-  text-align: center;
-  margin-right: 1rem;
-  border-radius: 2px;
 }
 button:disabled,
 button[disabled] {
@@ -150,13 +172,23 @@ button:active {
 
 .contactForm__form--right {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  /* border: 1px solid brown; */
+  flex: 0.5;
+  margin-top: 80px;
+  /* max-width: 1500px;
+  min-width: 1500px; */
+
+  /* border: 10px solid brown; */
 }
 
-.contactForm__logo > img {
+.contactForm__form--right > img {
+  height: 100vh;
+  /* display: block; */
+  width: 100%;
+  /* min-width: 1500px; */
+  object-fit: cover;
+}
+
+/* .contactForm__logo > img {
   width: 200px;
   height: 180px;
   border-radius: 50%;
@@ -172,7 +204,7 @@ button:active {
 
 .contactForm__maps > h2 {
   margin-bottom: 1rem;
-}
+} */
 
 .error {
   color: red;
@@ -180,6 +212,7 @@ button:active {
   /* border: 1px solid blue; */
   padding-left: 1rem;
   width: 100%;
+  margin-left: 4.5rem;
   font-size: 1rem;
 }
 
@@ -223,14 +256,34 @@ button:active {
   }
 }
 
-@media screen and (max-width: 425px) {
-  .contactForm__input {
-    width: 70%;
-  }
-}
-
 @media screen and (min-width: 425px) and (max-width: 768px) {
   .contactForm__input {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contactForm__form--right > img {
+    display: none;
+  }
+  .contactForm__form--right {
+    display: none;
+  }
+  .contactForm__form {
+    display: flex;
+    flex: 1;
+  }
+
+  .contactForm__form--text {
+    margin-left: 0;
+  }
+  .error {
+    margin-left: 1rem;
+  }
+  .contactForm__form--checkbox {
+    padding-left: 2rem;
+  }
+  .contactForm__title {
+    margin-top: 0px;
   }
 }

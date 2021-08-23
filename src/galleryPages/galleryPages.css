@@ -1,5 +1,4 @@
 .galleryPages {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,9 +10,19 @@
   margin-bottom: 1rem;
 }
 
+.slider {
+  touch-action: pan-x;
+}
+
+.carousel .slide img {
+  width: 100% !important;
+}
+
 .imageCarousel__image > img {
   height: 50vh;
   object-fit: contain;
+
+  /* border: 1px solid red; */
 }
 
 .imageCarousel__loader--container {

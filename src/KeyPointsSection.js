@@ -7,7 +7,10 @@ import "aos/dist/aos.css";
 import VisibilitySensor from "react-visibility-sensor";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
 import EditIcon from "@material-ui/icons/Edit";
-import couple from "./images/parents.png";
+import couple from "./images/couple.png";
+import design from "./images/design.png";
+import camera from "./images/camera.png";
+
 function KeyPointsSection() {
   useEffect(() => {
     AOS.init();
@@ -15,18 +18,19 @@ function KeyPointsSection() {
 
   return (
     <div className="keyPointsSection">
-      <div className="mainContainerKey">
+      <div id="key__1" className="mainContainerKey">
         <div className="keyPointsSection__section--1">
           <div className="keyPointsSection__section--1__icon">
-            <PeopleIcon className="svg-icon" />
+            {/* <PeopleIcon className="svg-icon" /> */}
+            <img className="image__icon" src={couple} alt="couple" />
           </div>
           <div className="keyPointsSection__section--1__heading">
             <h2 className="keyInformationHeading">Ektepar fra Stavanger</h2>
           </div>
           <div className="keyPointsSection__section--1__text1">
             <p className="keyParagraph">
-              Vi er et livlig ektepar med røtter fra Stavanger som fotograferer{" "}
-              <br /> i Rogaland området. <br />
+              Vi er et livlig ektepar fra Stavanger som fotograferer i Rogaland
+              området.
             </p>
           </div>
         </div>
@@ -63,9 +67,10 @@ function KeyPointsSection() {
           </div>
         </div>
       </div>
-      <div className="mainContainerKey">
+      <div id="key__2" className="mainContainerKey">
         <div className="keyPointsSection__section--1">
-          <CameraAltIcon className="svg-icon" />
+          {/* <CameraAltIcon className="svg-icon" /> */}
+          <img className="image__icon" src={camera} alt="camera" />
           <div className="keyPointsSection__section--1__heading">
             <h2 className="keyInformationHeading">Fotograf</h2>
           </div>
@@ -107,9 +112,10 @@ function KeyPointsSection() {
           </div>
         </div>
       </div>
-      <div className="mainContainerKey">
+      <div id="key__3" className="mainContainerKey">
         <div className="keyPointsSection__section--1">
-          <EditIcon className="svg-icon" />
+          {/* <EditIcon className="svg-icon" /> */}
+          <img className="image__icon" src={design} alt="design" />
           <div className="keyPointsSection__section--1__heading">
             <h2 className="keyInformationHeading">Designer</h2>
           </div>

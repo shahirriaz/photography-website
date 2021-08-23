@@ -17,7 +17,6 @@
 .card__description {
   max-width: 320px;
   text-align: left;
-  font-weight: bold;
 }
 .card__customerName {
   text-align: left;
@@ -25,6 +24,10 @@
 
 .card__customerName {
   padding: 4px;
+}
+
+.card__customerName > h3 {
+  font-weight: 600;
 }
 
 .floater {

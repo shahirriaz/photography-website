@@ -1,127 +1,183 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Prices.css";
-import PriceComponent from "./PriceComponent";
 import MainRow from "./MainRow";
 import { useEffect } from "react";
 import familieBilde from "./images/gallery/beata/5.jpg";
 import Footer from "./Footer";
-
-const imageArray = [
-  "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=950&q=80",
-  "https://images.unsplash.com/photo-1561525140-c2a4cc68e4bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
-];
-
-const priceDescription = [
-  "Bildepakke 1-5 filer 2000 kr",
-
-  "Bildepakke 2-10 filer 3500 kr",
-
-  "Bildepakke 3-15 filer 4995 kr",
-
-  " Bildepakke 4-20 filer 6990 kr",
-];
-
-const eventPriceDescription = [
-  "2900,- Fredagsbryllup 1-2 timer",
-
-  "3900,- Lørdagsbryllup 1-2 timer",
-
-  "5900,- Lørdagsbryllup 3 timer",
-
-  "7990,- Halv dag. 6 timer",
-
-  "9000,- Hel dag . 12 timer",
-];
+import Banner from "./Banner";
+import QuestionBanner from "./QuestionBanner";
+import anette from "./images/gallery/couple/par_13.jpg";
+import { Link } from "react-router-dom";
 
 function Prices() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
+
+  const fotografPakker = [
+    {
+      imageQuantity: "5",
+      price: "2000",
+      hexColors: "9C89B8",
+      includes_1: "1 time",
+      includes_2: "5 stk digitale bilder",
+      includes_3: "Ferdig redigert",
+      includes_4: "Høy oppløselig",
+    },
+    {
+      imageQuantity: "10",
+      price: "3500",
+      hexColors: "F0A6CA",
+      includes_1: "1 time",
+      includes_2: "10 stk digitale bilder",
+      includes_3: "Ferdig redigert",
+      includes_4: "Høy oppløselig",
+    },
+    {
+      imageQuantity: "15",
+      price: "4800",
+      hexColors: "EFC3E6",
+      includes_1: "1 time",
+      includes_2: "15 stk digitale bilder",
+      includes_3: "Ferdig redigert",
+      includes_4: "Høy oppløselig",
+      includes_5: "Digital bildegalleri på nett",
+    },
+    {
+      imageQuantity: "20",
+      price: "5600",
+      hexColors: "F0E6EF",
+      includes_1: "1 time",
+      includes_2: "20 stk digitale bilder",
+      includes_3: "Ferdig redigert",
+      includes_4: "Høy oppløselig",
+      includes_5: "Digital bildegalleri på nett",
+    },
+  ];
+
+  const bryllupObject = [
+    {
+      typeOfPackage: "Halvdagsfotografering",
+      imageQuantity: "250",
+      price: "4999",
+      hexColors: "5762D5",
+      includes_1: "Samtaletime i forkant av dagen",
+      includes_2:
+        "Forberedelse, hovedbildene, vielse og mottakelse, inntil fem timer fotografering",
+      includes_3: "250 redigerte digitale bilder",
+      includes_4: "Digital bildegalleri på nett",
+    },
+    {
+      typeOfPackage: "Heldagsfotografering",
+      imageQuantity: "400",
+      price: "6999",
+      hexColors: "6E7DAB",
+      includes_1: "Samtaletime i forkant av dagen",
+      includes_2: "Heldagsfotografering, inntil 10 timer",
+      includes_3: "400 redigerte digitale bilder",
+      includes_4: "Digital bildegalleri på nett",
+    },
+    {
+      typeOfPackage: "Dagen før og heldagsfotografering",
+      imageQuantity: "500",
+      price: "7999",
+      hexColors: "C191A1",
+      includes_1: "Samtaletime i forkant av dagen",
+      includes_2: "Fotografering mingling dagen før bryllupet, inntil to timer",
+      includes_3: "Heldagsfotografering, inntil 10 timer",
+      includes_4: "500 redigerte digitale bilder",
+    },
+  ];
 
   return (
     <div className="prices">
-      <MainRow
-        title="Priser"
-        subTitle="Info om pris"
-        description="Fotograferingsprisen dekker forberedelser, selve fotograferingen og redigeringen."
-        isColumnFlexDirection
-        isMainPrice
-        isBackgroundWhite
-        isMarginFirstRow
-        isPadding
-        // hr
-      >
-        {/* <PriceComponent
-          title="Barn"
-          pakke_subTitle_1="Portrett NyFødt"
-          pakke_subTitle_2="Med Familie"
-          pakke_price_1="2500kr"
-          pakke_price_2="4500kr"
-        />
-        <PriceComponent
-          title="Familie"
-          pakke_subTitle_1="Liten pakke - 5 bilder"
-          pakke_subTitle_2="Mellom pakke - 10 bilder"
-          // pakke_subTitle_3="Stor pakke - 15 bilder"
-          pakke_price_1="2500 ,-"
-          pakke_price_2="3000 ,-"
-          // pakke_price_3="4000 ,-"
-        />
-
-        <PriceComponent
-          title="Events"
-          pakke_subTitle_1="Liten pakke - Opptil 3t"
-          pakke_subTitle_2="Stor pakke - Opptil 5t"
-          pakke_price_1="4500,-"
-          pakke_price_2="6000,-"
-        /> */}
-      </MainRow>
-      <MainRow
-        title="Ettårsfotografering"
-        subTitle="Priser for ettårsfotografering"
-        description="Sed pretium dictum venenatis. Duis auctor a nisl non vehicula. Vestibulum at diam at tortor iaculis porta. Ut iaculis volutpat efficitur. Nulla facilisi. Proin nibh dui, dictum quis justo ac, congue molestie elit."
-        priceDescription={priceDescription}
-        // image="https://images.unsplash.com/photo-1608561435915-874b68cfc209?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-        imageArray={imageArray}
-        isReverse
-        isMargin
-        isPadding
-        // hr
-        isFontColorWhite
-        Icon
-        // serMerBilderBtn
-        isCenterButton
+      <Banner
+        img={anette}
+        // title="Bryllup || Par || Familie"
+        subTitle="Priser"
+        // isBtnPrice
       />
+      <MainRow
+        title="Fotgraferings pakker"
+        isFontColorWhite
+        isPadding
+        subTitle="Pakker nedenfor gjelder for par, familie, barn, gravid. ettårsdag, portrett og bedrift. Inkluderer forberedelser og planlegging før fotograferingen  "
+      />
+      <prices className="prices__mainContainer">
+        {fotografPakker.map((fotografObj, index) => (
+          <div className="prices__content">
+            <div
+              style={{ backgroundColor: `#${fotografObj.hexColors}` }}
+              className="txtContainer"
+            >
+              <h1>Bildepakke {index + 1}</h1>
+              <p>{fotografObj.imageQuantity} bilder</p>
+              <h2>kr {fotografObj.price},-</h2>
+
+              <Link to="/kontakt">
+                <button className="prices__btn">Bestill</button>
+              </Link>
+            </div>
+            <div className="price__include">
+              <h2 style={{ textAlign: "center", marginTop: "12px" }}>
+                Pris inkluderer:
+              </h2>
+              <ul className="prices__unorderedList">
+                <li>{fotografObj.includes_1}</li>
+                <li>{fotografObj.includes_2}</li>
+                <li>{fotografObj.includes_3}</li>
+                <li>{fotografObj.includes_4}</li>
+                <li>{fotografObj.includes_5}</li>
+              </ul>
+            </div>
+          </div>
+        ))}
+      </prices>
       <MainRow
         title="Bryllup"
-        subTitle="Priser for bryllup"
-        description="Aliquam auctor, diam ac placerat accumsan, magna elit aliquam risus, eu aliquet lorem quam et orci. Praesent sem arcu, eleifend vel augue eget, auctor pellentesque massa. Nullam sagittis elit nec eleifend congue. "
-        priceDescription={eventPriceDescription}
-        // image="https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-        imageArray={imageArray}
-        // hr
-        isBackgroundWhite
-        isMargin
-        isPadding
-        Icon
-        isCenterButton
-      />
-
-      <MainRow
-        title="Familie"
-        subTitle="Priser for familiebilder"
-        description="Curabitur rhoncus, urna vitae rutrum malesuada, eros tortor fermentum dolor, non dignissim mauris ipsum eget lectus. Donec pulvinar urna eu dolor pharetra, eu egestas metus laoreet. "
-        // imageArray={imageArray}
-        isReverse
-        image={familieBilde}
-        // hr
         isFontColorWhite
         isPadding
-        isMargin
-        priceDescription={priceDescription}
-        Icon
-        serMerBilderBtn
+        subTitle="Pakke pris for bryllup"
       />
+      <prices className="prices__mainContainer">
+        {bryllupObject.map(bryllupObject => (
+          <div
+            id="prices__bryllupContainer"
+            className="prices__content"
+            style={{ paddingBottom: "80px" }}
+          >
+            <div
+              style={{ backgroundColor: `#${bryllupObject.hexColors}` }}
+              className="txtContainer"
+            >
+              <h1>{bryllupObject.typeOfPackage}</h1>
+              <p>{bryllupObject.imageQuantity} bilder</p>
+              <h2>kr {bryllupObject.price},-</h2>
+              <Link to="/kontakt">
+                <button className="prices__btn">Bestill</button>
+              </Link>
+            </div>
+            <div className="price__include">
+              <h2 style={{ textAlign: "center", marginTop: "20px" }}>
+                Pris inkluderer:
+              </h2>
+              <ul className="prices__unorderedList">
+                <li id="bryllypList">{bryllupObject.includes_1}</li>
+                <li id="bryllypList">{bryllupObject.includes_2}</li>
+                <li id="bryllypList">{bryllupObject.includes_3}</li>
+                <li id="bryllypList">{bryllupObject.includes_4}</li>
+              </ul>
+            </div>
+          </div>
+        ))}
+      </prices>
+      <MainRow
+        title="Andre anledninger"
+        isFontColorWhite
+        isPadding
+        subTitle="Vi tar også bilder av andre anlednigner, slik som bursdag, dåp, konfirmasjon, bridal og baby shower. Vi skreddersyr pakkepriser etter ditt behov. Vi vil gjerne høre fra deg om du ønsker fotografering for din anledning eller har noen spørsmål. Ta kontakt via vårt kontaktskjema eller via mail. "
+      />
+      <QuestionBanner />
       <Footer />
     </div>
   );

@@ -11,3 +11,9 @@ ReactDOM.render(
   </StateProvider>,
   document.getElementById("root")
 );
+// ReactDOM.render(
+//   <StateProvider initialState={initialState} reducer={reducer}>
+//     <App />
+//   </StateProvider>,
+//   document.getElementById("root")
+// );

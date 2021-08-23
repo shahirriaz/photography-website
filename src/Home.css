@@ -5,3 +5,10 @@
   align-items: center;
   /* border: 1px solid red; */
 }
+
+.scrollElement {
+  scroll-margin: 100px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+}

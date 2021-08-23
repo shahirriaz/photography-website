@@ -71,13 +71,11 @@ function Footer() {
           </div>
           <div className="footer__firstPart--paragraph">
             <p>
-              Hvem har ikke lyst å ta familiebilder? <br /> Men altfor ofte
-              forblir det bare en tanke og blir lagt i glemmeboka. Vi har en
-              løsning for dette: Ønskelista. <br /> Har du veldig lyst på en
-              fotografering, men vet ikke når, eller hvilken anledning. Meld deg
-              inn i vårt ønskelista, og vi trekker en vinner hver måned som får
-              en helt gratis fotografering. Alt du trenger å gjøre er å oppgi
-              din mail til oss her: . les villkårene her
+              Har du veldig lyst på en fotografering, men vet ikke når, eller
+              hvilken anledning. Meld deg inn i vårt ønskelista, og vi trekker
+              en vinner hver måned som får en helt gratis fotografering. Alt du
+              trenger å gjøre er å oppgi din mail til oss her: . les villkårene
+              her
             </p>
           </div>
           <div className="footer__firstPart--email">

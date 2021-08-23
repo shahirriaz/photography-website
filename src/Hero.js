@@ -19,9 +19,7 @@ function Hero() {
           </h2>
         </div>
       </div>
-      <div className="keypointsContainer">
-        <KeyPointsSection />
-      </div>
+      <div className="keypointsContainer">{/* <KeyPointsSection /> */}</div>
     </div>
   );
 }

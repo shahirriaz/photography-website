@@ -1,64 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./ImageRow.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Lightbox from "react-awesome-lightbox";
-import "react-awesome-lightbox/build/style.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import { NavLink } from "react-router-dom";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
-function ImageRow({ images, isReverse }) {
-  let [galopen, changeGalOpen] = useState(false);
-  let [singOpen, changeSing] = useState(false);
-  let [currentIndex, changeCurrentIndex] = useState(0);
-
-  function launchGalary(_i, changeCurrentIndex, changeGalOpen) {
-    changeCurrentIndex(_i);
-    changeGalOpen(true);
-  }
+function ImageRow({ images, isOpen }) {
+  const [isLocalOpen, setLocalOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState({
+    photoIndex: 0,
+  });
 
   return (
-    <div className={`imageRow ${isReverse && "imageRow--reverseDirection"}`}>
-      <div className="imageRow__mainContainer">
-        {images && (
-          <>
-            {images.map((image, idx) => (
-              <LazyLoadImage
-                className="imageRow__image"
-                effect={"blur"}
-                key={image.id}
-                src={image.url}
-                onClick={e =>
-                  launchGalary(idx, changeCurrentIndex, changeGalOpen)
-                }
-                alt="collection image"
-              />
-            ))}
-          </>
-        )}
-      </div>
-      {galopen && window.innerWidth >= 900 ? (
+    <div>
+      {isOpen && (
         <Lightbox
-          startIndex={currentIndex}
-          images={images}
-          zoomStep={1}
-          onClose={e => changeGalOpen(false)}
+          mainSrc={images[photoIndex]}
+          nextSrc={images[(photoIndex + 1) % images.length]}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => setLocalOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex({
+              photoIndex: (photoIndex + images.length - 1) % images.length,
+            })
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex({
+              photoIndex: (photoIndex + 1) % images.length,
+            })
+          }
         />
-      ) : null}
-      {singOpen ? <Lightbox onClose={e => changeSing(false)} /> : null}
-      <div className="imageRow__buttonContainer">
-        {/* <NavLink to="/gallery">
-          <button
-            style={{ marginTop: "1rem" }}
-            className="imageRow__buttonContainer--button"
-          >
-            <div className="imageRow__buttonContainer--button--content">
-              <span>Ta meg til galleriet</span>
-            </div>
-          </button>
-        </NavLink> */}
-      </div>
+      )}
     </div>
   );
 }

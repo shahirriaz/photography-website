@@ -1,11 +1,12 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 .keyPointsSection {
   /* border: 1px solid red; */
   height: 650px;
-  background-color: white;
-  width: 66%;
-  border-radius: 20px;
+  /* background-color: white; */
+  width: 80%;
+  /* border-radius: 20px; */
   margin-bottom: 20px;
   max-width: 1500px;
   display: flex;
@@ -16,7 +17,7 @@
 }
 
 .mainContainerKey {
-  margin-right: 20px;
+  /* margin-right: 20px; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,34 +27,44 @@
   width: 100%;
 }
 .mainContainerKey:not(:last-child) {
-  border-right: 1px solid #dcdcdc;
+  border-right: 1px solid #7a7d7d;
 }
 
 .keyInformationHeading {
-  /* font-family: "Lato", sans-serif; */
-  padding-bottom: 15px;
-  font-size: 24px;
-  color: #232526;
+  padding-bottom: 24px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
 
   /* font-weight: 1000; */
 }
 .purple {
-  color: 232526;
-  font-size: 22px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .keyParagraph {
   text-align: center;
   letter-spacing: 0.6px;
   line-height: 22px;
-  font-size: 20px;
+  font-size: 16px;
   padding-right: 12px;
   padding-left: 12px;
+  color: #111;
+  /* text-rendering: optimizeSpeed; */
 }
 
 .svg-icon {
   transform: scale(1.7);
-  color: #232526;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.image__icon {
+  width: 50px;
+  object-fit: contain;
   margin-bottom: 30px;
 }
 
@@ -78,7 +89,22 @@
 
 .countUp--container > span {
   font-size: 40px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: 600;
+  color: #111;
+}
+
+.keyPointsSection__section--3__heading > p {
+  color: #111;
+}
+#key__1 {
+  background-color: #fff;
+}
+#key__2 {
+  background-color: #fff;
+}
+#key__3 {
+  background-color: #fff;
 }
 
 @media screen and (max-width: 1024px) {
@@ -89,7 +115,7 @@
   .keyParagraph {
     text-align: center;
     letter-spacing: 0.6px;
-    line-height: 18px;
+    line-height: 20px;
     font-size: 18px;
     padding-right: 12px;
     padding-left: 12px;
@@ -110,6 +136,9 @@
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    height: 500px;
+    height: 600px;
+  }
+  .keyParagraph {
+    font-size: 16px;
   }
 }

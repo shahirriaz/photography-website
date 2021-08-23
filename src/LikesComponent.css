@@ -1,0 +1,45 @@
+.icon__content--container {
+  /* border: 1px solid green; */
+  width: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+}
+.icon__content--container:hover {
+  cursor: pointer;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.likesCounter {
+  color: white;
+  font-size: 18px;
+}
+
+.favoriteIcon2 {
+  transform: scale(1.2);
+}
+
+.clicked {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .favoriteIcon2 {
+    transform: scale(0.8);
+  }
+  .likesCounter {
+    font-size: 14px;
+  }
+  .icon__content--container {
+    width: 55px;
+  }
+}

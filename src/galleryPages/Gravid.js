@@ -49,7 +49,7 @@ function Gravid() {
           backgroundImage: `url(https://images.unsplash.com/photo-1556982971-7da0c36e9042?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)`,
         }}
       >
-        <div className="imageCarousel__banner--fadeBottom"></div>
+        {/* <div className="imageCarousel__banner--fadeBottom"></div> */}
       </header>
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
@@ -78,17 +78,7 @@ function Gravid() {
           </div>
         )}
       </div>
-      <div className="gravid__info">
-        <MainRow
-          title="Interessert i å ta bilder hos oss?"
-          subTitle="Trykk under for å bestille"
-          isFontColorWhite
-          Icon
-          onlyBestill
-          isCenterButton
-        />
-      </div>
-      <ServiceGallery />
+      {/* <ServiceGallery /> */}
     </>
   );
 }

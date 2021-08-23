@@ -127,6 +127,9 @@ function MainRow({
                   <p>
                     <strong>Dato:</strong> {description?.date}
                   </p>
+                  <p>
+                    <strong>Kommentar:</strong> {description?.comment}
+                  </p>
                 </>
               ))}
           </div>

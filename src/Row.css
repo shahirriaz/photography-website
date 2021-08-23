@@ -30,9 +30,9 @@
 }
 
 .row__title > h2 {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.7px;
-  color: #585858;
+  color: #111;
   width: 100%;
 }
 

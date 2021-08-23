@@ -53,21 +53,23 @@
   margin-bottom: 7px;
   font-size: 1.8em;
   margin-top: 12px;
+  font-weight: 600;
 }
 .mainRow__content > h3 {
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
   padding-bottom: 1rem;
   font-size: 18px;
+  font-weight: normal;
   padding: 8px 0;
   letter-spacing: 0.4px;
   margin-bottom: 6px;
 }
 
 .mainRow__content > p {
-  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Josefin Sans", sans-serif; */
   letter-spacing: 0.5px;
   font-size: 18px;
-  line-height: 17px;
+  line-height: 22px;
 }
 
 #descriptionWrap {
@@ -177,7 +179,7 @@
   }
 
   .mainRow__content > h3 {
-    line-height: 1.2em;
+    line-height: 1.3em;
     font-size: 18px;
   }
   .mainRow__content > p {
@@ -306,7 +308,7 @@
   }
 
   .mainRow__content > p {
-    font-size: 14px;
+    font-size: 12px;
     /* border: 1px solid red; */
     width: 300px;
     /* margin-left: 67px; */
