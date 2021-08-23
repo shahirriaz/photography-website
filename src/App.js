@@ -1,14 +1,14 @@
 import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-const Header = React.lazy(() => import("./Header"));
-const Gallery = React.lazy(() => import("./Gallery"));
-const Contact = React.lazy(() => import("./Contact"));
-const Prices = React.lazy(() => import("./Prices"));
-const AboutUs = React.lazy(() => import("./AboutUs"));
-const Footer = React.lazy(() => import("./Footer"));
-const Home = React.lazy(() => import("./Home"));
-const Bestill = React.lazy(() => import("./Bestill"));
+import Header from "./Header";
+import Home from "./Home";
+import Gallery from "./Gallery";
+import Contact from "./Contact";
+import Prices from "./Prices";
+import AboutUs from "./AboutUs";
+import Footer from "./Footer";
+import Bestill from "./Bestill";
 
 function App() {
   return (
@@ -36,7 +36,6 @@ function App() {
               <Header isAnimated isAbsoluteFixed />
               <Gallery />
             </Route>
-            <Route path="/:name"></Route>
             <Route path="/">
               <Header isAnimated isAbsoluteFixed />
               <Home />
