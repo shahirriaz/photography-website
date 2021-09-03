@@ -1,6 +1,11 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import Gallery from "./Gallery";
@@ -15,32 +20,32 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <React.Suspense fallback={<p>Loading..</p>}>
-            <Route path="/kontakt">
-              <Header isSticky />
-              <Contact />
-            </Route>
-            <Route path="/omoss">
-              <Header isSticky />
-              <AboutUs />
-            </Route>
-            <Route path="/priser">
-              <Header isSticky />
-              <Prices />
-            </Route>
-            <Route path="/bestill">
-              <Header isSticky />
-              <Bestill />
-            </Route>
-            <Route path="/galleri/:name">
-              <Header isAnimated isAbsoluteFixed />
-              <Gallery />
-            </Route>
-            <Route path="/">
-              <Header isAnimated isAbsoluteFixed />
-              <Home />
-            </Route>
-          </React.Suspense>
+          <Route path="/kontakt">
+            <Header isSticky />
+            <Contact />
+          </Route>
+          <Route path="/omoss">
+            <Header isSticky />
+            <AboutUs />
+          </Route>
+          <Route path="/priser">
+            <Header isSticky />
+            <Prices />
+          </Route>
+          <Route path="/bestill/step/:step/:summary?">
+            <Header isSticky />
+            <Bestill />
+          </Route>
+          <Route path="/galleri/:name">
+            <Header isAnimated isAbsoluteFixed />
+            <Gallery />
+          </Route>
+
+          {/*       <Redirect to="/step/1" /> */}
+          <Route path="/">
+            <Header isAnimated isAbsoluteFixed />
+            <Home />
+          </Route>
         </Switch>
       </Router>
     </div>

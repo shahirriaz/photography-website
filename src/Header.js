@@ -159,7 +159,7 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
 
           <NavLink
             exact
-            to="/bestill"
+            to="/bestill/step/0"
             style={{ textDecoration: "none" }}
             activeClassName="header__heading--active"
           >

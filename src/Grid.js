@@ -113,7 +113,7 @@ function Grid() {
     setPhotoIndex(id);
   };
 
-  console.log(photoIndex);
+  // console.log(photoIndex);
 
   return (
     <div className="row">
@@ -132,7 +132,7 @@ function Grid() {
               <img
                 style={imageStyle}
                 onLoad={handleImageLoaded}
-                onClick={() => handleImageClick(gridObj1.mapId)}
+                // onClick={() => handleImageClick(gridObj1.mapId)}
                 id={gridObj1.mapId}
                 src={gridObj1.img}
                 alt="grid-img"

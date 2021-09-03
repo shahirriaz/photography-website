@@ -5,7 +5,10 @@ export const initialState = {
   date: null,
   timePicked: null,
   errorInput: {},
-  timeIsVisible: false,
+  service: [],
+  serviceFromShowCase: [],
+  storeDate: null,
+  storeTimeStamp: null,
 };
 
 const reducer = (state, action) => {
@@ -42,10 +45,25 @@ const reducer = (state, action) => {
         ...state,
         errorInput: action.errorInput,
       };
-    case "SEND_TIMEISVISIBLE":
+    case "SEND_SERVICE":
       return {
         ...state,
-        timeIsVisible: action.timeIsVisible,
+        service: action.service,
+      };
+    case "SEND_SERVICE_FROM_SHOWCASE":
+      return {
+        ...state,
+        serviceFromShowCase: action.serviceFromShowCase,
+      };
+    case "SEND_DATE-TO-GLOBAL": //sendng it here so it persists on form/page navigation
+      return {
+        ...state,
+        storeDate: action.storeDate,
+      };
+    case "SEND_SELECTED-TIMESTAMP":
+      return {
+        ...state,
+        storeTimeStamp: action.storeTimeStamp,
       };
 
     default:

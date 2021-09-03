@@ -1,12 +1,24 @@
 import React from "react";
-import { Element } from "react-scroll";
+import { useHistory } from "react-router";
 
 function TimeComponent(props) {
+  const history = useHistory();
+
+  // const handleClick = () => {
+  //   history.push("/bestill/step/2");
+  // };
+
   return (
     <div id="containerElement" className="time--container">
+      <div className="selectTime">
+        <h2>Velg klokkeslett:</h2>
+      </div>
+      <span className="time--error">
+        {props.timeError && "Vennligst velg klokkeslett"}
+      </span>
       <div id="test11" className="flex--container">
         <div className="column--one">
-          <h2>Morning</h2>
+          <h2>Morgen</h2>
           {props.timeArrayMorning.map((time, idx) => (
             <p
               className={"time--stamp"}
@@ -19,7 +31,7 @@ function TimeComponent(props) {
           ))}
         </div>
         <div className="column--two">
-          <h2>Afternoon</h2>
+          <h2>Ettermiddag</h2>
           {props.timeArrayAfternoon.map((time, idx) => (
             <p
               className={"time--stamp"}
@@ -32,7 +44,7 @@ function TimeComponent(props) {
           ))}
         </div>
         <div className="column--three">
-          <h2>Evening</h2>
+          <h2>Kveld</h2>
           {props.timeArrayEvening.map((time, idx) => (
             <p
               className={"time--stamp"}
@@ -44,6 +56,18 @@ function TimeComponent(props) {
             </p>
           ))}
         </div>
+      </div>
+      <div className="nextBtn">
+        {window.innerWidth <= 500 ? (
+          <button
+            onClick={props.mainFunction}
+            id="timeNextBtn"
+            className="summary__btn"
+          >
+            {" "}
+            Next
+          </button>
+        ) : null}
       </div>
     </div>
   );

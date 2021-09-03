@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { format } from "date-fns";
 import { enGB } from "date-fns/locale";
 import { useStateValue } from "../../StateProvider";
+import db from "./../../firebase";
 
 function Screen3() {
-  const [{ date, timePicked }, dispatch] = useStateValue();
+  const [{ date, timePicked, service, inputUser }, dispatch] = useStateValue();
+
+  //when this last component mounts... everything  must be pushes to db or whatever
+  useEffect(() => {
+    if (date !== undefined || null) {
+      if (date && timePicked && service && inputUser) {
+        db.collection("bookingDate")
+          .doc(format(date, "dd MMM yyyy").toString())
+          .set({
+            date: date,
+          });
+      } else {
+        console.log("error");
+      }
+    }
+  }, [date]);
+
   return (
     <div className="screen3">
       <div className="first--horizontal--row">
         <div className="screen3__heading">
-          <h1>Great You're Booked!</h1>
+          <h1>Digg! Da er du bestilt</h1>
         </div>
         <div className="screen3__desc">
-          <p>A confirmation emil is on its way to you</p>
+          <p>En bekreftelses epost er på vei til deg</p>
         </div>
       </div>
-
       <div className="second--horizontal--row">
         <div className="dateColumn">
           <h2>{format(date, "dd", { locale: enGB })}</h2>
@@ -25,12 +41,15 @@ function Screen3() {
           </p>
         </div>
         <div className="confirmationColumn">
-          <h2 style={{ marginBottom: "4px" }}>Out door Shoot</h2>
-          <p style={{ marginBottom: "20px" }}>Staff Member #1</p>
-          <p style={{ marginBottom: "8px" }}>1 hr | Meeting</p>
+          <h2 style={{ marginBottom: "4px" }}>
+            {service ? service[0] : "Ingen tjeneste valgt"}
+          </h2>
+          <p style={{ marginBottom: "8px" }}>
+            {service ? service[1] : "Ingen tidsmengde valgt"} |{" "}
+            {service ? service[2] : "Ingen type møte valgt"}
+          </p>
           <p>Olaveien 23 Pluto 6700</p>
         </div>
-        {/* <button>Add to My Google Calendar</button> */}
       </div>
     </div>
   );

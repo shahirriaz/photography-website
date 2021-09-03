@@ -3,11 +3,16 @@ import "./Banner.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useStateValue } from "./StateProvider";
+import smoothscroll from "smoothscroll-polyfill";
 
 function Banner({ img, title, subTitle, isBtn, isBtnPrice }) {
   const [{ ref }, dispatch] = useStateValue();
 
   const [image, setImage] = useState(0);
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
 
   useEffect(() => {
     AOS.init();

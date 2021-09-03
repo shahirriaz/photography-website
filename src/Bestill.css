@@ -1,16 +1,13 @@
 .bestill {
-  /* height: 100vh; */
+  height: auto;
   width: 100%;
   background-color: rgb(233, 233, 233);
   /* border: 1px solid red; */
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 6rem;
-
-  position: relative;
-  display: flex;
   align-items: flex-start;
+  margin-top: 6rem;
+  /* position: relative; */
 }
 
 ._loading_overlay_overlay {
@@ -24,31 +21,31 @@
   width: 100%;
   align-items: flex-start;
   justify-content: center;
-  /* border: 1px solid blue; */
+  /* border: 2px solid blue; */
   margin-top: 50px;
 }
+
+.secondary_container {
+  width: 50%;
+  max-width: 1200px;
+  margin: 1rem;
+  padding: 1rem;
+  /* border: 3px solid red; */
+}
+
+/* for targeting calendar specific */
+.specific--calendar--container--s1 {
+  width: 70%;
+  padding-bottom: 0.5rem;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
 ._loading_overlay_content,
 .css-42igfv {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-}
-.secondary_container {
-  width: 600px;
-  max-width: 1000px;
-  /* overflow: hidden; */
-  margin: 2rem;
-  padding: 2rem;
-  /* border: 1px solid red; */
-  height: 100vh;
-  margin-bottom: 15rem;
-}
-
-.calendar__container {
-  /* border: 1px solid red; */
-}
-
-.calendar__backBtn {
 }
 
 .calendar__backBtn {
@@ -80,10 +77,13 @@
 
 .calendar__firstHeading {
   margin-bottom: 5rem;
+  font-size: 28px;
+  font-weight: 600;
 }
-
-.calendar__heading2 {
-  /* margin-top: 6rem; */
+.calendar__valgdtDatoTxt {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 3px;
 }
 
 .wrapperSummray {
@@ -99,42 +99,6 @@
   width: 300px;
   height: 200px;
   position: fixed;
-  /* border: 1px solid red; */
-  /* position: absolute;
-  right: 5%;
-  top: 10%; */
-  /* background-color: red; */
-}
-
-.nice-dates-day {
-  font-size: 18px !important;
-}
-.nice-dates-week-header_day {
-  font-size: 18px !important;
-  font-weight: bold;
-  color: #111 !important;
-}
-
-.nice-dates-day_month {
-  font-size: 14px !important;
-  line-height: 0.5 !important;
-}
-
-.nice-dates-navigation_current {
-  font-size: 18px !important;
-}
-
-.nice-dates-day:after,
-.nice-dates-day:before {
-  border-radius: 0px !important;
-  background-color: #32292f !important;
-}
-.nice-dates-day:hover {
-  color: white !important;
-}
-
-.nice-dates-day.-disabled {
-  color: #b0b0b0 !important;
 }
 
 .summary__btn {
@@ -153,6 +117,74 @@
   border: none;
   color: white;
   margin-top: 2rem;
+}
+
+/* CALENDAR BUTTONS AND STYLES */
+.nice-dates-day {
+  font-size: 18px !important;
+}
+.nice-dates-week-header_day {
+  font-size: 18px !important;
+  font-weight: bold;
+  color: #111 !important;
+}
+
+.nice-dates-day_month {
+  font-size: 14px !important;
+  line-height: 0.5 !important;
+}
+
+.nice-dates-navigation_next:before {
+  border-right: 2px solid blue !important;
+  border-top: 2px solid blue !important;
+}
+
+.nice-dates-navigation_next:before {
+  border-right: 2px solid blue !important;
+  border-top: 2px solid blue !important;
+}
+
+.nice-dates-navigation_previous:before {
+  border-right: 2px solid blue !important;
+  border-top: 2px solid blue !important;
+}
+
+.nice-dates-navigation_previous.-disabled:before {
+  border-right: 2px solid rgba(0, 0, 255, 0.39) !important;
+  border-top: 2px solid rgba(0, 0, 255, 0.315) !important;
+}
+
+.nice-dates-navigation_current {
+  font-size: 18px !important;
+}
+
+.nice-dates-day {
+  color: blue !important;
+}
+
+.nice-dates-day:after,
+.nice-dates-day:before {
+  border-radius: 0px !important;
+  background-color: #32292f !important;
+}
+.nice-dates-day:hover {
+  color: white !important;
+}
+
+.nice-dates-day.-disabled {
+  color: #b0b0b0 !important;
+}
+
+.nice-dates-day.-highlight {
+  color: red !important;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M100 0 L0 100 ' stroke='black' stroke-width='1'/><path d='M0 0 L100 100 ' stroke='black' stroke-width='1'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 35% 35%, auto;
+}
+
+.nice-dates-day.-today {
+  color: black !important;
 }
 
 /* INPUT FIELDS */
@@ -219,15 +251,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 4px solid red; */
+  /* border: 1px solid blue; */
   margin-top: 2rem;
+}
+
+.selectTime {
+  margin-bottom: 2rem;
+  position: relative;
+  left: -104px;
+}
+
+.selectTime > h2 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.time--error {
+  margin-bottom: 2rem;
+  position: relative;
+  left: -100px;
+  font-size: 12px;
+  color: red;
 }
 
 .flex--container {
   display: flex;
   justify-content: space-between;
-  /* border: 4px solid red; */
-  width: 90%;
+  /* border: 2px solid red; */
+  width: 50%;
 }
 
 #scrollID {
@@ -239,16 +290,16 @@
 .flex--container h2 {
   font-weight: 300;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .flex--container p {
-  /* border: 1px solid red; */
   text-align: center;
   padding: 4px 12px;
   margin-bottom: 1rem;
   font-size: 12px;
+  font-weight: 400;
   border: 1px solid transparent;
-  /* pointer-events: none; */
 }
 
 .flex--container p:hover {
@@ -296,8 +347,6 @@
   /* border: 1px solid red; */
   font-size: 13px;
 }
-
-/* screen 3 */
 
 .screen3 {
   /* border: 1px solid red; */
@@ -348,4 +397,115 @@
 
 .confirmationColumn > h2 {
   font-weight: 500;
+}
+
+.MuiCircularProgress-svg {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .specific--calendar--container--s1 {
+    width: 100%;
+  }
+
+  .flex--container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .secondary_container {
+    /* border: 1px solid red; */
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .secondary_container {
+    width: 95%;
+    margin: 0rem;
+    padding: 0rem;
+  }
+
+  .nice-dates-day {
+    font-size: 12px !important;
+  }
+  .nice-dates-week-header_day {
+    font-size: 14px !important;
+    font-weight: bold;
+    color: #111 !important;
+  }
+
+  .nice-dates-day_month {
+    font-size: 12px !important;
+    line-height: 0.5 !important;
+  }
+
+  .nice-dates-navigation_current {
+    font-size: 16px !important;
+  }
+  .specific--calendar--container--s1 {
+    width: 100%;
+  }
+  .flex--container {
+    width: 100%;
+  }
+  .flex--container h2 {
+    font-size: 18px;
+  }
+  .calendar__firstHeading {
+    margin-bottom: 3rem;
+    font-size: 22px;
+  }
+  .calendar__valgdtDatoTxt {
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 1.5rem;
+  }
+  .calendar__backBtn {
+    margin-bottom: 2rem;
+  }
+
+  #timeNextBtn {
+    padding-right: 9rem;
+    padding-left: 9rem;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .wrapperSummray {
+    height: 100vh;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+
+  .summary {
+    margin: 0rem;
+    padding: 0;
+    /* float: left; */
+    width: 100%;
+    height: 100%;
+    position: inherit;
+    /* border: 1px solid red; */
+  }
+  .reviewBookingMobile > h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .summary--container {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    padding-top: 3rem;
+  }
+  .summary__btn {
+    padding-right: 9rem;
+    padding-left: 9rem;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }

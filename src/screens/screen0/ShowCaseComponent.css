@@ -1,0 +1,149 @@
+.showCase {
+  /* border: 1px solid red; */
+  width: 100vw;
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.showCase__banner {
+  color: white;
+  height: 33vh;
+  min-width: 100%;
+  position: relative;
+}
+
+.showCase__content--container {
+  /* border: 10px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.showCase__heading {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.showCase__heading > h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.showCase__cardContainer {
+  display: flex;
+  border: 1px solid rgb(180, 180, 180);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding: 10px; */
+}
+
+.duration {
+  border-right: 1px solid grey;
+  padding-right: 30px;
+}
+
+.showCase__desc {
+  padding-left: 30px;
+}
+
+.showCase__cardContainer p {
+  font-size: 13px;
+}
+
+.showCase__btn > button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 9px;
+  display: inline-block;
+  padding: 8px 25px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #32292f;
+  /* border: 1px solid white; */
+  border: none;
+  color: white;
+  margin-top: 2rem;
+}
+
+.showCase__serviceDescription {
+  /* border: 1px solid red; */
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.showCase__serviceDescription > h2 {
+  font-weight: 500;
+  font-size: 23px;
+  margin-bottom: 1rem;
+}
+
+.showCase__serviceDescription--p {
+  font-size: 13px;
+  max-width: 70%;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.showCase__hr {
+  margin-top: 2rem;
+  width: 50%;
+}
+
+.showCase {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .showCase__heading > h1 {
+    font-size: 32px;
+  }
+}

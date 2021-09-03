@@ -1,6 +1,6 @@
 {
   "name": "photography",
-  
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,6 @@
     "date-fns": "^2.23.0",
     "firebase": "^8.9.1",
     "i": "^0.3.6",
-    "ignore-styles": "^5.0.1",
     "react": "^17.0.2",
     "react-burger-menu": "^3.0.6",
     "react-countup": "^5.2.0",
@@ -37,14 +36,14 @@
     "react-spinners": "^0.11.0",
     "react-spring": "^9.2.4",
     "react-visibility-sensor": "^5.1.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "ssr" : "node server/index.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

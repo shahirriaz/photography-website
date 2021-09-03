@@ -300,26 +300,3 @@ function ContactForm({ submitForm }) {
 }
 
 export default ContactForm;
-
-// if (Object.keys(errors).length === 0) {
-
-//   Axios.post("http://localhost:3001/contact", {
-//     firstName: user.name,
-//     email: user.email,
-//     phone: user.phone,
-//     type: user.type,
-//     age: user.age,
-//     dato: user.date,
-//   }).then(response => {
-//     console.log(response.status);
-
-//     setProcessing(false);
-//     setSucceeded(true);
-//   });
-//   // .catch(error => {
-//   //   console.log(error);
-//   // });
-//   // alert("Posted");
-// } else {
-//   alert("Cannot post data");
-// }

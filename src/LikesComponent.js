@@ -12,14 +12,14 @@ function LikesComponent({ id, iconId }) {
   const [iconColor, setIconColor] = useLocalState(iconId, "grey");
   const [counter, setCounter] = useState("");
 
-  // useEffect(() => {
-  //   db.collection("likes")
-  //     .doc(id)
-  //     .onSnapshot(doc => {
-  //       setLikes(Object.values(doc.data()));
-  //     });
-  //   setCounter(db.collection("likes").doc(id));
-  // }, []);
+  useEffect(() => {
+    db.collection("likes")
+      .doc(id)
+      .onSnapshot(doc => {
+        setLikes(Object.values(doc.data()));
+      });
+    setCounter(db.collection("likes").doc(id));
+  }, []);
 
   return (
     <div className="like--container">
