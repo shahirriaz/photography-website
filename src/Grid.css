@@ -47,7 +47,7 @@
 }
 
 .overLay50--opacity {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 768px) {
@@ -121,4 +121,10 @@
     opacity: 0.6;
     cursor: pointer;
   }
+  /* desktop behaviour */
+.likesContainer {
+  top: 75%;
+  left: 5%;
+}
+
 }

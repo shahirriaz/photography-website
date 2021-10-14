@@ -73,13 +73,16 @@
     flex-direction: column;
     flex-basis: 50%;
   }
-}
-@media screen and (max-width: 768px) {
-  .serviceCard--container {
-    flex-direction: column;
-    flex-basis: 50%;
+  .screen0 > h1 {
+    width: 100%;
+    padding-bottom: 3rem;
+    margin: auto;
+    padding-left: 0px;
+    text-align: center;
+    white-space: nowrap;
   }
 }
+
 @media screen and (max-width: 500px) {
   .serviceCard--container {
     flex-direction: column;
