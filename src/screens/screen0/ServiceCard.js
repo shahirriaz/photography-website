@@ -10,17 +10,11 @@ import { useStateValue } from "../../StateProvider";
 
 function ServiceCard({ image, heading, hour, desc, handleClick, idForPath }) {
   const [state, dispatch] = useStateValue();
-  const { step, summary } = useParams();
-  const { path } = useRouteMatch();
   const history = useHistory();
 
   //push to next screen code
-  const handleClick2 = next => () => {
-    history.push(
-      generatePath(path, {
-        step: Math.max(1, Math.min(Number(step) + next, 3)),
-      })
-    );
+  const handleClick2 = () => {
+    history.push("/bestill/step/1");
     dispatch({
       type: "SEND_SERVICE",
       service: [heading, hour, desc],
@@ -37,9 +31,9 @@ function ServiceCard({ image, heading, hour, desc, handleClick, idForPath }) {
         <h2>{heading}</h2>
         <p className="serviceCard__content--p">{hour}</p>
         <p className="serviceCard__content--p">{desc}</p>
-      </div>
       <div className="serviceCard__btn">
-        <button onClick={handleClick2(1)}>Lets meet</button>
+        <button onClick={handleClick2}>La oss møtes</button>
+      </div>
       </div>
     </div>
   );

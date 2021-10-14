@@ -52,7 +52,7 @@ function Par() {
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
           title="Par fotografering"
-          description="Memorylane har lang erfaring med å ta bilder av par, og vi vet hvilke knapper vi skal trykke på for å forevige de gode øyeblikkene og uttrykkene som brått forsvinner. Vi kommer gjerne hjem til dere, blir med på en aktivitet dere liker, eller bevarer et av de mange øyeblikkene som utgjør hverdagen."
+          subTitle="Memorylane har lang erfaring med å ta bilder av par, og vi vet hvilke knapper vi skal trykke på for å forevige de gode øyeblikkene og uttrykkene som brått forsvinner. Vi kommer gjerne hjem til dere, blir med på en aktivitet dere liker, eller bevarer et av de mange øyeblikkene som utgjør hverdagen."
           isFontColorWhite
           isMargin
           isPadding
@@ -60,7 +60,7 @@ function Par() {
 
         {imgsLoaded ? (
           <Carousel useKeyboardArrows={true} showThumbs={false}>
-            {galleryCoupleCollection.map(image => (
+            {galleryCoupleCollection.map((image) => (
               <div key={image.id} className="imageCarousel__image">
                 <img src={image.src} />
               </div>

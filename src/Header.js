@@ -62,7 +62,7 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
       } ${isSticky && "header__sticky"} `}
     >
       <div className="header__logo">
-        <NavLink to="/home">
+        <NavLink to="/hjem">
           {isAnimated ? (
             <img
               className="header__mobileLogo"
@@ -339,6 +339,24 @@ function Header({ isAnimated, isAbsoluteFixed, isSticky }) {
                             </div>
                           </Expand>
                         </div>
+                        <div className="header__border"></div>
+                        <NavLink
+                          exact
+                          to="/bestill/step/0"
+                          onClick={() => setShowMenu(!showMenu)}
+                          style={{ textDecoration: "none" }}
+                          activeclassname="header__heading--active2"
+                        >
+                          <h4
+                            style={{
+                              fontSize: "16px",
+                              color: "#fff",
+                              fontWeight: "normal",
+                            }}
+                          >
+                            Bestill
+                          </h4>
+                        </NavLink>
                         <div className="header__border"></div>
                         <NavLink
                           exact

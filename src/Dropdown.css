@@ -47,10 +47,10 @@
   border: solid #ccc;
   border-width: 0 1px 1px 0;
   float: right;
-  margin-top: 12px;
-  margin-left: 17px;
+  margin-top: 10.5px;
+  margin-left: 15px;
 
-  padding: 5px;
+  padding: 4px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }

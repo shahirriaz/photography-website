@@ -5,22 +5,25 @@ import { useStateValue } from "../../StateProvider";
 import db from "./../../firebase";
 
 function Screen3() {
-  const [{ date, timePicked, service, inputUser }, dispatch] = useStateValue();
+  const [
+    { date, timePicked, service, inputUser, serviceFromShowCase },
+    dispatch,
+  ] = useStateValue();
 
   //when this last component mounts... everything  must be pushes to db or whatever
-  useEffect(() => {
-    if (date !== undefined || null) {
-      if (date && timePicked && service && inputUser) {
-        db.collection("bookingDate")
-          .doc(format(date, "dd MMM yyyy").toString())
-          .set({
-            date: date,
-          });
-      } else {
-        console.log("error");
-      }
-    }
-  }, [date]);
+  // useEffect(() => {
+  //   if (date !== undefined || null) {
+  //     if (date && timePicked && service && inputUser) {
+  //       db.collection("bookingDate")
+  //         .doc(format(date, "dd MMM yyyy").toString())
+  //         .set({
+  //           date: date,
+  //         });
+  //     } else {
+  //       console.log("error");
+  //     }
+  //   }
+  // }, [date]);
 
   return (
     <div className="screen3">
@@ -42,13 +45,14 @@ function Screen3() {
         </div>
         <div className="confirmationColumn">
           <h2 style={{ marginBottom: "4px" }}>
-            {service ? service[0] : "Ingen tjeneste valgt"}
+            {service[0] || serviceFromShowCase[0] || "Familie Shoot"}
           </h2>
           <p style={{ marginBottom: "8px" }}>
-            {service ? service[1] : "Ingen tidsmengde valgt"} |{" "}
-            {service ? service[2] : "Ingen type møte valgt"}
+            {service[1] || serviceFromShowCase[1]}{" "}
+            {service[2] ||
+              serviceFromShowCase[2] ||
+              `1 time | ${" "} Innledende møte`}
           </p>
-          <p>Olaveien 23 Pluto 6700</p>
         </div>
       </div>
     </div>

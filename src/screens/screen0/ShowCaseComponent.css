@@ -1,25 +1,33 @@
 .showCase {
-  /* border: 1px solid red; */
+  /* border: 10px solid red; */
   width: 100vw;
+  /* height: 100vh; */
+  /* height: 100vh; */
   position: absolute;
+  height: 100vh;
   top: 30%;
   right: 50%;
   transform: translate(50%, -50%);
+  background-color: rgb(233, 233, 233);
 }
 
+ 
 .showCase__banner {
   color: white;
-  height: 33vh;
-  min-width: 100%;
-  position: relative;
+  height: 50vh;
+  max-width: 100%;
+  /* position: relative; */
 }
 
 .showCase__content--container {
   /* border: 10px solid red; */
+  /* height: 60vh; */
+  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgb(233, 233, 233);
 }
 
 .showCase__heading {
@@ -71,6 +79,10 @@
   border: none;
   color: white;
   margin-top: 2rem;
+}
+
+.showCase__btn > button:hover {
+  cursor: pointer;
 }
 
 .showCase__serviceDescription {

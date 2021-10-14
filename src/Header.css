@@ -5,7 +5,7 @@
   z-index: 100;
   width: 100%;
   top: 0;
-  padding: 10px 5px;
+  padding: 5px 5px;
   position: relative;
 }
 
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 900px;
+  max-width: 650px;
   width: 100%;
   margin-right: 120px;
   /* border: 1px solid red; */
@@ -48,23 +48,33 @@
 
 .header__title {
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+
 }
 
 .header__titleWhite {
-  color: rgb(248, 248, 248);
+  color: #ffff;
 }
 
 .header__titleBlack {
-  color: #202020;
+  /* color: #202020; */
+  color: #2c2c2b;
 }
 
-.header__title:hover {
-  color: #787878;
+.header__titleBlack:hover {
+  color: #ff8c27;
   cursor: pointer;
+   
 }
+
+.header__titleWhite:hover {
+  color: #ff8c27;
+  cursor: pointer;
+   
+}
+
 
 .header__heading--active {
   border-bottom: 3px solid #ff8c27;

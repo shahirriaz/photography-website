@@ -6,7 +6,7 @@ import Banner from "./Banner";
 import sun from "./images/sun.png";
 import suitcase from "./images/suitcase.png";
 import ring from "./images/ring.png";
-import mitchi from "./images/gallery/autumn/autumn_9.jpg";
+// import mitchi from "./images/gallery/autumn/autumn_9.jpg";
 
 function AboutUs() {
   // useEffect(() => {
@@ -15,7 +15,14 @@ function AboutUs() {
 
   return (
     <div className="aboutUs">
-      <Banner img={mitchi} title="Ektepar" subTitle="Om oss" />
+      <Banner
+        img="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"
+        // title="Om"
+        // subTitle="Om oss"
+        positionX="50%"
+        positionY="70%"
+        // isBtn
+      />
       <MainRow
         subTitle="Vi er et ektepar som fotograferer familier, par og barn. Fotografi er noe vi begge har alltid vært interessert, og det gir oss mulighet til å skape noe magisk sammen. Vi får møte så mange fantastiske mennesker, og får muligheten til å vitne og forevige både store og små øyeblikk i deres liv. Dette gir oss glede, og er drivkraften vår."
         isFontColorWhite
@@ -105,7 +112,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="aboutUs__mainContainer--2">
+      {/* <div className="aboutUs__mainContainer--2">
         <div className="wrapper">
           <div className="aboutUs__mainContainer--2__left">
             <div className="mainContainer--2__left__heading">
@@ -144,7 +151,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="aboutUs__mainContainer--1">
         <div className="aboutUs__left">
           <div className="left__heading">

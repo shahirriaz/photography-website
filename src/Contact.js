@@ -13,12 +13,13 @@ function Contact() {
 
   return (
     <div className="contact">
-      {!formIsSubmitted ? (
+      <h1 style={{fontSize: "9rem", marginTop: "4rem"}}>Under utvikling</h1>
+      {/* {!formIsSubmitted ? (
         <ContactForm submitForm={submitForm} />
       ) : (
         <YourInformation />
       )}
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

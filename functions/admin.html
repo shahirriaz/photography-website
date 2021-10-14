@@ -1,0 +1,127 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ml foto Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://us-central1-photography-5b191.cloudfunctions.net/api/admin.scss"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="http://localhost:5001/photography-5b191/us-central-1/api/admin.scss"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/photography-5b191.appspot.com/o/logo_black.png?alt=media&token=3bcaf3d5-e6e8-49c7-a052-2a96dd9a8dff"
+          alt=""
+        />
+      </div>
+      <div class="welcomeMessage">
+        <p id="welcome"></p>
+      </div>
+    </header>
+
+    <div class="main--container">
+      <div class="side--panel">
+        <ul>
+          <li class="active side--menu">Endre Booking dato</li>
+          <li class="side--menu">Alle bookinger</li>
+        </ul>
+      </div>
+
+      <div class="main--panel">
+        <div class="mb-3">
+          <label for="dateToDisable" class="form-label">Velg dato</label>
+          <input
+            class="form-control form-control-lg"
+            type="datetime-local"
+            placeholder="Velg dato"
+          />
+        </div>
+
+        <div class="centerContent">
+          <div class="booked">
+            <h1>Booked dato:</h1>
+            <ul style="margin-bottom: 10rem" id="aside"></ul>
+          </div>
+
+          <div class="chosen">
+            <h1>Valgt dato:</h1>
+            <ul id="aside2"></ul>
+          </div>
+        </div>
+
+        <div class="btnContainer">
+          <button class="button" id="buttonSend">Deaktiver valgt dato</button>
+          <button class="button" id="buttonSend2">Aktiver valgt dato</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="content">
+      <h1 id="welcome"></h1>
+    </div>
+    <div class="mb-3">
+      <label for="dateToDisable" class="form-label">Velg dato</label>
+      <input
+        class="form-control form-control-lg"
+        type="datetime-local"
+        placeholder="Velg dato"
+      />
+    </div>
+
+    <div class="centerContent">
+      <aside>
+        <div class="aside">
+          <div class="asideContainer">
+            <h1>Booked dato:</h1>
+            <ul style="margin-bottom: 10rem;" id="aside"></ul>
+            <h1>Valgt dato:</h1>
+            <ul id="aside2"></ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="btnContainer">
+      <button class="button" id="buttonSend">Deaktiver valgt dato</button>
+      <button class="button" id="buttonSend2">Aktiver valgt dato</button>
+    </div> -->
+
+    <!-- <script
+      type="module"
+      src="http://localhost:5001/photography-5b191/us-central-1/api/admin.js"
+    ></script> -->
+    <script
+      type="module"
+      src="https://us-central1-photography-5b191.cloudfunctions.net/api/admin.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

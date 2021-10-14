@@ -41,8 +41,8 @@ function App() {
             <Gallery />
           </Route>
 
-          {/*       <Redirect to="/step/1" /> */}
           <Route path="/">
+            <Redirect to="/hjem" />
             <Header isAnimated isAbsoluteFixed />
             <Home />
           </Route>

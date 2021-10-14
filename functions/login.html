@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://us-central1-photography-5b191.cloudfunctions.net/api/login.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="  http://localhost:5001/photography-5b191/us-central-1/api/login.css"
+    /> -->
+    <style>
+      .logo {
+        margin-left: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <header>
+        <img
+          class="logo"
+          src="https://firebasestorage.googleapis.com/v0/b/photography-5b191.appspot.com/o/logo_black.png?alt=media&token=3bcaf3d5-e6e8-49c7-a052-2a96dd9a8dff"
+          alt=""
+          width="200px"
+        />
+      </header>
+      <div class="login-triangle"></div>
+      <h2 class="login-header">Log in</h2>
+      <form class="login-container">
+        <p><input id="email" type="email" placeholder="Email" /></p>
+        <p><input id="password" type="password" placeholder="Password" /></p>
+        <p><input id="login" type="submit" value="Log in" /></p>
+      </form>
+    </div>
+    <script
+      type="module"
+      src="https://us-central1-photography-5b191.cloudfunctions.net/api/auth.js"
+    ></script>
+    <!-- <script
+      type="module"
+      src="http://localhost:5001/photography-5b191/us-central-1/api/auth.js"
+    ></script> -->
+  </body>
+</html>

@@ -6,24 +6,24 @@ import Expand from "react-expand-animated";
 import LoadingOverlay from "react-loading-overlay";
 import { CircularProgress } from "@material-ui/core";
 
-function Screen2({ handleBackBtn, mainFunction }) {
+function Screen2({ handleBackBtn, mainFunction, processingReq }) {
   const [loaded, setLoaded] = useState(true); //must be true
-  const [{ errorInput }, dispatch] = useStateValue();
+  const [{ errorInput, storeInputUser }, dispatch] = useStateValue();
   const [inputUser, setInputUser] = useState({
-    name: "",
-    email: "",
-    number: "",
-    message: "",
+    name: storeInputUser?.name,
+    email: storeInputUser?.email,
+    number: storeInputUser?.number,
+    message: storeInputUser?.message,
   });
   useEffect(() => {
     if (loaded) {
-      setTimeout(() => setLoaded(false), 1000);
+      setTimeout(() => setLoaded(false), 0);
     }
     // console.log(loaded);
   }, [loaded]);
 
   let name, value;
-  const handleChange = e => {
+  const handleChange = (e) => {
     name = e.target.name;
     value = e.target.value;
 
@@ -38,19 +38,23 @@ function Screen2({ handleBackBtn, mainFunction }) {
       type: "SEND_INPUTUSER",
       inputUser: inputUser,
     });
+    dispatch({
+      type: "SEND_INPUTUSER-GLOBAL",
+      storeInputUser: inputUser,
+    });
   }, [inputUser]);
 
   return (
     <LoadingOverlay active={loaded} spinner={<CircularProgress />}>
       <div className="bestill__input--container">
         <button onClick={handleBackBtn} className="calendar__backBtn" href="">
-          Back
+          Tilbake
         </button>
         <h1 style={{ marginBottom: "50px" }} className="calendar__firstHeading">
-          Add your info
+          Legg til info
         </h1>
-        <p style={{ marginBottom: "40px" }}>Tell us a bit about yourself</p>
-        <p>Name</p>
+        <p style={{ marginBottom: "40px" }}>Fortell oss litt om deg selv</p>
+        <p>Navn</p>
         <div className="input--name">
           <input
             value={inputUser.name}
@@ -60,7 +64,7 @@ function Screen2({ handleBackBtn, mainFunction }) {
           />
           {errorInput.name && <p className="input__error">{errorInput.name}</p>}
         </div>
-        <p style={{ marginTop: errorInput ? "2rem" : "" }}>Emaill</p>
+        <p style={{ marginTop: errorInput ? "2rem" : "" }}>E-post</p>
         <div className="input--email">
           <input
             value={inputUser.email}
@@ -71,7 +75,7 @@ function Screen2({ handleBackBtn, mainFunction }) {
         </div>
         {errorInput.email && <p className="input__error">{errorInput.email}</p>}
 
-        <p>Phone number</p>
+        <p>Mobil nummer</p>
         <div className="input--number">
           <input
             value={inputUser.number}
@@ -84,14 +88,16 @@ function Screen2({ handleBackBtn, mainFunction }) {
           )}
         </div>
 
-        <p style={{ marginTop: errorInput ? "2rem" : "" }}>Add your message</p>
+        <p style={{ marginTop: errorInput ? "2rem" : "" }}>Legg til melding</p>
         <div className="input--message">
-          <input
+          <textarea
+          className="userMessage"
             value={inputUser.message}
             name="message"
             onChange={handleChange}
             type="text"
           />
+          {/* <input /> */}
         </div>
         {errorInput.message && (
           <p className="input__error">{errorInput.message}</p>
@@ -104,8 +110,16 @@ function Screen2({ handleBackBtn, mainFunction }) {
               id="timeNextBtn"
               className="summary__btn"
             >
-              {" "}
-              Bestill
+              <span>
+                {processingReq ? (
+                  <CircularProgress
+                    className="circularSVG"
+                    style={{ color: "white" }}
+                  />
+                ) : (
+                  "Bestill"
+                )}
+              </span>
             </button>
           ) : null}
         </div>

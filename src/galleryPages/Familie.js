@@ -55,7 +55,7 @@ function Familie() {
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
           title="Familie fotografering"
-          description="Familibilder kobler oss til våre røtter, og hvor vi kommer fra. Det er så viktig å forevige de fine øyeblikkene en har sammen. En dag vil disse bildene være det eneste barnet har av deg. Vi tenker ofte på hvordan fremtiden vil være, men glemmer å forevige de fine minnene vi har idag."
+          subTitle="Familibilder kobler oss til våre røtter, og hvor vi kommer fra. Det er så viktig å forevige de fine øyeblikkene en har sammen. En dag vil disse bildene være det eneste barnet har av deg. Vi tenker ofte på hvordan fremtiden vil være, men glemmer å forevige de fine minnene vi har idag."
           isFontColorWhite
           isMargin
           isPadding
@@ -67,7 +67,7 @@ function Familie() {
             dynamicHeight={true}
             autoplay={false}
           >
-            {galleryFamilyCollection.map(image => (
+            {galleryFamilyCollection.map((image) => (
               <div key={image.id} className="imageCarousel__image">
                 <img src={image.src} />
               </div>

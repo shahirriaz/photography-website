@@ -13,6 +13,7 @@ function LikesComponent({ id, iconId }) {
   const [counter, setCounter] = useState("");
 
   useEffect(() => {
+    // console.log("i am running ")
     db.collection("likes")
       .doc(id)
       .onSnapshot(doc => {

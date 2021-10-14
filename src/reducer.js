@@ -9,10 +9,13 @@ export const initialState = {
   serviceFromShowCase: [],
   storeDate: null,
   storeTimeStamp: null,
+  theme: null,
+  storeInputUser: {},
+  width: window.innerWidth,
 };
 
 const reducer = (state, action) => {
-  // console.log(action);
+  // console.log(action)
   switch (action.type) {
     case "SEND_USER":
       return {
@@ -64,6 +67,22 @@ const reducer = (state, action) => {
       return {
         ...state,
         storeTimeStamp: action.storeTimeStamp,
+      };
+
+    case "SEND_THEME":
+      return {
+        ...state,
+        theme: action.theme,
+      };
+    case "SEND_INPUTUSER-GLOBAL":
+      return {
+        ...state,
+        storeInputUser: action.storeInputUser,
+      };
+    case "SEND_WIDTH":
+      return {
+        ...state,
+        width: action.width,
       };
 
     default:

@@ -54,7 +54,7 @@ function Gravid() {
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
           title="Barn"
-          description="Lorem ipsun"
+          subTitle="Lorem ipsun"
           isFontColorWhite
           isMargin
           isPadding
@@ -66,7 +66,7 @@ function Gravid() {
             autoplay={false}
             dynamicHeight={true}
           >
-            {galleryGravidCollection.map(image => (
+            {galleryGravidCollection.map((image) => (
               <div key={image.id} className="imageCarousel__image">
                 <img src={image.src} />
               </div>

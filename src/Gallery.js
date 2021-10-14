@@ -18,7 +18,7 @@ function Gallery() {
       {name === "barn" ? <Ettår /> : null}
       {name === "portrett" ? <Portrett /> : null}
       {name === "gravid" ? <Gravid /> : null}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

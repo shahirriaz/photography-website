@@ -6,6 +6,7 @@
 .screen0 section {
   display: flex;
   justify-content: center;
+  /* border: 1px solid red; */
 }
 
 .screen0 > h1 {
@@ -13,6 +14,7 @@
   font-weight: 600;
   margin-bottom: 3rem;
   padding-left: 12px;
+  margin-left: 7.5rem;
 }
 
 .screen0 {
@@ -59,12 +61,28 @@
 }
 
 .serviceCard--container {
+  box-sizing: border-box;
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 768px) {
   .serviceCard--container {
     flex-direction: column;
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .serviceCard--container {
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .serviceCard--container {
+    flex-direction: column;
+    flex-basis: 90%;
   }
 }

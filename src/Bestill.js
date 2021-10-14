@@ -22,26 +22,32 @@ import Screen0 from "./screens/screen0/Screen0";
 import ReviewBookingMobile from "./screens/ReviewBookingMobile";
 
 function Bestill() {
-  const [{ date, timePicked, inputUser, service }, dispatch] = useStateValue();
+  const [
+    { date, timePicked, inputUser, service, serviceFromShowCase },
+    dispatch,
+  ] = useStateValue();
   const [userDataCorrect, setUserDataCorrect] = useState(false);
   const [showS3, setShowS3] = useState(false);
   const [showingOneAndTwo, setshowingOneAndTwo] = useState(true);
   const [showSummary, setShowSummary] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
+  const [processingReq, setProcessingReq] = useState(false);
+  const [someState, setSomeState] = useState(true);
 
   useEffect(() => {
     const upDateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setWidth(newWidth);
+      dispatch({
+        type: "SEND_WIDTH",
+        width: width,
+      });
     };
-
     window.addEventListener("resize", upDateWindowDimensions);
     return () => {
       window.removeEventListener("resize", upDateWindowDimensions);
     };
-  }, []);
-
-  console.log(width);
+  }, [width]);
 
   const history = useHistory();
   const { step } = useParams();
@@ -55,13 +61,6 @@ function Bestill() {
   //Erorr
   const [error, setError] = useState(false);
   const [timeError, setTimeError] = useState(false);
-
-  // useEffect(() => {
-  //   if (loaded) {
-  //     setTimeout(() => setLoaded(false), 1000);
-  //   }
-
-  // }, [loaded]);
 
   //error handling screen1
   useEffect(() => {
@@ -88,19 +87,18 @@ function Bestill() {
       });
     }
     if (Object.keys(errorInput).length === 0 && userDataCorrect) {
-      if (date && service.length != 0) {
+      setProcessingReq(true);
+      if (date) {
         handleSendingDataToServer();
-      } else alert("Vennligst velg dato eller tjeneste");
+      } else alert("Vennligst velg dato");
     }
   }, [errorInput]);
 
+  //responsible for conditionally showing screens
   useEffect(() => {
     if (showS3) {
       setShowSummary(true);
       setshowingOneAndTwo(false);
-    } else {
-      // setLoaded(true);
-      //show a spinner on next button when sending data or whatever
     }
   }, [showS3]);
 
@@ -115,36 +113,41 @@ function Bestill() {
     } else return true;
   }
 
-  const nextStep = next => {
+  const nextStep = (next) => {
     history.push(
       generatePath(path, {
-        step: Math.max(1, Math.min(Number(step) + next, 2)),
+        step: Math.max(1, Math.min(Number(step) + next, 3)),
       })
     );
   };
 
-  const renderStep = step => {
+  const renderStep = (step) => {
     switch (step) {
-      // case 3:
-      //   return (
-      //     <Screen2 mainFunction={mainFunction} handleBackBtn={handleBackBtn} />
-      //   );
+      case 3:
+        return (
+          <Screen2
+            processingReq={processingReq}
+            mainFunction={mainFunction}
+            handleBackBtn={handleBackBtn}
+          />
+        );
 
       case 2:
         if (width <= 500) {
-          console.log("im running");
           return <ReviewBookingMobile handleNextScreen={mainFunction} />;
-        } else if (width >= 768) {
+        } else if (width >= 500) {
           return (
             <Screen2
+              processingReq={processingReq}
               mainFunction={mainFunction}
               handleBackBtn={handleBackBtn}
             />
           );
         }
-
+        break;
       case 1:
         return <Screen1 timeError={timeError} mainFunction={mainFunction} />;
+
       case 0:
         return <Screen0 />;
       default:
@@ -152,22 +155,22 @@ function Bestill() {
   };
 
   const mainFunction = () => {
-    console.log("HEllo");
     setUserDataCorrect(true);
     if (step === "1") {
       handleNextScreen1();
     } else if (step === "2" && width <= 500) {
       nextStep(1);
-    } else if (step === "2" && width >= 768) {
+    } else if (step === "2" && width >= 500) {
+      handleNextScreen2();
+    } else if (step === "3" && width <= 500) {
       handleNextScreen2();
     }
-    // else if (step === "3") {
-    //   handleNextScreen2();
-    // }
   };
 
   const handleBackBtn = () => {
-    nextStep(-1);
+    if (step === "3" && width >= 500) {
+      nextStep(-2);
+    } else nextStep(-1);
   };
 
   const handleNextScreen1 = () => {
@@ -191,45 +194,53 @@ function Bestill() {
         date: format(date, "dd MMM yyyy", { locale: enGB }),
         timePicked: timePicked,
         inputUser: inputUser,
-        typeOfShoot: service[0],
-        durationOfShoot: service[1],
-        typeOfMeeting: service[2],
+        typeOfShoot: service[0] || serviceFromShowCase[0],
+        durationOfShoot: service[1] || serviceFromShowCase[1],
+        typeOfMeeting: service[2] || serviceFromShowCase[2],
       },
       timeout: 10000,
       headers: { "Content-Type": "application/json" },
     })
-      .then(response => {
+      .then((response) => {
         //  console.log(response.status);
         if ((response.status = 201)) {
           setShowS3(true);
+          setProcessingReq(false);
+          setSomeState(false);
           //  console.log(showS3);
         } else {
           alert("error");
         }
       })
-      .catch(err => {
+      .catch((err) => {
         alert(err);
+        setProcessingReq(false);
       });
   };
 
-  console.log(width);
+  // console.log(width);
 
   return (
     <div className="bestill">
       <div className="mainContainer--bestill">
-        <div className="secondary_container">
+        <div
+          className="secondary_container"
+          style={{
+            width:
+              step === "0" ? "90%" : step === "1" && width <= 500 ? "90%" : "",
+          }}
+        >
           {showingOneAndTwo && renderStep(Number(step))}
 
           {showSummary && <Screen3 />}
         </div>
-        {step != "0" && width >= 500 ? (
+        {step != "0" && width >= 501 && someState ? (
           <SummaryComponent
-            date={date}
-            timePicked={timePicked}
             handleNextScreen={mainFunction}
             error={error}
             timeError={timeError}
             showSummary={showSummary}
+            processingReq={processingReq}
           />
         ) : null}
       </div>
@@ -238,101 +249,3 @@ function Bestill() {
 }
 
 export default Bestill;
-
-// useEffect(() => {
-//   if (date) {
-//     ref?.current?.scrollIntoView({ behavior: "smooth" });
-//     setIsVisible(true);
-//     setError(false);
-//   }
-//   if (timePicked) setTimeError(false);
-// }, [date, timePicked]);
-
-// useEffect(() => {
-//   if (loaded) {
-//     setTimeout(() => setLoaded(false), 1000);
-//   }
-//   // console.log(loaded);
-// }, [loaded]);
-
-// {showingScreen1 || showingScreen2 ? (
-//   <>
-//     {showingScreen2 ? (
-//       <button
-//         onClick={handleBackClick}
-//         className="calendar__backBtn"
-//         href=""
-//       >
-//         Back
-//       </button>
-//     ) : (
-//       ""
-//     )}
-
-// <h1 className="calendar__firstHeading">
-//   {showingScreen1 ? "Schedule Online" : "Add your info"}
-// </h1>
-// {showingScreen1 ? (
-//   <p style={{ fontSize: "18px" }}>
-//     Selected date:{" "}
-//     {date
-//       ? format(date, "dd MMM yyyy", { locale: enGB })
-//       : "Ingen valgt"}
-//     .
-//   </p>
-// ) : (
-//   <p style={{ fontSize: "18px" }}>
-//     {showingScreen2 ? "Tell us a bit about yourself" : ""}
-//   </p>
-// )}
-//     <div id="scrollID" className="calendar__container">
-//       <div className="box" id="box-1">
-//         {showingScreen1 && <Screen1 />}
-//       </div>
-//       <div className="box" id="box-2">
-//         {showingScreen2 && <InputFieldComponent />}
-//       </div>
-//     </div>
-//   </>
-// ) : (
-//   <div className="box" id="box-3">
-//     {showingScreen3 && <Screen3 />}
-//   </div>
-// )}
-
-{
-  /* <LoadingOverlay
-            active={loaded}
-            spinner={<CircularProgress />}
-            text="Loading your content..."
-          > */
-}
-
-{
-  /* </LoadingOverlay> */
-}
-
-// <h1 className="calendar__firstHeading">
-// {showingScreen1 ? "Schedule Online" : "Add your info"}
-// </h1>
-// {showingScreen1 ? (
-// <p style={{ fontSize: "18px" }}>
-//   Selected date:{" "}
-//   {date
-//     ? format(date, "dd MMM yyyy", { locale: enGB })
-//     : "Ingen valgt"}
-//   .
-// </p>
-// ) : (
-// <p style={{ fontSize: "18px" }}>
-//   {showingScreen2 ? "Tell us a bit about yourself" : ""}
-// </p>
-// )}
-
-// if (Object.keys(errorInput).length === 0 && showingScreen2 === false) {
-//   nextStep(1);
-// } else return;
-
-// setLoaded(!loaded);
-// only reset to top screen if user has picked date and time
-// if (date && timePicked) window.scrollTo(0, 0);

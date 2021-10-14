@@ -54,7 +54,7 @@ function Barn() {
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
           title="Barn"
-          description="Før man klarer å tenke seg om, har barna blitt store og flytter ut. Forevig de første stegene, de første årene, og barndommens fine minner. Du vil sitte igjen med fine minner som vil vare ut livet."
+          subTitle="Før man klarer å tenke seg om, har barna blitt store og flytter ut. Forevig de første stegene, de første årene, og barndommens fine minner. Du vil sitte igjen med fine minner som vil vare ut livet."
           isFontColorWhite
           isMargin
           isPadding

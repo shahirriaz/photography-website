@@ -2,14 +2,12 @@ require("dotenv").config();
 const functions = require("firebase-functions");
 const express = require("express");
 const { check, validationResult } = require("express-validator");
-// const db = require("./db");
-// const nodemailer = require("nodemailer");
-// const mailGun = require("nodemailer-mailgun-transport");
 const rateLimit = require("express-rate-limit");
-
+const path = require("path");
 const admin = require("firebase-admin");
+const mainMail = require("./email-util.js");
 
-const serviceAccount = require("./photography-5b191-firebase-adminsdk-um8kz-096fadb78a.json");
+const serviceAccount = require("./serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -27,11 +25,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: true, credentials: true }));
 
-app.use(function (req, res, next) {
-  res.setHeader("Content-Type", "application/json");
-  next();
-});
-
 app.post(
   "/bekreftelse",
   limiter,
@@ -39,115 +32,29 @@ app.post(
   check("timePicked").notEmpty(),
   check("inputUser").notEmpty(),
   function (req, res) {
-    // console.log(req.body);
-    console.log("i am logging from server");
     const errors2 = validationResult(req);
-    // console.log(errors2);
     if (!errors2.isEmpty()) {
       return res.status(400).send({
         message: "Error, something went wrong",
       });
     } else {
       res.status(201).send("Created user");
-      // const bodyFromClient = ({
-      //   date,
-      //   timePicked,
-      //   inputUser: { name, email, number, message },
-      //   typeOfShoot,
-      //   durationOfShoot,
-      //   typeOfMeeting,
-      // } = req.body);
-      // sendMail(email, message, bodyFromClient, function (err, data) {
-      //   if (err) {
-      //     console.log(err);
-      //   } else {
-      //     console.log("Email sendt");
-      //     return;
-      //   }
-      // });
+      mainMail(req.body);
     }
   }
 );
 
-// const auth = {
-//   auth: {
-//     api_key: process.env.MAIL_GUN_API,
-//     domain: process.env.MAIL_GUN_DOMAIN,
-//   },
-//   host: "api.eu.mailgun.net",
-// };
-// const transporter = nodemailer.createTransport(mailGun(auth));
+app.use(express.static("public/js"));
+app.use(express.static("public/css"));
 
-// const sendMail = (
-//   email,
-//   subject,
-//   {
-//     date,
-//     timePicked,
-//     inputUser: { name, number, message },
-//     typeOfShoot,
-//     durationOfShoot,
-//     typeOfMeeting,
-//   },
-//   cb
-// ) => {
-//   const mailOptions = {
-//     from: email,
-//     to: "shallagutten@hotmail.com",
-//     subject: subject,
-//     text: "Jeg ønsker fotografering",
-//     html: `
-//             <h1>Kunde fra Mlfoto.no</h1>
-//             <p>Navn: ${name}</p>
-//             <p>Telefon nummer: ${number}</p>
-//             <p>Dato ønsket: ${date}</p>
-//             <p>Kl: ${timePicked}</p>
-//             <p>Type møte: ${typeOfMeeting}</p>
-//             <p>Type Fotografering: ${typeOfShoot}</p>
-//             <p>Mengde tid: ${durationOfShoot}</p>
-//             <p>Kommentar: ${message}</p>
-//     `,
-//   };
+app.get("/login", function (req, res) {
+  // console.log(req)
+  res.sendFile(path.join(__dirname, "login.html"));
+});
 
-//   transporter.sendMail(mailOptions, function (err, data) {
-//     if (err) {
-//       cb(err, null);
-//     } else {
-//       cb(null, data);
-//     }
-//   });
-// };
-
-// const sendMail = (
-//   email,
-//   subject,
-//   { firstName, phone, type, age, comment, dato, pricePackage },
-//   cb
-// ) => {
-//   const mailOptions = {
-//     from: email,
-//     to: "shallagutten@hotmail.com",
-//     subject: `${firstName} -- Kunde fra Mlfoto`,
-//     text: "Jeg ønsker fotografering",
-//     html: `
-//             <h1>Kunde fra Mlfoto.no</h1>
-//             <h2>Navn: ${firstName}</h2>
-//             <h2>Telefon nummer: ${phone}</h2>
-//             <h2>Type fotografering ønsket: ${type}</h2>
-//             <h2>Alder: ${age}</h2>
-//             <h2>Dato: ${dato}</h2>
-//             <h3>Kommentar: ${comment}</h3>
-//             <h3>Pakke: ${pricePackage}</h3>
-//     `,
-//   };
-
-//   transporter.sendMail(mailOptions, function (err, data) {
-//     if (err) {
-//       cb(err, null);
-//     } else {
-//       cb(null, data);
-//     }
-//   });
-// };
+app.get("/admin/:uid", function (req, res) {
+  // console.log(req)
+  res.sendFile(path.join(__dirname, "admin.html"));
+});
 
 exports.api = functions.https.onRequest(app);

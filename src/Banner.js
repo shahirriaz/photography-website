@@ -5,7 +5,17 @@ import "aos/dist/aos.css";
 import { useStateValue } from "./StateProvider";
 import smoothscroll from "smoothscroll-polyfill";
 
-function Banner({ img, title, subTitle, isBtn, isBtnPrice }) {
+function Banner({
+  img,
+  title,
+  subTitle,
+  isBtn,
+  isBtnPrice,
+  positionX,
+  positionY,
+  home,
+  prices,
+}) {
   const [{ ref }, dispatch] = useStateValue();
 
   const [image, setImage] = useState(0);
@@ -38,8 +48,8 @@ function Banner({ img, title, subTitle, isBtn, isBtnPrice }) {
         backgroundSize: "cover",
         // backgroundImage: `url(${arrayOfImages[image]})`,
         backgroundImage: `url(${img})`,
-        backgroundPosition: "50% 40%",
-        opacity: "0.9",
+        backgroundPosition: `${positionX} ${positionY} `,
+        // opacity: "0.9",
       }}
     >
       <div class="overlay4"></div>
@@ -52,7 +62,8 @@ function Banner({ img, title, subTitle, isBtn, isBtnPrice }) {
         </div>
         {isBtn && (
           <button onClick={handleClick} id="overLayBtn" className="banner__btn">
-            Se galleri
+            {home && "Se galleri"}
+            {prices && "Se priser"}
           </button>
         )}
         {/* {isBtnPrice && (

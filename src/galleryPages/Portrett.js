@@ -54,7 +54,7 @@ function Portrett() {
       <div data-aos="fade-in" data-aos-duration="2000" className="galleryPages">
         <MainRow
           title="Portrett"
-          description="Morbi ex purus, dapibus id mauris id, dapibus dictum lorem. Mauris sed interdum purus, et dapibus metus. Integer quis felis molestie, fringilla enim vitae, ullamcorper lorem. "
+          subTitle="Morbi ex purus, dapibus id mauris id, dapibus dictum lorem. Mauris sed interdum purus, et dapibus metus. Integer quis felis molestie, fringilla enim vitae, ullamcorper lorem. "
           isFontColorWhite
           isMargin
           isPadding
@@ -66,7 +66,7 @@ function Portrett() {
             dynamicHeight={true}
             autoplay={false}
           >
-            {galleryPortrettCollection.map(image => (
+            {galleryPortrettCollection.map((image) => (
               <div key={image.id} className="imageCarousel__image">
                 <img src={image.src} />
               </div>

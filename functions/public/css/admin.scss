@@ -1,0 +1,162 @@
+:root {
+  --font-family-raleway: "Raleway", sans-serif;
+  --primary-color-1: #2c3e50;
+  --primary-color-2: #34495e;
+  --header-color-2: #c6d4e2;
+  --main--color: #f7f7f7;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --dotted-line: 1px dotted #afb2b6;
+  --color-green: #27ae60;
+  --color-clouds: #ecf0f1;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%; /* 1rem == 10px */
+  font-family: "Roboto Slab", serif;
+}
+
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+}
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 12px;
+}
+
+#list {
+  font-family: "Roboto Slab", serif;
+  border-bottom: 1px solid black;
+  list-style: none;
+}
+
+body {
+  // font-weight: 300;''
+  margin: 0;
+  padding: 0;
+
+  // display: grid;
+  // place-items: center;
+  // height: 100vh;
+  // width: 100vw;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-color-2);
+}
+
+#welcome{
+  padding-right: 8px;
+}
+
+.logo {
+  margin-left: 5rem;
+}
+.logo > img {
+  width: 120px;
+  object-fit: contain;
+}
+
+.centerContent {
+  // border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+}
+
+.btnContainer {
+  display: flex;
+}
+
+.button {
+  width: 200px;
+  height: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-right: 2rem;
+  padding: 2rem;
+}
+
+.button:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.main--container {
+  height: 90vh;
+  display: flex;
+}
+
+.side--panel {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  flex: 0.2;
+  color: white;
+  background-color: var(--primary-color-2);
+}
+
+.main--panel {
+  // border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0.8;
+  background-color: var(--main--color);
+}
+
+p {
+  font-size: 20px;
+}
+.side--menu {
+  margin: 2rem;
+  padding-bottom: 4px;
+}
+li {
+  list-style: none;
+  font-size: 18px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.booked,
+.chosen {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 5rem;
+  margin: 5rem;
+  // background-color: var(main--color);
+  border: none;
+}
+
+.active::after {
+  content: "";
+  float: right;
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: var(--main--color);
+  transform: rotate(-90deg);
+}
